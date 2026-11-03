@@ -1,20 +1,10 @@
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 
 export default function Services() {
   return (
     <div style={styles.container}>
-      <nav style={styles.nav}>
-        <div style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></div>
-        <div style={styles.navLinks}>
-          <Link to="/" style={styles.link}>ГЛАВНАЯ</Link>
-          <Link to="/services" style={styles.linkActive}>УСЛУГИ</Link>
-          <Link to="/methodology" style={styles.link}>МЕТОДОЛОГИЯ</Link>
-          <Link to="/cases" style={styles.link}>КЕЙСЫ</Link>
-          <Link to="/faq" style={styles.link}>FAQ</Link>
-          <Link to="/glossary" style={styles.link}>ГЛОССАРИЙ</Link>
-          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
-        </div>
-      </nav>
+      <Navbar />
 
       <section style={styles.section}>
         <div style={styles.tag}>[ Enterprise-Grade GEO Solutions ]</div>
@@ -59,13 +49,6 @@ export default function Services() {
 
 const styles = {
   container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
-  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '2px solid #000000', backgroundColor: '#ffffff', position: 'sticky', top: 0, zIndex: 100 },
-  logo: { fontSize: '28px', fontWeight: '900', color: '#000000', letterSpacing: '2px' },
-  logoBlue: { color: '#00a8e8' },
-  navLinks: { display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' },
-  link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
-  linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
-  linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
   section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
   serviceBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
   tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },

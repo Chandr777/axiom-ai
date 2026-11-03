@@ -41,7 +41,6 @@ function Home() {
         </video>
         <div style={styles.heroOverlay}>
           <div style={styles.heroContent}>
-            <div style={styles.tag}>[ Generative Engine Optimization / AEO Enterprise Protocol ]</div>
             <h1 style={styles.h1}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</h1>
             <p style={styles.subtitle}>
               Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.

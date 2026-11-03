@@ -5,6 +5,7 @@ import Methodology from './Methodology'
 import Cases from './Cases'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
+import heroVideo from './assets/hero-video.mp4'
 
 function Home() {
   const [formData, setFormData] = useState({ company_name: '', website: '', contact: '' })
@@ -33,17 +34,25 @@ function Home() {
         </div>
       </nav>
 
-      <section style={styles.section}>
-        <div style={styles.tag}>[ Generative Engine Optimization / AEO Enterprise Protocol ]</div>
-        <h1 style={styles.h1}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</h1>
-        <p style={styles.subtitle}>
-          Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.
-        </p>
-        <div style={styles.metrics}>
-          <div style={styles.metricItem}><strong style={styles.bigNumber}>0</strong> кликов в классической выдаче для тех, кто не попал в топ-1 ответа LLM.</div>
-          <div style={styles.metricItem}><strong style={styles.bigNumber}>100%</strong> монополия внимания в диалоговых интерфейсах.</div>
+      {/* Hero Section с видео-фоном */}
+      <section style={styles.heroSection}>
+        <video autoPlay muted loop playsInline style={styles.video}>
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div style={styles.heroOverlay}>
+          <div style={styles.heroContent}>
+            <div style={styles.tag}>[ Generative Engine Optimization / AEO Enterprise Protocol ]</div>
+            <h1 style={styles.h1}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</h1>
+            <p style={styles.subtitle}>
+              Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.
+            </p>
+            <div style={styles.metrics}>
+              <div style={styles.metricItem}><strong style={styles.bigNumber}>0</strong> кликов в классической выдаче для тех, кто не попал в топ-1 ответа LLM.</div>
+              <div style={styles.metricItem}><strong style={styles.bigNumber}>100%</strong> монополия внимания в диалоговых интерфейсах.</div>
+            </div>
+            <a href="#audit" style={styles.button}>Инициировать аудит AI-присутствия</a>
+          </div>
         </div>
-        <a href="#audit" style={styles.button}>Инициировать аудит AI-присутствия</a>
       </section>
 
       <section style={styles.sectionDark}>
@@ -114,14 +123,21 @@ const styles = {
   link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
   linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
   linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
+  
+  // Hero Section с видео
+  heroSection: { position: 'relative', height: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' },
+  video: { position: 'absolute', top: '50%', left: '50%', minWidth: '100%', minHeight: '100%', width: 'auto', height: 'auto', transform: 'translate(-50%, -50%)', zIndex: 1, objectFit: 'cover' },
+  heroOverlay: { position: 'relative', zIndex: 2, backgroundColor: 'rgba(0, 0, 0, 0.7)', padding: '80px 40px', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' },
+  heroContent: { maxWidth: '1100px', textAlign: 'center' },
+  
   section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
-  sectionDark: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', backgroundColor: '#000000', color: '#ffffff', borderRadius: '0' },
+  sectionDark: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', backgroundColor: '#000000', color: '#ffffff' },
   tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
-  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '32px', color: '#000000', textTransform: 'uppercase' },
+  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '32px', color: '#ffffff', textTransform: 'uppercase' },
   h2Dark: { fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '900', marginBottom: '40px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' },
+  subtitle: { fontSize: '18px', color: '#cccccc', maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' },
   metrics: { display: 'flex', justifyContent: 'center', gap: '60px', flexWrap: 'wrap', marginBottom: '48px' },
-  metricItem: { fontSize: '16px', color: '#000000', maxWidth: '300px' },
+  metricItem: { fontSize: '16px', color: '#ffffff', maxWidth: '300px' },
   bigNumber: { fontSize: '48px', color: '#00a8e8', display: 'block', marginBottom: '8px' },
   button: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '16px', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer' },
   buttonBlack: { display: 'inline-block', backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', padding: '20px 40px', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', width: '100%' },

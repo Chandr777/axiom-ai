@@ -3,39 +3,94 @@ import { Link } from 'react-router-dom'
 export default function Methodology() {
   return (
     <div style={styles.container}>
-      <nav style={styles.nav}><Link to="/" style={styles.link}>← На главную</Link></nav>
+      <nav style={styles.nav}>
+        <div style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></div>
+        <div style={styles.navLinks}>
+          <Link to="/" style={styles.link}>ГЛАВНАЯ</Link>
+          <Link to="/services" style={styles.link}>УСЛУГИ</Link>
+          <Link to="/methodology" style={styles.linkActive}>МЕТОДОЛОГИЯ</Link>
+          <Link to="/cases" style={styles.link}>КЕЙСЫ</Link>
+          <Link to="/faq" style={styles.link}>FAQ</Link>
+          <Link to="/glossary" style={styles.link}>ГЛОССАРИЙ</Link>
+          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
+        </div>
+      </nav>
+
       <section style={styles.section}>
         <div style={styles.tag}>[ Algorithmic R&D Protocol ]</div>
         <h1 style={styles.h1}>Как мы измеряем и гарантируем доминирование в ИИ</h1>
         <p style={styles.subtitle}>Генеративный поиск — это строгая математика векторов, RAG-контекстов и весов языковых моделей.</p>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>Этап 1: Рентгенография векторного пространства</h2>
-        <p style={styles.text}>Промт-моделирование и анализ энтропии бренда. Мы выявляем «галлюцинации» ИИ о вашей компании и оцениваем долю рекомендаций.</p>
+
+      <section style={styles.phaseBlock}>
+        <div style={styles.marker}>[ Phase 01 / Diagnostic ]</div>
+        <h2 style={styles.h2}>Многофакторный анализ присутствия в LLM</h2>
+        <p style={styles.text}>Прежде чем менять алгоритмы, необходимо понять, в каких именно векторных кластерах языковая модель «теряет» ваш бренд.</p>
+        <div style={styles.list}>
+          <div style={styles.listItem}><strong>1. Промт-моделирование (Prompt Matrix Simulation):</strong> Прогон сотен вариаций экспертных, транзакционных и рекомендательных запросов через API ведущих LLM.</div>
+          <div style={styles.listItem}><strong>2. Анализ энтропии бренда:</strong> Оценка того, насколько точно нейросеть знает ваши продуктовые характеристики, цены, регионы и УТП.</div>
+          <div style={styles.listItem}><strong>3. Индекс конкурентной агрессии:</strong> Распределение долей рекомендаций между вами и конкурентами.</div>
+        </div>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>Этап 2: Инженерия графов знаний</h2>
-        <p style={styles.text}>Семантическая паспортизация и устранение цифрового шума. Упаковка данных в форматы, оптимизированные для RAG-извлечения.</p>
+
+      <section style={{...styles.phaseBlock, backgroundColor: '#000000', color: '#ffffff'}}>
+        <div style={styles.markerDark}>[ Phase 02 / Engineering ]</div>
+        <h2 style={styles.h2Dark}>Построение графов доверия и продуктовых связей</h2>
+        <p style={styles.textDark}>Языковые модели мыслят не страницами, а сущностями и связями между ними (Knowledge Graphs).</p>
+        <div style={styles.list}>
+          <div style={styles.listItemDark}><strong>1. Семантическая паспортизация:</strong> Создание жестких цифровых связей между брендом, экспертами, лицензиями и кейсами.</div>
+          <div style={styles.listItemDark}><strong>2. Устранение семантического шума:</strong> Очистка цифрового контура от устаревших и противоречивых данных.</div>
+          <div style={styles.listItemDark}><strong>3. Машиночитаемая интеграция:</strong> Упаковка данных в форматы, оптимизированные для RAG-извлечения.</div>
+        </div>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>Этап 3: Синхронизация с краулерами</h2>
-        <p style={styles.text}>Непрерывный мониторинг того, как боты (GPTBot, ClaudeBot) сканируют инфраструктуру, и реактивное обновление профиля.</p>
+
+      <section style={styles.phaseBlock}>
+        <div style={styles.marker}>[ Phase 03 / Sync & Monitor ]</div>
+        <h2 style={styles.h2}>Непрерывный контроль индексации и RAG-циклов</h2>
+        <p style={styles.text}>Алгоритмы обучения языковых моделей постоянно обновляются. То, что работало вчера, требует корректировки сегодня.</p>
+        <div style={styles.list}>
+          <div style={styles.listItem}><strong>1. Краулинг-аудит:</strong> Мониторинг того, как боты (GPTBot, ClaudeBot, PerplexityBot) сканируют инфраструктуру клиента.</div>
+          <div style={styles.listItem}><strong>2. Динамический векторный трекинг:</strong> Еженедельный замер изменения индекса видимости бренда.</div>
+          <div style={styles.listItem}><strong>3. Реактивное обновление:</strong> Быстрое внесение изменений при выходе новых версий foundational models.</div>
+        </div>
       </section>
-      <section style={{...styles.section, textAlign: 'center', marginBottom: '80px'}}>
-        <Link to="/" style={styles.button}>Запросить презентацию методологии</Link>
+
+      <section style={{...styles.section, backgroundColor: '#000000', color: '#ffffff'}}>
+        <h2 style={styles.h2Dark}>Прогнозируемый результат вместо маркетинговой неопределенности</h2>
+        <p style={styles.textDark}>Наша методология превращает попадание в рекомендации ИИ из случайной удачи в управляемый инженерный процесс. Вы получаете прозрачную аналитику, измеримый рост индекса видимости и поток целевых лидов.</p>
+        <Link to="/audit" style={styles.buttonBlue}>ЗАПРОСИТЬ ПРЕЗЕНТАЦИЮ МЕТОДОЛОГИИ</Link>
       </section>
+
+      <footer style={styles.footer}>
+        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
+      </footer>
     </div>
   )
 }
+
 const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#050505', color: '#e5e5e5', minHeight: '100vh' },
-  nav: { padding: '20px 40px', borderBottom: '1px solid #222' },
-  link: { color: '#38bdf8', textDecoration: 'none', fontWeight: '600' },
-  section: { maxWidth: '900px', margin: '0 auto', padding: '60px 20px' },
-  tag: { display: 'inline-block', backgroundColor: '#1e293b', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: '600', marginBottom: '24px' },
-  h1: { fontSize: '48px', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px', color: '#ffffff' },
-  h2: { fontSize: '28px', fontWeight: '700', marginBottom: '16px', color: '#38bdf8' },
-  subtitle: { fontSize: '18px', color: '#a3a3a3', maxWidth: '700px' },
-  text: { fontSize: '16px', color: '#d4d4d4', lineHeight: '1.6', maxWidth: '800px' },
-  button: { display: 'inline-block', backgroundColor: '#38bdf8', color: '#000', fontWeight: '700', padding: '16px 32px', borderRadius: '6px', textDecoration: 'none', fontSize: '16px' }
+  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
+  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '2px solid #000000', backgroundColor: '#ffffff', position: 'sticky', top: 0, zIndex: 100 },
+  logo: { fontSize: '28px', fontWeight: '900', color: '#000000', letterSpacing: '2px' },
+  logoBlue: { color: '#00a8e8' },
+  navLinks: { display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' },
+  link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
+  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
+  phaseBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
+  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
+  marker: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  markerDark: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
+  h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
+  h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
+  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px' },
+  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px' },
+  list: { textAlign: 'left', maxWidth: '900px', margin: '32px auto 0' },
+  listItem: { fontSize: '15px', color: '#000000', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #000000', backgroundColor: '#ffffff' },
+  listItemDark: { fontSize: '15px', color: '#ffffff', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #00a8e8', backgroundColor: '#111111' },
+  buttonBlue: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginTop: '32px' },
+  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

@@ -43,21 +43,52 @@ export default function Navbar() {
 
   return (
     <nav style={{
-      ...styles.nav,
-      padding: isMobile ? '16px 20px' : '24px 40px'
+      display: 'flex', 
+      justifyContent: 'space-between', 
+      alignItems: 'center', 
+      borderBottom: '2px solid #000000', 
+      backgroundColor: '#ffffff', 
+      position: 'sticky', 
+      top: 0, 
+      zIndex: 100,
+      width: '100%',
+      boxSizing: 'border-box',
+      padding: isMobile ? '16px 24px' : '24px 40px',
+      paddingRight: isMobile ? '24px' : '40px'
     }}>
-      <Link to="/" style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></Link>
+      <Link to="/" style={{
+        fontSize: isMobile ? '22px' : '28px',
+        fontWeight: '900', 
+        color: '#000000', 
+        letterSpacing: '2px',
+        textDecoration: 'none',
+        flexShrink: 0
+      }}>AXIOM <span style={{ color: '#00a8e8' }}>AI</span></Link>
       
       {/* Десктопное меню */}
       {!isMobile && (
-        <div style={styles.navLinks}>
+        <div style={{
+          display: 'flex', 
+          gap: '20px', 
+          alignItems: 'center', 
+          flexWrap: 'wrap',
+          justifyContent: 'flex-end'
+        }}>
           <Link to="/" style={linkStyleDesktop('/')}>ГЛАВНАЯ</Link>
           <Link to="/services" style={linkStyleDesktop('/services')}>УСЛУГИ</Link>
           <Link to="/methodology" style={linkStyleDesktop('/methodology')}>МЕТОДОЛОГИЯ</Link>
           <Link to="/cases" style={linkStyleDesktop('/cases')}>КЕЙСЫ</Link>
           <Link to="/faq" style={linkStyleDesktop('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyleDesktop('/glossary')}>ГЛОССАРИЙ</Link>
-          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
+          <Link to="/audit" style={{
+            backgroundColor: '#000000', 
+            color: '#ffffff', 
+            textDecoration: 'none', 
+            fontSize: '13px', 
+            fontWeight: '700', 
+            padding: '10px 20px', 
+            letterSpacing: '1px' 
+          }}>AI-АУДИТ</Link>
         </div>
       )}
 
@@ -66,37 +97,47 @@ export default function Navbar() {
         <button 
           onClick={() => setIsOpen(!isOpen)} 
           style={{
-            ...styles.burgerButton,
-            position: 'relative',
-            zIndex: 101
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '8px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginLeft: 'auto',
+            flexShrink: 0,
+            width: '44px',
+            height: '44px',
+            minWidth: '44px'
           }}
           aria-label="Меню"
         >
           <div style={{
-            width: '28px',
-            height: '3px',
+            width: '24px',
+            height: '2.5px',
             backgroundColor: '#000000',
-            margin: '4px 0',
+            margin: '3px 0',
             transition: '0.3s',
-            transform: isOpen ? 'rotate(45deg) translate(6px, 6px)' : 'none',
+            transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
             borderRadius: '2px'
           }} />
           <div style={{
-            width: '28px',
-            height: '3px',
+            width: '24px',
+            height: '2.5px',
             backgroundColor: '#000000',
-            margin: '4px 0',
+            margin: '3px 0',
             transition: '0.3s',
             opacity: isOpen ? '0' : '1',
             borderRadius: '2px'
           }} />
           <div style={{
-            width: '28px',
-            height: '3px',
+            width: '24px',
+            height: '2.5px',
             backgroundColor: '#000000',
-            margin: '4px 0',
+            margin: '3px 0',
             transition: '0.3s',
-            transform: isOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
+            transform: isOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
             borderRadius: '2px'
           }} />
         </button>
@@ -105,8 +146,15 @@ export default function Navbar() {
       {/* Мобильное меню */}
       {isMobile && isOpen && (
         <div style={{
-          ...styles.mobileMenu,
+          position: 'absolute',
           top: '100%',
+          left: 0,
+          right: 0,
+          backgroundColor: '#ffffff',
+          borderBottom: '2px solid #000000',
+          padding: '20px',
+          boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+          zIndex: 99,
           maxHeight: 'calc(100vh - 70px)',
           overflowY: 'auto'
         }}>
@@ -117,78 +165,19 @@ export default function Navbar() {
           <Link to="/faq" style={linkStyle('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyle('/glossary')}>ГЛОССАРИЙ</Link>
           <Link to="/audit" style={{
-            ...styles.linkButton,
+            backgroundColor: '#000000', 
+            color: '#ffffff', 
+            textDecoration: 'none', 
+            fontSize: '13px', 
+            fontWeight: '700', 
+            padding: '16px 20px', 
+            letterSpacing: '1px',
             display: 'block',
             textAlign: 'center',
-            marginTop: '20px',
-            padding: '16px 20px'
+            marginTop: '20px'
           }}>AI-АУДИТ</Link>
         </div>
       )}
     </nav>
   )
-}
-
-const styles = {
-  nav: { 
-    display: 'flex', 
-    justifyContent: 'space-between', 
-    alignItems: 'center', 
-    borderBottom: '2px solid #000000', 
-    backgroundColor: '#ffffff', 
-    position: 'sticky', 
-    top: 0, 
-    zIndex: 100,
-    width: '100%',
-    boxSizing: 'border-box'
-  },
-  logo: { 
-    fontSize: '24px', 
-    fontWeight: '900', 
-    color: '#000000', 
-    letterSpacing: '2px',
-    textDecoration: 'none',
-    flexShrink: 0
-  },
-  logoBlue: { color: '#00a8e8' },
-  navLinks: { 
-    display: 'flex', 
-    gap: '20px', 
-    alignItems: 'center', 
-    flexWrap: 'wrap',
-    justifyContent: 'flex-end'
-  },
-  linkButton: { 
-    backgroundColor: '#000000', 
-    color: '#ffffff', 
-    textDecoration: 'none', 
-    fontSize: '13px', 
-    fontWeight: '700', 
-    padding: '10px 20px', 
-    letterSpacing: '1px' 
-  },
-  burgerButton: {
-    background: 'none',
-    border: 'none',
-    cursor: 'pointer',
-    padding: '12px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 'auto',
-    flexShrink: 0,
-    minWidth: '48px',
-    minHeight: '48px'
-  },
-  mobileMenu: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    backgroundColor: '#ffffff',
-    borderBottom: '2px solid #000000',
-    padding: '20px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-    zIndex: 99
-  }
 }

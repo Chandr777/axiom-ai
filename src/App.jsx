@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import './App.css' // Можно оставить пустым или удалить, стили уже внутри
 
 function App() {
   const [formData, setFormData] = useState({ company_name: '', website: '', contact: '' })
-  const [status, setStatus] = useState('idle') // idle, loading, success, error
+  const [status, setStatus] = useState('idle') 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -14,19 +13,24 @@ function App() {
     setStatus('loading')
 
     try {
-      // ЗАМЕНИТЕ URL на ваш реальный бэкенд, когда он будет развернут
+      // Временно имитируем успешный ответ, пока бэкенд не развернут
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      setStatus('success')
+      setFormData({ company_name: '', website: '', contact: '' })
+      
+      /* Когда бэкенд будет готов, раскомментируйте этот блок:
       const response = await fetch('https://api.axiom-ai.su/api/v1/request-audit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
-
       if (response.ok) {
         setStatus('success')
         setFormData({ company_name: '', website: '', contact: '' })
       } else {
         setStatus('error')
       }
+      */
     } catch (error) {
       console.error('Ошибка:', error)
       setStatus('error')
@@ -51,7 +55,7 @@ function App() {
 
       {/* Блок 2: The Shift */}
       <section style={{...styles.section, backgroundColor: '#111'}}>
-        <h2 style={styles.h2}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</2>
+        <h2 style={styles.h2}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</h2>
         <div style={styles.grid}>
           <div style={styles.card}>
             <h3 style={styles.h3}>Вчера (Классический поиск)</h3>
@@ -87,7 +91,7 @@ function App() {
       </section>
 
       {/* Блок 4: Deep Audit Framework (Форма) */}
-      <section id="audit" style={{...styles.section, backgroundColor: '#0f172a', border: '1px solid #1e293b'}}>
+      <section id="audit" style={{...styles.section, backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '12px'}}>
         <h2 style={styles.h2}>AI-Footprint Diagnostic: Рентгенография вашего цифрового следа</h2>
         <p style={styles.subtitle}>Мы проводим многофакторный программный срез индексации вашего бренда в коммерческих сценариях топ-5 языковых моделей.</p>
         
@@ -126,7 +130,7 @@ function App() {
             </button>
             {status === 'error' && <p style={styles.errorText}>Ошибка сети. Проверьте подключение или попробуйте позже.</p>}
           </form>
-                )}
+        )}
         <p style={styles.smallText}>
           🔒 <em>Гарантия точности: При повторных запросах система выдает верифицированный и стабильный результат на основе зафиксированного векторного среза. Никаких случайных флуктуаций.</em>
         </p>
@@ -138,7 +142,7 @@ function App() {
         <ul style={styles.list}>
           <li><strong>Высокий чек:</strong> Пользователи из рекомендаций ИИ закрываются на сделку в разы быстрее.</li>
           <li><strong>Защита от конкурентов:</strong> Вы создаете непреодолимый цифровой барьер на годы вперед.</li>
-          <li><strong>Иммунитет к алгоритмам:</strong> Семантический авторитет в базах знаний ИИ стабилен и долговечен.</.li>
+          <li><strong>Иммунитет к алгоритмам:</strong> Семантический авторитет в базах знаний ИИ стабилен и долговечен.</li>
         </ul>
         <div style={styles.finalCta}>
           <h2 style={styles.h2}>Рынок рекомендаций ИИ формируется прямо сейчас. Места в топе ограничены.</h2>
@@ -153,7 +157,6 @@ function App() {
   )
 }
 
-// Простые встроенные стили для немедленного отображения без настройки CSS
 const styles = {
   container: { fontFamily: 'system-ui, -apple-system, sans-serif', backgroundColor: '#050505', color: '#e5e5e5', lineHeight: '1.6', margin: 0, padding: 0 },
   section: { maxWidth: '900px', margin: '0 auto', padding: '80px 20px', textAlign: 'center' },
@@ -175,7 +178,7 @@ const styles = {
   successMessage: { backgroundColor: '#064e3b', color: '#6ee7b7', padding: '20px', borderRadius: '8px', marginTop: '24px', fontWeight: '600' },
   errorText: { color: '#ef4444', marginTop: '8px', fontSize: '14px' },
   smallText: { fontSize: '13px', color: '#737373', marginTop: '24px', maxWidth: '600px', margin: '24px auto 0' },
-  list: { textAlign: 'left', maxWidth: '700px', margin: '40px auto', fontSize: '18px', color: '#d4d4d4' },
+  list: { textAlign: 'left', maxWidth: '700px', margin: '40px auto', fontSize: '18px', color: '#d4d4d4', listStylePosition: 'inside' },
   finalCta: { marginTop: '60px', padding: '40px', backgroundColor: '#111', borderRadius: '12px', border: '1px solid #222' },
   footer: { textAlign: 'center', padding: '40px 20px', color: '#525252', fontSize: '14px', borderTop: '1px solid #111' }
 }

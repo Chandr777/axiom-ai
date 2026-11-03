@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Services from './Services'
 import Methodology from './Methodology'
 import Cases from './Cases'
+import FAQ from './FAQ'
+import Glossary from './Glossary'
 
 function Home() {
   const [formData, setFormData] = useState({ company_name: '', website: '', contact: '' })
@@ -11,7 +13,7 @@ function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('loading')
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Имитация отправки
+    await new Promise(resolve => setTimeout(resolve, 1000))
     setStatus('success')
     setFormData({ company_name: '', website: '', contact: '' })
   }
@@ -19,37 +21,69 @@ function Home() {
   return (
     <div style={styles.container}>
       <nav style={styles.nav}>
-        <span style={styles.logo}>AXIOM AI</span>
+        <div style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></div>
         <div style={styles.navLinks}>
-          <Link to="/services" style={styles.link}>Услуги</Link>
-          <Link to="/methodology" style={styles.link}>Методология</Link>
-          <Link to="/cases" style={styles.link}>Кейсы</Link>
+          <Link to="/" style={styles.linkActive}>ГЛАВНАЯ</Link>
+          <Link to="/services" style={styles.link}>УСЛУГИ</Link>
+          <Link to="/methodology" style={styles.link}>МЕТОДОЛОГИЯ</Link>
+          <Link to="/cases" style={styles.link}>КЕЙСЫ</Link>
+          <Link to="/faq" style={styles.link}>FAQ</Link>
+          <Link to="/glossary" style={styles.link}>ГЛОССАРИЙ</Link>
+          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
         </div>
       </nav>
 
       <section style={styles.section}>
         <div style={styles.tag}>[ Generative Engine Optimization / AEO Enterprise Protocol ]</div>
-        <h1 style={styles.h1}>Ваши клиенты больше не ищут вас через Google. Они спрашивают у ИИ.</h1>
-        <p style={styles.subtitle}>Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.</p>
+        <h1 style={styles.h1}>Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.</h1>
+        <p style={styles.subtitle}>
+          Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.
+        </p>
+        <div style={styles.metrics}>
+          <div style={styles.metricItem}><strong style={styles.bigNumber}>0</strong> кликов в классической выдаче для тех, кто не попал в топ-1 ответа LLM.</div>
+          <div style={styles.metricItem}><strong style={styles.bigNumber}>100%</strong> монополия внимания в диалоговых интерфейсах.</div>
+        </div>
         <a href="#audit" style={styles.button}>Инициировать аудит AI-присутствия</a>
       </section>
 
-      <section id="audit" style={{...styles.section, backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '12px'}}>
-        <h2 style={styles.h2}>AI-Footprint Diagnostic</h2>
+      <section style={styles.sectionDark}>
+        <h2 style={styles.h2Dark}>Вчера vs Сегодня</h2>
+        <div style={styles.grid}>
+          <div style={styles.cardDark}>
+            <h3 style={styles.h3Dark}>Классический поиск</h3>
+            <p style={styles.textDark}>Пользователь получает 20 ссылок, сравнивает цены, читает отзывы. У вас есть шанс.</p>
+            <p style={styles.warning}>❌ Устаревшая модель</p>
+          </div>
+          <div style={styles.cardDark}>
+            <h3 style={styles.h3Dark}>Генеративный поиск</h3>
+            <p style={styles.textDark}>ИИ анализирует терабайты данных и выдает одну-единственную рекомендацию.</p>
+            <p style={styles.success}>✅ Безальтернативное решение</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="audit" style={styles.section}>
+        <h2 style={styles.h1}>AI-FOOTPRINT DIAGNOSTIC: РЕНТГЕНОГРАФИЯ ВАШЕГО ЦИФРОВОГО СЛЕДА</h2>
+        <p style={styles.subtitle}>Мы не предлагаем «оценить сайт по шкале от 1 до 10». Мы проводим многофакторный программный срез индексации вашего бренда в коммерческих сценариях топ-5 языковых моделей.</p>
+        
         {status === 'success' ? (
-          <div style={styles.successMessage}>✅ Заявка принята. Отчет формируется на основе верифицированного среза.</div>
+          <div style={styles.successMessage}>✅ Заявка принята. Закрытый отчет формируется на основе верифицированного среза.</div>
         ) : (
           <form onSubmit={handleSubmit} style={styles.form}>
-            <input name="company_name" placeholder="Юридическое лицо / Бренд" value={formData.company_name} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <input name="website" placeholder="Корпоративный домен" value={formData.website} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <input name="contact" placeholder="Email / Telegram ЛПР" value={formData.contact} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <button type="submit" disabled={status === 'loading'} style={styles.button}>{status === 'loading' ? 'Обработка...' : 'Запросить закрытый отчет'}</button>
+            <label style={styles.label}>ЮРИДИЧЕСКОЕ ЛИЦО / БРЕНД</label>
+            <input name="company_name" placeholder="ООО «Корпорация»" value={formData.company_name} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <label style={styles.label}>КОРПОРАТИВНЫЙ ДОМЕН</label>
+            <input name="website" placeholder="company.com" value={formData.website} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <label style={styles.label}>КОНТАКТ ЛПР (EMAIL / TELEGRAM)</label>
+            <input name="contact" placeholder="ceo@company.com" value={formData.contact} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <button type="submit" disabled={status === 'loading'} style={styles.buttonBlack}>{status === 'loading' ? 'ОБРАБОТКА...' : 'ЗАПРОСИТЬ ЗАКРЫТЫЙ ОТЧЕТ'}</button>
           </form>
         )}
+        <p style={styles.smallText}>🔒 Гарантия точности: при повторных запросах система выдает верифицированный стабильный результат на основе зафиксированного векторного среза.</p>
       </section>
 
       <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} Axiom AI. Architecture of Generative Dominance.</p>
+        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
     </div>
   )
@@ -63,25 +97,44 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/methodology" element={<Methodology />} />
         <Route path="/cases" element={<Cases />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/glossary" element={<Glossary />} />
+        <Route path="/audit" element={<Home />} />
       </Routes>
     </Router>
   )
 }
 
 const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#050505', color: '#e5e5e5', minHeight: '100vh' },
-  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 40px', borderBottom: '1px solid #222', maxWidth: '1200px', margin: '0 auto' },
-  logo: { fontSize: '20px', fontWeight: '800', color: '#ffffff', letterSpacing: '2px' },
-  navLinks: { display: 'flex', gap: '24px' },
-  link: { color: '#a3a3a3', textDecoration: 'none', fontSize: '14px', fontWeight: '600', transition: 'color 0.2s' },
-  section: { maxWidth: '900px', margin: '0 auto', padding: '80px 20px', textAlign: 'center' },
-  tag: { display: 'inline-block', backgroundColor: '#1e293b', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: '600', marginBottom: '24px' },
-  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px', color: '#ffffff' },
-  h2: { fontSize: '32px', fontWeight: '700', marginBottom: '20px', color: '#ffffff' },
-  subtitle: { fontSize: '18px', color: '#a3a3a3', maxWidth: '700px', margin: '0 auto 32px' },
-  button: { display: 'inline-block', backgroundColor: '#38bdf8', color: '#000', fontWeight: '700', padding: '16px 32px', borderRadius: '6px', textDecoration: 'none', fontSize: '16px', border: 'none', cursor: 'pointer', marginTop: '16px' },
-  form: { display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '500px', margin: '40px auto 0' },
-  input: { padding: '16px', borderRadius: '6px', border: '1px solid #333', backgroundColor: '#0a0a0a', color: '#fff', fontSize: '16px', outline: 'none' },
-  successMessage: { backgroundColor: '#064e3b', color: '#6ee7b7', padding: '20px', borderRadius: '8px', marginTop: '24px', fontWeight: '600' },
-  footer: { textAlign: 'center', padding: '40px 20px', color: '#525252', fontSize: '14px', borderTop: '1px solid #111', marginTop: '80px' }
+  container: { fontFamily: 'system-ui, -apple-system, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
+  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '2px solid #000000', backgroundColor: '#ffffff', position: 'sticky', top: 0, zIndex: 100 },
+  logo: { fontSize: '28px', fontWeight: '900', color: '#000000', letterSpacing: '2px' },
+  logoBlue: { color: '#00a8e8' },
+  navLinks: { display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' },
+  link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
+  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
+  sectionDark: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', backgroundColor: '#000000', color: '#ffffff', borderRadius: '0' },
+  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
+  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '32px', color: '#000000', textTransform: 'uppercase' },
+  h2Dark: { fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: '900', marginBottom: '40px', color: '#ffffff', textTransform: 'uppercase' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' },
+  metrics: { display: 'flex', justifyContent: 'center', gap: '60px', flexWrap: 'wrap', marginBottom: '48px' },
+  metricItem: { fontSize: '16px', color: '#000000', maxWidth: '300px' },
+  bigNumber: { fontSize: '48px', color: '#00a8e8', display: 'block', marginBottom: '8px' },
+  button: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '16px', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer' },
+  buttonBlack: { display: 'inline-block', backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', padding: '20px 40px', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', width: '100%' },
+  grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' },
+  cardDark: { backgroundColor: '#111111', padding: '40px', border: '2px solid #333333' },
+  h3Dark: { fontSize: '22px', fontWeight: '800', marginBottom: '16px', color: '#00a8e8', textTransform: 'uppercase' },
+  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.6' },
+  warning: { color: '#ff4444', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
+  success: { color: '#00a8e8', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
+  form: { display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '600px', margin: '40px auto 0', textAlign: 'left' },
+  label: { fontSize: '12px', fontWeight: '800', color: '#000000', letterSpacing: '1px', marginTop: '16px' },
+  input: { padding: '18px', border: '2px solid #000000', backgroundColor: '#ffffff', color: '#000000', fontSize: '16px', outline: 'none', fontWeight: '600' },
+  successMessage: { backgroundColor: '#00a8e8', color: '#000000', padding: '24px', fontWeight: '800', marginTop: '24px', fontSize: '16px' },
+  smallText: { fontSize: '13px', color: '#666666', marginTop: '24px', maxWidth: '700px', margin: '24px auto 0' },
+  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

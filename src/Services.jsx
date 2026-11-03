@@ -3,39 +3,82 @@ import { Link } from 'react-router-dom'
 export default function Services() {
   return (
     <div style={styles.container}>
-      <nav style={styles.nav}><Link to="/" style={styles.link}>← На главную</Link></nav>
+      <nav style={styles.nav}>
+        <div style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></div>
+        <div style={styles.navLinks}>
+          <Link to="/" style={styles.link}>ГЛАВНАЯ</Link>
+          <Link to="/services" style={styles.linkActive}>УСЛУГИ</Link>
+          <Link to="/methodology" style={styles.link}>МЕТОДОЛОГИЯ</Link>
+          <Link to="/cases" style={styles.link}>КЕЙСЫ</Link>
+          <Link to="/faq" style={styles.link}>FAQ</Link>
+          <Link to="/glossary" style={styles.link}>ГЛОССАРИЙ</Link>
+          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
+        </div>
+      </nav>
+
       <section style={styles.section}>
         <div style={styles.tag}>[ Enterprise-Grade GEO Solutions ]</div>
         <h1 style={styles.h1}>Инженерия вашего бренда в алгоритмах языковых моделей</h1>
-        <p style={styles.subtitle}>Нейросети оперируют сущностями, векторными связями и графами знаний. Мы пересобираем цифровой профиль вашей компании.</p>
+        <p style={styles.subtitle}>Нейросети не ранжируют сайты — они оперируют сущностями, векторными связями и графами знаний.</p>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>01. Vector & Entity Injection</h2>
-        <p style={styles.text}>Создаем машиночитаемое досье компании и интегрируем данные в источники, которые используют foundational models при обучении.</p>
+
+      <section style={styles.serviceBlock}>
+        <div style={styles.marker}>[ Service Module 01 ]</div>
+        <h2 style={styles.h2}>Vector & Entity Injection</h2>
+        <p style={styles.text}><strong>Проблема:</strong> Большинство бизнесов для языковых моделей — «слепые зоны».</p>
+        <p style={styles.text}><strong>Решение:</strong> Паспортизация сущности, внедрение в базы знаний, векторное позиционирование.</p>
+        <p style={styles.result}><strong>Результат:</strong> ИИ воспринимает ваш бренд как признанного индустриального лидера.</p>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>02. LLM Crawling Architecture</h2>
-        <p style={styles.text}>Развертывание легковесных машиночитаемых представлений сайта и внедрение глубоких схем JSON-LD нового поколения.</p>
+
+      <section style={{...styles.serviceBlock, backgroundColor: '#000000', color: '#ffffff'}}>
+        <div style={styles.markerDark}>[ Service Module 02 ]</div>
+        <h2 style={styles.h2Dark}>LLM Crawling Architecture</h2>
+        <p style={styles.textDark}><strong>Проблема:</strong> Стандартные сайты запутывают поисковых роботов нового поколения (GPTBot, PerplexityBot).</p>
+        <p style={styles.textDark}><strong>Решение:</strong> API-слои для краулеров, JSON-LD нового поколения, устранение токенового шума.</p>
+        <p style={styles.resultDark}><strong>Результат:</strong> Коммерческая информация считывается ИИ мгновенно и без искажений.</p>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>03. Multi-Source Citation Engineering</h2>
-        <p style={styles.text}>Формирование потока качественных упоминаний на площадках, которые сканируются поисковыми движками ИИ в реальном времени.</p>
+
+      <section style={styles.serviceBlock}>
+        <div style={styles.marker}>[ Service Module 03 ]</div>
+        <h2 style={styles.h2}>Multi-Source Citation Engineering</h2>
+        <p style={styles.text}><strong>Проблема:</strong> Нейросети не верят сайтам компаний — они верят перекрестным источникам.</p>
+        <p style={styles.text}><strong>Решение:</strong> Карта цитирования, посев экспертного следа, управление консенсусом данных.</p>
+        <p style={styles.result}><strong>Результат:</strong> Железобетонный консенсус: для ИИ вы — безальтернативный эксперт.</p>
       </section>
+
       <section style={{...styles.section, textAlign: 'center', marginBottom: '80px'}}>
-        <Link to="/" style={styles.button}>Запросить технический бриф</Link>
+        <Link to="/audit" style={styles.buttonBlack}>ЗАПРОСИТЬ ТЕХНИЧЕСКИЙ БРИФ</Link>
       </section>
+
+      <footer style={styles.footer}>
+        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
+      </footer>
     </div>
   )
 }
+
 const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#050505', color: '#e5e5e5', minHeight: '100vh' },
-  nav: { padding: '20px 40px', borderBottom: '1px solid #222' },
-  link: { color: '#38bdf8', textDecoration: 'none', fontWeight: '600' },
-  section: { maxWidth: '900px', margin: '0 auto', padding: '60px 20px' },
-  tag: { display: 'inline-block', backgroundColor: '#1e293b', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: '600', marginBottom: '24px' },
-  h1: { fontSize: '48px', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px', color: '#ffffff' },
-  h2: { fontSize: '28px', fontWeight: '700', marginBottom: '16px', color: '#38bdf8' },
-  subtitle: { fontSize: '18px', color: '#a3a3a3', maxWidth: '700px' },
-  text: { fontSize: '16px', color: '#d4d4d4', lineHeight: '1.6', maxWidth: '800px' },
-  button: { display: 'inline-block', backgroundColor: '#38bdf8', color: '#000', fontWeight: '700', padding: '16px 32px', borderRadius: '6px', textDecoration: 'none', fontSize: '16px' }
+  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
+  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '2px solid #000000', backgroundColor: '#ffffff', position: 'sticky', top: 0, zIndex: 100 },
+  logo: { fontSize: '28px', fontWeight: '900', color: '#000000', letterSpacing: '2px' },
+  logoBlue: { color: '#00a8e8' },
+  navLinks: { display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' },
+  link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
+  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
+  serviceBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
+  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
+  marker: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  markerDark: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
+  h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
+  h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
+  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px' },
+  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px' },
+  result: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8' },
+  resultDark: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8' },
+  buttonBlack: { display: 'inline-block', backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' },
+  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

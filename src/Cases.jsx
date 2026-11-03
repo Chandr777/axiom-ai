@@ -3,37 +3,116 @@ import { Link } from 'react-router-dom'
 export default function Cases() {
   return (
     <div style={styles.container}>
-      <nav style={styles.nav}><Link to="/" style={styles.link}>← На главную</Link></nav>
+      <nav style={styles.nav}>
+        <div style={styles.logo}>AXIOM <span style={styles.logoBlue}>AI</span></div>
+        <div style={styles.navLinks}>
+          <Link to="/" style={styles.link}>ГЛАВНАЯ</Link>
+          <Link to="/services" style={styles.link}>УСЛУГИ</Link>
+          <Link to="/methodology" style={styles.link}>МЕТОДОЛОГИЯ</Link>
+          <Link to="/cases" style={styles.linkActive}>КЕЙСЫ</Link>
+          <Link to="/faq" style={styles.link}>FAQ</Link>
+          <Link to="/glossary" style={styles.link}>ГЛОССАРИЙ</Link>
+          <Link to="/audit" style={styles.linkButton}>AI-АУДИТ</Link>
+        </div>
+      </nav>
+
       <section style={styles.section}>
         <div style={styles.tag}>[ Verified Case Studies & Impact ]</div>
         <h1 style={styles.h1}>Как наши клиенты захватывают доминирование в рекомендациях ИИ</h1>
+        <p style={styles.subtitle}>Теория GEO работает только тогда, когда подтверждена цифрами.</p>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>Кейс 01: Fintech & Enterprise</h2>
-        <p style={styles.text}><strong>До:</strong> Видимость в ИИ 4%. 95% диалогового трафика уходило к конкурентам.<br/><strong>Решение:</strong> Vector & Entity Injection в отраслевые базы данных.<br/><strong>Результат:</strong> Видимость 82%. Рост квалифицированных лидов на 340% за 4 месяца.</p>
+
+      <section style={styles.caseBlock}>
+        <div style={styles.marker}>[ Case Study 01 / Financial Technology ]</div>
+        <h2 style={styles.h2}>Перехват рекомендаций в сегменте корпоративных финансовых сервисов</h2>
+        <div style={styles.caseGrid}>
+          <div style={styles.caseCard}>
+            <h3 style={styles.h3}>ДО ВНЕДРЕНИЯ</h3>
+            <p style={styles.text}>Видимость в ИИ: <strong style={styles.blue}>4%</strong><br/>95% диалогового трафика уходило к двум крупным конкурентам.</p>
+          </div>
+          <div style={styles.caseCard}>
+            <h3 style={styles.h3}>РЕШЕНИЕ</h3>
+            <p style={styles.text}>Vector & Entity Injection в ключевые отраслевые базы данных. Инженерия цитирования на верифицированных площадках.</p>
+          </div>
+          <div style={styles.caseCard}>
+            <h3 style={styles.h3}>ПОСЛЕ ВНЕДРЕНИЯ</h3>
+            <p style={styles.text}>Видимость в ИИ: <strong style={styles.blue}>82%</strong><br/>Рост квалифицированных лидов на <strong style={styles.blue}>340%</strong> за 4 месяца.</p>
+          </div>
+        </div>
       </section>
-      <section style={styles.section}>
-        <h2 style={styles.h2}>Кейс 02: Commercial Real Estate</h2>
-        <p style={styles.text}><strong>До:</strong> Видимость в ИИ 11%. Эпизодические упоминания.<br/><strong>Решение:</strong> LLM Crawling Architecture для мгновенного считывания портфолио ботами.<br/><strong>Результат:</strong> Видимость 76%. Каждое второе обращение ссылается на рекомендацию LLM.</p>
+
+      <section style={{...styles.caseBlock, backgroundColor: '#000000', color: '#ffffff'}}>
+        <div style={styles.markerDark}>[ Case Study 02 / Commercial Real Estate ]</div>
+        <h2 style={styles.h2Dark}>Монополизация выдачи ИИ для застройщика элитных объектов</h2>
+        <div style={styles.caseGrid}>
+          <div style={styles.caseCardDark}>
+            <h3 style={styles.h3Dark}>ДО ВНЕДРЕНИЯ</h3>
+            <p style={styles.textDark}>Видимость в ИИ: <strong style={styles.blue}>11%</strong><br/>Эпизодические упоминания в нейтральном ключе.</p>
+          </div>
+          <div style={styles.caseCardDark}>
+            <h3 style={styles.h3Dark}>РЕШЕНИЕ</h3>
+            <p style={styles.textDark}>LLM Crawling Architecture для мгновенного считывания портфолио, лицензий и стандартов ботами.</p>
+          </div>
+          <div style={styles.caseCardDark}>
+            <h3 style={styles.h3Dark}>ПОСЛЕ ВНЕДРЕНИЯ</h3>
+            <p style={styles.textDark}>Видимость в ИИ: <strong style={styles.blue}>76%</strong><br/>Каждое второе обращение ссылается на рекомендацию LLM.</p>
+          </div>
+        </div>
       </section>
-      <section style={{...styles.section, backgroundColor: '#111', borderRadius: '12px', marginTop: '40px'}}>
-        <h2 style={styles.h2}>О компании Axiom AI</h2>
-        <p style={styles.text}>Мы не покупаем ссылки и не пишем шаблонные тексты. Мы работаем напрямую с архитектурой восприятия искусственного интеллекта, обеспечивая точность измерений и конфиденциальность Enterprise-уровня.</p>
+
+      <section style={styles.aboutBlock}>
+        <h2 style={styles.h2}>О КОМПАНИИ AXIOM AI</h2>
+        <p style={styles.textLarge}>Axiom AI создана инженерами и маркетологами нового поколения, которые осознали раньше других: классический digital-маркетинг исчерпал себя. Мы не покупаем ссылки и не пишем шаблонные тексты. Мы работаем напрямую с архитектурой восприятия искусственного интеллекта.</p>
+        <div style={styles.principles}>
+          <div style={styles.principle}><strong style={styles.blue}>ТОЧНОСТЬ ИЗМЕРЕНИЙ</strong><br/>Только алгоритмические метрики векторного присутствия.</div>
+          <div style={styles.principle}><strong style={styles.blue}>ДОЛГОСРОЧНАЯ СТАБИЛЬНОСТЬ</strong><br/>Позиции устойчивы к штормам поисковых алгоритмов.</div>
+          <div style={styles.principle}><strong style={styles.blue}>КОНФИДЕНЦИАЛЬНОСТЬ</strong><br/>Работаем по жестким стандартам безопасности данных.</div>
+        </div>
       </section>
-      <section style={{...styles.section, textAlign: 'center', marginBottom: '80px'}}>
-        <Link to="/" style={styles.button}>Обсудить проект и заказать аудит</Link>
+
+      <section style={{...styles.section, backgroundColor: '#000000', color: '#ffffff'}}>
+        <h2 style={styles.h2Dark}>Ваш кейс может стать следующим в списке лидеров рынка</h2>
+        <p style={styles.textDark}>Запишитесь на закрытый стратегический брифинг. Мы проанализируем ваш бренд и покажем позиции в генеративном поиске прямо сейчас.</p>
+        <Link to="/audit" style={styles.buttonBlue}>ОБСУДИТЬ ПРОЕКТ И ЗАКАЗАТЬ АУДИТ</Link>
       </section>
+
+      <footer style={styles.footer}>
+        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
+      </footer>
     </div>
   )
 }
+
 const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#050505', color: '#e5e5e5', minHeight: '100vh' },
-  nav: { padding: '20px 40px', borderBottom: '1px solid #222' },
-  link: { color: '#38bdf8', textDecoration: 'none', fontWeight: '600' },
-  section: { maxWidth: '900px', margin: '0 auto', padding: '60px 20px' },
-  tag: { display: 'inline-block', backgroundColor: '#1e293b', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', fontSize: '14px', fontWeight: '600', marginBottom: '24px' },
-  h1: { fontSize: '48px', fontWeight: '800', lineHeight: '1.1', marginBottom: '24px', color: '#ffffff' },
-  h2: { fontSize: '28px', fontWeight: '700', marginBottom: '16px', color: '#38bdf8' },
-  text: { fontSize: '16px', color: '#d4d4d4', lineHeight: '1.6', maxWidth: '800px' },
-  button: { display: 'inline-block', backgroundColor: '#38bdf8', color: '#000', fontWeight: '700', padding: '16px 32px', borderRadius: '6px', textDecoration: 'none', fontSize: '16px' }
+  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
+  nav: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '24px 40px', borderBottom: '2px solid #000000', backgroundColor: '#ffffff', position: 'sticky', top: 0, zIndex: 100 },
+  logo: { fontSize: '28px', fontWeight: '900', color: '#000000', letterSpacing: '2px' },
+  logoBlue: { color: '#00a8e8' },
+  navLinks: { display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' },
+  link: { color: '#000000', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkActive: { color: '#00a8e8', textDecoration: 'none', fontSize: '13px', fontWeight: '700', letterSpacing: '1px' },
+  linkButton: { backgroundColor: '#000000', color: '#ffffff', textDecoration: 'none', fontSize: '13px', fontWeight: '700', padding: '10px 20px', letterSpacing: '1px' },
+  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
+  caseBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
+  aboutBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
+  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
+  marker: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  markerDark: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
+  h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '32px', color: '#000000', textTransform: 'uppercase' },
+  h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '32px', color: '#ffffff', textTransform: 'uppercase' },
+  h3: { fontSize: '14px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  h3Dark: { fontSize: '14px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
+  text: { fontSize: '15px', color: '#000000', lineHeight: '1.7' },
+  textDark: { fontSize: '15px', color: '#cccccc', lineHeight: '1.7' },
+  textLarge: { fontSize: '18px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', margin: '0 auto 40px' },
+  blue: { color: '#00a8e8' },
+  caseGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px' },
+  caseCard: { padding: '32px', border: '2px solid #000000', backgroundColor: '#ffffff' },
+  caseCardDark: { padding: '32px', border: '2px solid #00a8e8', backgroundColor: '#111111' },
+  principles: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '40px' },
+  principle: { padding: '32px', border: '2px solid #000000', fontSize: '15px', lineHeight: '1.6' },
+  buttonBlue: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginTop: '32px' },
+  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

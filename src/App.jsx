@@ -44,32 +44,39 @@ function Home() {
         <div style={styles.heroOverlay}>
           <div style={{
             ...styles.heroContent,
-            padding: isMobile ? '20px 16px' : '40px'
+            padding: isMobile ? '20px 16px' : '40px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center', // ЖЕСТКОЕ ЦЕНТРИРОВАНИЕ ВСЕГО КОНТЕНТА
+            textAlign: 'center'
           }}>
             <h1 style={{
               ...styles.h1,
-              fontSize: isMobile ? '28px' : 'clamp(32px, 5vw, 56px)',
-              lineHeight: isMobile ? '1.2' : '1.05'
+              fontSize: isMobile ? '26px' : 'clamp(32px, 5vw, 56px)',
+              lineHeight: isMobile ? '1.2' : '1.05',
+              textAlign: 'center'
             }}>
               Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.
             </h1>
             <p style={{
               ...styles.subtitle,
               fontSize: isMobile ? '15px' : '18px',
-              padding: isMobile ? '0 8px' : '0'
+              textAlign: 'center',
+              maxWidth: isMobile ? '100%' : '800px'
             }}>
               Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.
             </p>
             <div style={{
               ...styles.metrics,
               gap: isMobile ? '24px' : '60px',
-              flexDirection: isMobile ? 'column' : 'row'
+              flexDirection: isMobile ? 'column' : 'row',
+              alignItems: 'center'
             }}>
-              <div style={styles.metricItem}>
+              <div style={{...styles.metricItem, textAlign: 'center'}}>
                 <strong style={{...styles.bigNumber, fontSize: isMobile ? '36px' : '48px'}}>0</strong>
                 кликов в классической выдаче для тех, кто не попал в топ-1 ответа LLM.
               </div>
-              <div style={styles.metricItem}>
+              <div style={{...styles.metricItem, textAlign: 'center'}}>
                 <strong style={{...styles.bigNumber, fontSize: isMobile ? '36px' : '48px'}}>100%</strong>
                 монополия внимания в диалоговых интерфейсах.
               </div>
@@ -79,11 +86,10 @@ function Home() {
               padding: isMobile ? '14px 20px' : '20px 40px',
               fontSize: isMobile ? '13px' : '16px',
               width: isMobile ? '100%' : 'auto',
+              maxWidth: '400px',
               boxSizing: 'border-box',
               display: 'inline-block',
-              textAlign: 'center',
-              whiteSpace: 'normal',
-              wordBreak: 'break-word'
+              textAlign: 'center'
             }}>
               ИНИЦИИРОВАТЬ АУДИТ AI-ПРИСУТСТВИЯ
             </a>
@@ -93,7 +99,8 @@ function Home() {
 
       <section style={{
         ...styles.sectionDark,
-        padding: isMobile ? '40px 16px' : '80px 40px'
+        padding: isMobile ? '40px 16px' : '80px 40px',
+        textAlign: 'center'
       }}>
         <h2 style={{
           ...styles.h2Dark,
@@ -125,19 +132,22 @@ function Home() {
 
       <section id="audit" style={{
         ...styles.section,
-        padding: isMobile ? '40px 16px' : '80px 40px'
+        padding: isMobile ? '40px 16px' : '80px 40px',
+        textAlign: 'center'
       }}>
         <h2 style={{
           ...styles.h1,
           fontSize: isMobile ? '22px' : 'clamp(28px, 4vw, 44px)',
-          color: '#000000'
+          color: '#000000',
+          textAlign: 'center'
         }}>
           AI-FOOTPRINT DIAGNOSTIC: РЕНТГЕНОГРАФИЯ ВАШЕГО ЦИФРОВОГО СЛЕДА
         </h2>
         <p style={{
           ...styles.subtitle,
           color: '#333333',
-          fontSize: isMobile ? '14px' : '18px'
+          fontSize: isMobile ? '14px' : '18px',
+          textAlign: 'center'
         }}>
           Мы не предлагаем «оценить сайт по шкале от 1 до 10». Мы проводим многофакторный программный срез индексации вашего бренда в коммерческих сценариях топ-5 языковых моделей.
         </p>
@@ -147,14 +157,12 @@ function Home() {
         ) : (
           <form onSubmit={handleSubmit} style={{
             ...styles.form,
-            padding: isMobile ? '0 8px' : '0'
+            padding: isMobile ? '0 8px' : '0',
+            alignItems: 'center'
           }}>
-            <label style={styles.label}>ЮРИДИЧЕСКОЕ ЛИЦО / БРЕНД</label>
-            <input name="company_name" placeholder="ООО «Корпорация»" value={formData.company_name} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <label style={styles.label}>КОРПОРАТИВНЫЙ ДОМЕН</label>
-            <input name="website" placeholder="company.com" value={formData.website} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <label style={styles.label}>КОНТАКТ ЛПР (EMAIL / TELEGRAM)</label>
-            <input name="contact" placeholder="ceo@company.com" value={formData.contact} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <input name="company_name" placeholder="Юридическое лицо / Бренд" value={formData.company_name} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <input name="website" placeholder="Корпоративный домен" value={formData.website} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
+            <input name="contact" placeholder="Email / Telegram ЛПР" value={formData.contact} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
             <button type="submit" disabled={status === 'loading'} style={{
               ...styles.buttonBlack,
               padding: isMobile ? '16px 20px' : '20px 40px',
@@ -166,8 +174,9 @@ function Home() {
         )}
         <p style={{
           ...styles.smallText,
-          padding: isMobile ? '0 8px' : '0'
-        }}>🔒 Гарантия точности: при повторных запросах система выдает верифицированный стабильный результат на основе зафиксированного векторного среза.</p>
+          padding: isMobile ? '0 8px' : '0',
+          textAlign: 'center'
+        }}>🔒 Гарантия точности: при повторных запросах система выдает верифицированный стабильный результат.</p>
       </section>
 
       <footer style={{
@@ -202,27 +211,26 @@ const styles = {
   heroSection: { position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' },
   video: { position: 'absolute', top: '50%', left: '50%', minWidth: '100%', minHeight: '100%', width: 'auto', height: 'auto', transform: 'translate(-50%, -50%)', zIndex: 1, objectFit: 'cover' },
   heroOverlay: { position: 'relative', zIndex: 2, backgroundColor: 'rgba(0, 0, 0, 0.75)', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' },
-  heroContent: { maxWidth: '1100px', textAlign: 'center', width: '100%', boxSizing: 'border-box' },
-  section: { maxWidth: '1100px', margin: '0 auto', textAlign: 'center', width: '100%', boxSizing: 'border-box' },
+  heroContent: { maxWidth: '1100px', width: '100%', boxSizing: 'border-box' },
+  section: { maxWidth: '1100px', margin: '0 auto', width: '100%', boxSizing: 'border-box' },
   sectionDark: { maxWidth: '1100px', margin: '0 auto', backgroundColor: '#000000', color: '#ffffff', width: '100%', boxSizing: 'border-box' },
   h1: { fontWeight: '900', marginBottom: '32px', color: '#ffffff', textTransform: 'uppercase', margin: '0 auto 32px' },
   h2Dark: { fontWeight: '900', marginBottom: '40px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { color: '#cccccc', maxWidth: '800px', margin: '0 auto 40px', lineHeight: '1.6' },
+  subtitle: { color: '#cccccc', margin: '0 auto 40px', lineHeight: '1.6' },
   metrics: { display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' },
-  metricItem: { fontSize: '16px', color: '#ffffff', maxWidth: '300px', textAlign: 'center' },
+  metricItem: { fontSize: '16px', color: '#ffffff', maxWidth: '300px' },
   bigNumber: { color: '#00a8e8', display: 'block', marginBottom: '8px' },
-  button: { backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', textDecoration: 'none', letterSpacing: '1px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', display: 'inline-block', marginTop: '16px' },
-  buttonBlack: { backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', width: '100%', display: 'block', marginTop: '16px' },
+  button: { backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', textDecoration: 'none', letterSpacing: '1px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', marginTop: '16px' },
+  buttonBlack: { backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', width: '100%', maxWidth: '400px', marginTop: '16px' },
   grid: { display: 'grid', marginTop: '32px' },
-  cardDark: { backgroundColor: '#111111', border: '2px solid #333333', textAlign: 'center' },
+  cardDark: { backgroundColor: '#111111', border: '2px solid #333333' },
   h3Dark: { fontSize: '22px', fontWeight: '800', marginBottom: '16px', color: '#00a8e8', textTransform: 'uppercase' },
   textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.6' },
   warning: { color: '#ff4444', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
   success: { color: '#00a8e8', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
-  form: { display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '600px', margin: '40px auto 0', textAlign: 'left' },
-  label: { fontSize: '12px', fontWeight: '800', color: '#000000', letterSpacing: '1px', marginTop: '16px' },
-  input: { padding: '18px', border: '2px solid #000000', backgroundColor: '#ffffff', color: '#000000', fontSize: '16px', outline: 'none', fontWeight: '600', width: '100%', boxSizing: 'border-box' },
-  successMessage: { backgroundColor: '#00a8e8', color: '#000000', padding: '24px', fontWeight: '800', marginTop: '24px', fontSize: '16px' },
+  form: { display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '600px', margin: '40px auto 0' },
+  input: { padding: '18px', border: '2px solid #000000', backgroundColor: '#ffffff', color: '#000000', fontSize: '16px', outline: 'none', fontWeight: '600', width: '100%', maxWidth: '400px', boxSizing: 'border-box' },
+  successMessage: { backgroundColor: '#00a8e8', color: '#000000', padding: '24px', fontWeight: '800', marginTop: '24px', fontSize: '16px', maxWidth: '400px', margin: '24px auto 0' },
   smallText: { fontSize: '13px', color: '#666666', marginTop: '24px', maxWidth: '700px', margin: '24px auto 0' },
   footer: { textAlign: 'center', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600', width: '100%', boxSizing: 'border-box' }
 }

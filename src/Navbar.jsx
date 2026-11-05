@@ -54,7 +54,7 @@ export default function Navbar() {
       padding: isMobile ? '16px 24px' : '24px 40px'
     }}>
       <Link to="/" style={{
-        fontSize: isMobile ? '22px' : '28px',
+        fontSize: isMobile ? '26px' : '34px',
         fontWeight: '900', 
         color: '#000000', 
         letterSpacing: '2px',
@@ -78,8 +78,8 @@ export default function Navbar() {
           <Link to="/faq" style={linkStyleDesktop('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyleDesktop('/glossary')}>ГЛОССАРИЙ</Link>
           <Link to="/audit" style={{
-            backgroundColor: '#000000', 
-            color: '#ffffff', 
+            backgroundColor: '#00a8e8', 
+            color: '#000000', 
             textDecoration: 'none', 
             fontSize: '13px', 
             fontWeight: '700', 
@@ -161,8 +161,8 @@ export default function Navbar() {
           <Link to="/faq" style={linkStyle('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyle('/glossary')}>ГЛОССАРИЙ</Link>
           <Link to="/audit" style={{
-            backgroundColor: '#000000', 
-            color: '#ffffff', 
+            backgroundColor: '#00a8e8', 
+            color: '#000000', 
             textDecoration: 'none', 
             fontSize: '13px', 
             fontWeight: '700', 

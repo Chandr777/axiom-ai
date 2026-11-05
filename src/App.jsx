@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import Services from './Services'
 import Methodology from './Methodology'
 import Cases from './Cases'
+import Pricing from './Pricing'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
 import heroVideo from './assets/hero-video.mp4'
@@ -187,6 +188,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/methodology" element={<Methodology />} />
         <Route path="/cases" element={<Cases />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/glossary" element={<Glossary />} />
         <Route path="/audit" element={<Home />} />

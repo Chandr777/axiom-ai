@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
 export default function Methodology() {
@@ -45,12 +44,6 @@ export default function Methodology() {
         </div>
       </section>
 
-      <section style={{...styles.section, backgroundColor: '#000000', color: '#ffffff'}}>
-        <h2 style={styles.h2Dark}>Прогнозируемый результат вместо маркетинговой неопределенности</h2>
-        <p style={styles.textDark}>Наша методология превращает попадание в рекомендации ИИ из случайной удачи в управляемый инженерный процесс. Вы получаете прозрачную аналитику, измеримый рост индекса видимости и поток целевых лидов.</p>
-        <Link to="/audit" style={styles.buttonBlue}>ЗАПРОСИТЬ ПРЕЗЕНТАЦИЮ МЕТОДОЛОГИИ</Link>
-      </section>
-
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
@@ -68,12 +61,11 @@ const styles = {
   h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
   h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
   h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
-  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px' },
-  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
+  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px', textAlign: 'justify' },
+  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '24px', textAlign: 'justify' },
   list: { textAlign: 'left', maxWidth: '900px', margin: '32px auto 0' },
-  listItem: { fontSize: '15px', color: '#000000', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #000000', backgroundColor: '#ffffff' },
-  listItemDark: { fontSize: '15px', color: '#ffffff', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #00a8e8', backgroundColor: '#111111' },
-  buttonBlue: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginTop: '32px' },
+  listItem: { fontSize: '15px', color: '#000000', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #000000', backgroundColor: '#ffffff', textAlign: 'justify' },
+  listItemDark: { fontSize: '15px', color: '#ffffff', lineHeight: '1.7', marginBottom: '20px', padding: '20px', border: '2px solid #00a8e8', backgroundColor: '#111111', textAlign: 'justify' },
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

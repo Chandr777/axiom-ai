@@ -43,14 +43,76 @@ export default function Glossary() {
 }
 
 const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
-  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
-  glossarySection: { maxWidth: '1100px', margin: '0 auto', padding: '0 40px 80px' },
-  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
-  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
-  termBlock: { padding: '32px', border: '2px solid #000000', marginBottom: '20px', backgroundColor: '#ffffff' },
-  term: { fontSize: '18px', fontWeight: '900', color: '#00a8e8', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' },
-  definition: { fontSize: '16px', color: '#000000', lineHeight: '1.7', textAlign: 'justify' },
-  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
+  container: { 
+    fontFamily: 'system-ui, sans-serif', 
+    backgroundColor: '#ffffff', 
+    color: '#000000', 
+    minHeight: '100vh' 
+  },
+  section: { 
+    maxWidth: '1100px', 
+    margin: '0 auto', 
+    padding: '80px 40px', 
+    textAlign: 'center' 
+  },
+  glossarySection: { 
+    maxWidth: '1100px', 
+    margin: '0 auto', 
+    padding: '0 40px 80px' 
+  },
+  tag: { 
+    display: 'inline-block', 
+    backgroundColor: '#000000', 
+    color: '#00a8e8', 
+    padding: '8px 16px', 
+    fontSize: '12px', 
+    fontWeight: '700', 
+    marginBottom: '32px', 
+    letterSpacing: '2px' 
+  },
+  h1: { 
+    fontSize: 'clamp(32px, 5vw, 56px)', 
+    fontWeight: '900', 
+    lineHeight: '1.05', 
+    marginBottom: '24px', 
+    color: '#000000', 
+    textTransform: 'uppercase' 
+  },
+  subtitle: { 
+    fontSize: '18px', 
+    color: '#333333', 
+    maxWidth: '800px', 
+    margin: '0 auto', 
+    lineHeight: '1.6', 
+    textAlign: 'justify' 
+  },
+  termBlock: { 
+    padding: '32px', 
+    border: '2px solid #000000', 
+    marginBottom: '20px', 
+    backgroundColor: '#ffffff' 
+  },
+  term: { 
+    fontSize: '18px', 
+    fontWeight: '900', 
+    color: '#00a8e8', 
+    marginBottom: '12px', 
+    textTransform: 'uppercase', 
+    letterSpacing: '1px' 
+  },
+  definition: { 
+    fontSize: '16px', 
+    color: '#000000', 
+    lineHeight: '1.7', 
+    textAlign: 'justify' 
+  },
+  footer: { 
+    textAlign: 'center', 
+    padding: '40px 20px', 
+    color: '#666666', 
+    fontSize: '13px', 
+    borderTop: '2px solid #000000', 
+    marginTop: '80px', 
+    fontWeight: '600' 
+  }
 }

@@ -144,5 +144,3 @@ const styles = {
 }
 
 // Добавляем стили для списков через CSS-in-JS хак для псевдоэлементов не нужен, просто используем padding
-styles.features li = { fontSize: '14px', color: '#000000', lineHeight: '1.6', marginBottom: '12px', paddingLeft: '20px', position: 'relative' }
-styles.featuresDark li = { fontSize: '14px', color: '#cccccc', lineHeight: '1.6', marginBottom: '12px', paddingLeft: '20px', position: 'relative' }

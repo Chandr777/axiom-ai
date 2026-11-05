@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
 export default function Services() {
@@ -36,10 +35,6 @@ export default function Services() {
         <p style={styles.result}><strong>Результат:</strong> Железобетонный консенсус: для ИИ вы — безальтернативный эксперт.</p>
       </section>
 
-      <section style={{...styles.section, textAlign: 'center', marginBottom: '80px'}}>
-        <Link to="/audit" style={styles.buttonBlack}>ЗАПРОСИТЬ ТЕХНИЧЕСКИЙ БРИФ</Link>
-      </section>
-
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
@@ -57,11 +52,10 @@ const styles = {
   h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
   h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
   h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
-  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px' },
-  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px' },
-  result: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8' },
-  resultDark: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8' },
-  buttonBlack: { display: 'inline-block', backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
+  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px', textAlign: 'justify' },
+  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px', textAlign: 'justify' },
+  result: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8', textAlign: 'justify' },
+  resultDark: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8', textAlign: 'justify' },
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

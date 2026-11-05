@@ -24,7 +24,7 @@ export default function Pricing() {
 
       <section style={styles.gridSection}>
         {/* FREE */}
-        <div style={{...styles.card, textAlign: 'center'}}>
+        <div style={styles.card}>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>FREE</h2>
             <p style={styles.cardSubtitle}>AI-FOOTPRINT EXPRESS</p>
@@ -33,7 +33,7 @@ export default function Pricing() {
             <span style={styles.price}>0 ₽</span>
             <span style={styles.priceNote}>Разовый отчёт</span>
           </div>
-          <p style={{...styles.cardDesc, textAlign: 'center'}}>Для ЛПР, которые хотят самостоятельно оценить текущее положение бренда перед принятием решения.</p>
+          <p style={styles.cardDesc}>Для ЛПР, которые хотят самостоятельно оценить текущее положение бренда перед принятием решения.</p>
           <ul style={styles.features}>
             <li style={listItemStyle}>Автоматический срез видимости в топ-3 LLM</li>
             <li style={listItemStyle}>Отчёт по 15 ключевым коммерческим запросам</li>
@@ -45,7 +45,7 @@ export default function Pricing() {
         </div>
 
         {/* PRO */}
-        <div style={{...styles.card, ...styles.cardPro, textAlign: 'center'}}>
+        <div style={{...styles.card, ...styles.cardPro}}>
           <div style={styles.badge}>ВЫБОР ЛИДЕРОВ</div>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>PRO</h2>
@@ -55,7 +55,7 @@ export default function Pricing() {
             <span style={styles.price}>43 000 – 87 000 ₽</span>
             <span style={styles.priceNote}>Разовая оплата за проект</span>
           </div>
-          <p style={{...styles.cardDesc, textAlign: 'center'}}>Для компаний, готовых к системной работе по встраиванию бренда в архитектуру LLM.</p>
+          <p style={styles.cardDesc}>Для компаний, готовых к системной работе по встраиванию бренда в архитектуру LLM.</p>
           <ul style={styles.features}>
             <li style={listItemStyle}>Всё из тарифа FREE, плюс:</li>
             <li style={listItemStyle}>Диагностика по 100+ запросам (полная матрица)</li>
@@ -70,7 +70,7 @@ export default function Pricing() {
         </div>
 
         {/* BUSINESS */}
-        <div style={{...styles.card, textAlign: 'center'}}>
+        <div style={styles.card}>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>BUSINESS</h2>
             <p style={styles.cardSubtitle}>НЕПРЕРЫВНОЕ ДОМИНИРОВАНИЕ</p>
@@ -79,7 +79,7 @@ export default function Pricing() {
             <span style={styles.price}>140 000 – 160 000 ₽</span>
             <span style={styles.priceNote}>В месяц / контракт от 6 мес.</span>
           </div>
-          <p style={{...styles.cardDesc, textAlign: 'center'}}>Для Enterprise-клиентов, для которых позиция в рекомендациях ИИ — вопрос рыночной монополии.</p>
+          <p style={styles.cardDesc}>Для Enterprise-клиентов, для которых позиция в рекомендациях ИИ — вопрос рыночной монополии.</p>
           <ul style={styles.features}>
             <li style={listItemStyle}>Всё из тарифа PRO, плюс:</li>
             <li style={listItemStyle}>Еженедельный мониторинг в топ-5 LLM</li>
@@ -104,16 +104,40 @@ export default function Pricing() {
 
 const styles = {
   container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
-  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
-  gridSection: { maxWidth: '1200px', margin: '0 auto', padding: '0 40px 80px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', alignItems: 'stretch' },
+  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 20px', textAlign: 'center' },
+  
+  // ИЗМЕНЕНО: Flexbox с центрированием вместо Grid для гарантированного центра на мобильных
+  gridSection: { 
+    maxWidth: '1200px', 
+    margin: '0 auto', 
+    padding: '0 20px 80px', 
+    display: 'flex', 
+    flexWrap: 'wrap', 
+    justifyContent: 'center', 
+    gap: '32px', 
+    alignItems: 'stretch' 
+  },
+  
   tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
   h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase', textAlign: 'center' },
   subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'center' },
   
-  card: { border: '2px solid #000000', padding: '40px 32px', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff', position: 'relative' },
+  // ИЗМЕНЕНО: Добавлены width и margin для центрирования самой карточки
+  card: { 
+    border: '2px solid #000000', 
+    padding: '40px 24px', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    backgroundColor: '#ffffff', 
+    position: 'relative',
+    width: '100%',
+    maxWidth: '400px',
+    margin: '0 auto',
+    textAlign: 'center'
+  },
   cardPro: { border: '2px solid #00a8e8', boxShadow: '0 10px 30px rgba(0, 168, 232, 0.15)' },
   
-  badge: { position: 'absolute', top: '-14px', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#00a8e8', color: '#000000', fontSize: '11px', fontWeight: '800', padding: '6px 16px', letterSpacing: '1px' },
+  badge: { position: 'absolute', top: '-14px', left: '50%', transform: 'translateX(-50%)', backgroundColor: '#00a8e8', color: '#000000', fontSize: '11px', fontWeight: '800', padding: '6px 16px', letterSpacing: '1px', whiteSpace: 'nowrap' },
   
   cardHeader: { textAlign: 'center', marginBottom: '24px' },
   cardTitle: { fontSize: '28px', fontWeight: '900', color: '#000000', margin: 0, letterSpacing: '2px' },
@@ -125,7 +149,7 @@ const styles = {
   
   cardDesc: { fontSize: '15px', color: '#333333', lineHeight: '1.6', marginBottom: '24px', textAlign: 'center' },
   
-  features: { listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1 },
+  features: { listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1, textAlign: 'left' }, // Список оставлен выровненным по левому краю для читаемости, но сама карточка по центру
   
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
 }

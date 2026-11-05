@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
 export default function Glossary() {
@@ -36,11 +35,6 @@ export default function Glossary() {
         ))}
       </section>
 
-      <section style={{...styles.section, backgroundColor: '#000000', color: '#ffffff'}}>
-        <h2 style={styles.h2Dark}>Готовы говорить на одном языке с алгоритмами?</h2>
-        <Link to="/audit" style={styles.buttonBlue}>ЗАКАЗАТЬ AI-АУДИТ</Link>
-      </section>
-
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
@@ -54,11 +48,9 @@ const styles = {
   glossarySection: { maxWidth: '1100px', margin: '0 auto', padding: '0 40px 80px' },
   tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
   h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
-  h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
   termBlock: { padding: '32px', border: '2px solid #000000', marginBottom: '20px', backgroundColor: '#ffffff' },
   term: { fontSize: '18px', fontWeight: '900', color: '#00a8e8', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '1px' },
-  definition: { fontSize: '16px', color: '#000000', lineHeight: '1.7' },
-  buttonBlue: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginTop: '24px' },
+  definition: { fontSize: '16px', color: '#000000', lineHeight: '1.7', textAlign: 'justify' },
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

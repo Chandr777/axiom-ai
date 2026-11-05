@@ -7,9 +7,7 @@ export default function Navbar() {
   const location = useLocation()
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
     checkMobile()
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
@@ -53,8 +51,7 @@ export default function Navbar() {
       zIndex: 100,
       width: '100%',
       boxSizing: 'border-box',
-      padding: isMobile ? '16px 24px' : '24px 40px',
-      paddingRight: isMobile ? '24px' : '40px'
+      padding: isMobile ? '16px 24px' : '24px 40px'
     }}>
       <Link to="/" style={{
         fontSize: isMobile ? '22px' : '28px',

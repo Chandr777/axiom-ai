@@ -65,7 +65,6 @@ export default function Navbar() {
         flexShrink: 0
       }}>AXIOM <span style={{ color: '#00a8e8' }}>AI</span></Link>
       
-      {/* Десктопное меню */}
       {!isMobile && (
         <div style={{
           display: 'flex', 
@@ -78,6 +77,7 @@ export default function Navbar() {
           <Link to="/services" style={linkStyleDesktop('/services')}>УСЛУГИ</Link>
           <Link to="/methodology" style={linkStyleDesktop('/methodology')}>МЕТОДОЛОГИЯ</Link>
           <Link to="/cases" style={linkStyleDesktop('/cases')}>КЕЙСЫ</Link>
+          <Link to="/pricing" style={linkStyleDesktop('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={linkStyleDesktop('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyleDesktop('/glossary')}>ГЛОССАРИЙ</Link>
           <Link to="/audit" style={{
@@ -92,7 +92,6 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Бургер-кнопка для мобильных */}
       {isMobile && (
         <button 
           onClick={() => setIsOpen(!isOpen)} 
@@ -143,7 +142,6 @@ export default function Navbar() {
         </button>
       )}
 
-      {/* Мобильное меню */}
       {isMobile && isOpen && (
         <div style={{
           position: 'absolute',
@@ -162,6 +160,7 @@ export default function Navbar() {
           <Link to="/services" style={linkStyle('/services')}>УСЛУГИ</Link>
           <Link to="/methodology" style={linkStyle('/methodology')}>МЕТОДОЛОГИЯ</Link>
           <Link to="/cases" style={linkStyle('/cases')}>КЕЙСЫ</Link>
+          <Link to="/pricing" style={linkStyle('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={linkStyle('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyle('/glossary')}>ГЛОССАРИЙ</Link>
           <Link to="/audit" style={{

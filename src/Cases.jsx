@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
 export default function Cases() {
@@ -60,12 +59,6 @@ export default function Cases() {
         </div>
       </section>
 
-      <section style={{...styles.section, backgroundColor: '#000000', color: '#ffffff'}}>
-        <h2 style={styles.h2Dark}>Ваш кейс может стать следующим в списке лидеров рынка</h2>
-        <p style={styles.textDark}>Запишитесь на закрытый стратегический брифинг. Мы проанализируем ваш бренд и покажем позиции в генеративном поиске прямо сейчас.</p>
-        <Link to="/audit" style={styles.buttonBlue}>ОБСУДИТЬ ПРОЕКТ И ЗАКАЗАТЬ АУДИТ</Link>
-      </section>
-
       <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
@@ -86,16 +79,15 @@ const styles = {
   h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '32px', color: '#ffffff', textTransform: 'uppercase' },
   h3: { fontSize: '14px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
   h3Dark: { fontSize: '14px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6' },
-  text: { fontSize: '15px', color: '#000000', lineHeight: '1.7' },
-  textDark: { fontSize: '15px', color: '#cccccc', lineHeight: '1.7' },
-  textLarge: { fontSize: '18px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', margin: '0 auto 40px' },
+  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
+  text: { fontSize: '15px', color: '#000000', lineHeight: '1.7', textAlign: 'justify' },
+  textDark: { fontSize: '15px', color: '#cccccc', lineHeight: '1.7', textAlign: 'justify' },
+  textLarge: { fontSize: '18px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', margin: '0 auto 40px', textAlign: 'justify' },
   blue: { color: '#00a8e8' },
   caseGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '32px' },
   caseCard: { padding: '32px', border: '2px solid #000000', backgroundColor: '#ffffff' },
   caseCardDark: { padding: '32px', border: '2px solid #00a8e8', backgroundColor: '#111111' },
   principles: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginTop: '40px' },
-  principle: { padding: '32px', border: '2px solid #000000', fontSize: '15px', lineHeight: '1.6' },
-  buttonBlue: { display: 'inline-block', backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', padding: '20px 40px', textDecoration: 'none', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginTop: '32px' },
+  principle: { padding: '32px', border: '2px solid #000000', fontSize: '15px', lineHeight: '1.6', textAlign: 'justify' },
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
 }

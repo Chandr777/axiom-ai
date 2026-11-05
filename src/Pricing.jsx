@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 
+const listItemStyle = {
+  fontSize: '14px',
+  color: '#000000',
+  lineHeight: '1.6',
+  marginBottom: '12px',
+  paddingLeft: '20px',
+  position: 'relative',
+  textAlign: 'justify'
+}
+
 export default function Pricing() {
   return (
     <div style={styles.container}>
@@ -25,12 +35,12 @@ export default function Pricing() {
           </div>
           <p style={styles.cardDesc}>Для ЛПР, которые хотят самостоятельно оценить текущее положение бренда перед принятием решения.</p>
           <ul style={styles.features}>
-            <li>Автоматический срез видимости в топ-3 LLM</li>
-            <li>Отчёт по 15 ключевым коммерческим запросам</li>
-            <li>Индекс цитирования бренда</li>
-            <li>Выявление критических «галлюцинаций» ИИ</li>
-            <li>Сравнительная таблица с 3 конкурентами</li>
-            <li>PDF-отчёт на email в течение 24 часов</li>
+            <li style={listItemStyle}>Автоматический срез видимости в топ-3 LLM</li>
+            <li style={listItemStyle}>Отчёт по 15 ключевым коммерческим запросам</li>
+            <li style={listItemStyle}>Индекс цитирования бренда</li>
+            <li style={listItemStyle}>Выявление критических «галлюцинаций» ИИ</li>
+            <li style={listItemStyle}>Сравнительная таблица с 3 конкурентами</li>
+            <li style={listItemStyle}>PDF-отчёт на email в течение 24 часов</li>
           </ul>
         </div>
 
@@ -47,15 +57,15 @@ export default function Pricing() {
           </div>
           <p style={styles.cardDesc}>Для компаний, готовых к системной работе по встраиванию бренда в архитектуру LLM.</p>
           <ul style={styles.features}>
-            <li>Всё из тарифа FREE, плюс:</li>
-            <li>Диагностика по 100+ запросам (полная матрица)</li>
-            <li>Разработка ТЗ инженерами Axiom AI</li>
-            <li>Vector & Entity Injection (паспортизация)</li>
-            <li>LLM Crawling Architecture (JSON-LD, API)</li>
-            <li>Multi-Source Citation (посев на 10+ площадках)</li>
-            <li>Персональный инженер-куратор</li>
-            <li>Дорожная карта на 6 месяцев</li>
-            <li>2 контрольных замера (30 и 90 дней)</li>
+            <li style={listItemStyle}>Всё из тарифа FREE, плюс:</li>
+            <li style={listItemStyle}>Диагностика по 100+ запросам (полная матрица)</li>
+            <li style={listItemStyle}>Разработка ТЗ инженерами Axiom AI</li>
+            <li style={listItemStyle}>Vector & Entity Injection (паспортизация)</li>
+            <li style={listItemStyle}>LLM Crawling Architecture (JSON-LD, API)</li>
+            <li style={listItemStyle}>Multi-Source Citation (посев на 10+ площадках)</li>
+            <li style={listItemStyle}>Персональный инженер-куратор</li>
+            <li style={listItemStyle}>Дорожная карта на 6 месяцев</li>
+            <li style={listItemStyle}>2 контрольных замера (30 и 90 дней)</li>
           </ul>
         </div>
 
@@ -71,16 +81,16 @@ export default function Pricing() {
           </div>
           <p style={styles.cardDesc}>Для Enterprise-клиентов, для которых позиция в рекомендациях ИИ — вопрос рыночной монополии.</p>
           <ul style={styles.features}>
-            <li>Всё из тарифа PRO, плюс:</li>
-            <li>Еженедельный мониторинг в топ-5 LLM</li>
-            <li>Динамический векторный трекинг</li>
-            <li>Реактивное обновление при апдейтах моделей</li>
-            <li>Непрерывный посев контента (4+ в месяц)</li>
-            <li>Управление консенсусом данных в сети</li>
-            <li>Краулинг-аудит инфраструктуры</li>
-            <li>Выделенная команда (инженер + аналитик)</li>
-            <li>Ежемесячный стратегический отчёт</li>
-            <li>Гарантия сохранения индекса видимости</li>
+            <li style={listItemStyle}>Всё из тарифа PRO, плюс:</li>
+            <li style={listItemStyle}>Еженедельный мониторинг в топ-5 LLM</li>
+            <li style={listItemStyle}>Динамический векторный трекинг</li>
+            <li style={listItemStyle}>Реактивное обновление при апдейтах моделей</li>
+            <li style={listItemStyle}>Непрерывный посев контента (4+ в месяц)</li>
+            <li style={listItemStyle}>Управление консенсусом данных в сети</li>
+            <li style={listItemStyle}>Краулинг-аудит инфраструктуры</li>
+            <li style={listItemStyle}>Выделенная команда (инженер + аналитик)</li>
+            <li style={listItemStyle}>Ежемесячный стратегический отчёт</li>
+            <li style={listItemStyle}>Гарантия сохранения индекса видимости</li>
           </ul>
         </div>
       </section>
@@ -119,5 +129,3 @@ const styles = {
   
   footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
 }
-
-styles.features li = { fontSize: '14px', color: '#000000', lineHeight: '1.6', marginBottom: '12px', paddingLeft: '20px', position: 'relative', textAlign: 'justify' }

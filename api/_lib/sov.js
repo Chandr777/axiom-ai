@@ -13,7 +13,7 @@ async function openai(prompt){
  return {text:outText(d),citations,model:d.model||process.env.OPENAI_MODEL||'gpt-6-astra'};
 }
 async function claude(prompt){
- const d=await post('https://api.anthropic.com/v1/messages',process.env.ANTHROPIC_API_KEY,{model:process.env.ANTHROPIC_MODEL||'claude-sonnet-4-6',max_tokens:1800,system:'Research current providers using web search. Be independent, substantiate claims, answer in the question language and cite sources.',messages:[{role:'user',content:prompt}],tools:[{type:'web_search_20250305',name:'web_search',max_uses:4}]},{'anthropic-version':'2023-06-01'});
+ const d=await post('https://api.anthropic.com/v1/messages',process.env.ANTHROPIC_API_KEY,{model:process.env.ANTHROPIC_MODEL||'claude-sonnet-4-6',max_tokens:1800,system:'Research current providers using web search. Be independent, substantiate claims, answer in the question language and cite sources.',messages:[{role:'user',content:prompt}],tools:[{type:'web_search_20250305',name:'web_search',max_uses:4}]},{'anthropic-version':'2023-06-01','x-api-key':process.env.ANTHROPIC_API_KEY});
  const blocks=d.content||[];
  return {text:blocks.filter(x=>x.type==='text').map(x=>x.text).join('\n'),citations:blocks.flatMap(x=>x.citations||[]).filter(x=>x.url).map(x=>({url:x.url,title:x.title||x.url})),model:d.model||process.env.ANTHROPIC_MODEL||'claude-sonnet-4-6'};
 }

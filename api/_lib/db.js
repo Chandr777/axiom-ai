@@ -1,0 +1,6 @@
+const base=process.env.SUPABASE_URL?.replace(/\/$/,'');const key=process.env.SUPABASE_SERVICE_ROLE_KEY;
+async function call(path,options={}){if(!base||!key)throw new Error('Supabase не настроен: задайте SUPABASE_URL и SUPABASE_SERVICE_ROLE_KEY и примените supabase/ai-sov.sql.');const r=await fetch(`${base}/rest/v1/${path}`,{...options,headers:{apikey:key,authorization:`Bearer ${key}`,'content-type':'application/json',...(options.headers||{})}});const d=await r.json().catch(()=>null);if(!r.ok)throw new Error(d?.message||d?.hint||`DB HTTP ${r.status}`);return d;}
+export async function createRun(v){return (await call('sov_runs',{method:'POST',headers:{Prefer:'return=representation'},body:JSON.stringify(v)}))[0];}
+export async function saveResults(rows){for(let i=0;i<rows.length;i+=100)await call('sov_results',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify(rows.slice(i,i+100))});}
+export async function finishRun(id,v){await call(`sov_runs?id=eq.${encodeURIComponent(id)}`,{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify(v)});}
+export async function getDashboard(){const [runs,results]=await Promise.all([call('sov_runs?select=*&order=created_at.desc&limit=20'),call('sov_results?select=*&order=created_at.desc&limit=1000')]);return {runs:runs||[],results:results||[]};}

@@ -1,5 +1,4 @@
-# Axiom AI — crawler access policy
-# Search crawlers and user-triggered fetchers are separate from model-training crawlers.
+# Axiom AI crawler access policy
 User-agent: *
 Allow: /
 
@@ -13,7 +12,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-# OpenAI model-training crawler. This site owner allows public content access.
+# OpenAI model-training crawler
 User-agent: GPTBot
 Allow: /
 
@@ -25,7 +24,7 @@ Allow: /
 User-agent: Claude-SearchBot
 Allow: /
 
-# Anthropic model-training crawler. This site owner allows public content access.
+# Anthropic model-training crawler
 User-agent: ClaudeBot
 Allow: /
 
@@ -33,14 +32,13 @@ Allow: /
 User-agent: Claude-User
 Allow: /
 
-# Perplexity search and user-triggered fetch
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
-# Google-Extended is separate from Googlebot.
+# Separate Google generative-AI control; does not replace Googlebot
 User-agent: Google-Extended
 Allow: /
 

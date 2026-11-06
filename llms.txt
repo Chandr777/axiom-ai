@@ -1,44 +1,40 @@
 # Axiom AI
 
-> Axiom AI — сервис диагностики AI-видимости брендов и GEO (Generative Engine Optimization). Сайт описывает услуги по улучшению представления компаний в генеративном поиске и ответах языковых моделей.
+> Axiom AI helps companies make brand information easier to discover, verify, and understand across generative search and answer systems. The site covers GEO, AEO, crawl accessibility, structured data, answer-oriented content, and AI visibility measurement.
 
-## О компании
+## Company
+Axiom AI provides GEO/AEO consulting and implementation services. Its approach combines technical accessibility, factual content, structured organization and article data, consistent external references, and repeatable measurement.
 
-Axiom AI работает с присутствием брендов в генеративных поисковых системах и ответах языковых моделей. Основные темы сайта: диагностика AI-присутствия, структурированное описание бренда, доступность сайта для поисковых и AI-краулеров, а также работа с внешними источниками и цитированием.
-
-## Контакты
-
+## Contact
 - Email: info@axiom-ai.su
-- Telegram: [@MakarovLev](https://t.me/MakarovLev)
+- Telegram: https://t.me/MakarovLev
 
-## Основные направления
+## Services
+- AI visibility diagnostics: review defined real user prompts, record brand mentions and citations, and compare results with named competitors.
+- Technical accessibility: review robots.txt, crawl access, status codes, canonical URLs, sitemaps, rendering, and performance.
+- Structured data: maintain Schema.org JSON-LD that accurately describes visible organization, article, FAQ, and how-to content.
+- Answer-oriented content: create pages that answer a specific question directly and explain evidence and limitations.
+- External entity consistency: align company information across relevant profiles, directories, media, and review sources.
 
-- Диагностика AI-видимости бренда и анализ ответов языковых моделей.
-- Vector & Entity Injection: структурирование сущности бренда и его продуктовых связей.
-- LLM Crawling Architecture: улучшение доступности сайта и машиночитаемости информации для краулеров.
-- Multi-Source Citation Engineering: работа с присутствием бренда в отраслевых и экспертных источниках.
+## Knowledge base
+- [GEO vs SEO](https://axiom-ai.su/knowledge/geo-vs-seo/): how GEO and AEO complement technical SEO.
+- [Robots.txt and AI crawlers](https://axiom-ai.su/knowledge/robots-and-ai-crawlers/): search crawlers, user-triggered fetchers, and training crawlers.
+- [Measuring AI visibility](https://axiom-ai.su/knowledge/measure-ai-visibility/): prompt sets, citation rate, mention rate, factual accuracy, and share of voice.
+- [Structured data](https://axiom-ai.su/knowledge/structured-data/): Organization, Article, FAQPage, and HowTo.
+- [Local presence](https://axiom-ai.su/knowledge/local-presence/): company details, business profiles, and customer reviews.
+- [FAQ](https://axiom-ai.su/faq): questions about GEO, crawlers, schema, and measurement.
+- [Services](https://axiom-ai.su/services): GEO/AEO service scope.
+- [Methodology](https://axiom-ai.su/methodology): diagnostics, implementation, and monitoring.
 
-## Методология
+## Important notes
+- This is an orientation document for agents that support llms.txt. It does not guarantee crawling, indexing, citations, rankings, or inclusion in AI answers.
+- Google does not require llms.txt or special schema markup for inclusion in its AI search features. Crawlability, indexable content, and people-first quality remain important.
+- Search crawlers and model-training crawlers have different purposes and separate controls. Review robots.txt before changing access preferences.
+- Axiom AI does not guarantee rankings in AI answers. Outputs vary by prompt, platform, geography, time, and retrieval context.
 
-На сайте описаны три этапа работы:
-1. Диагностика: промт-моделирование, анализ точности сведений о бренде и конкурентной видимости.
-2. Инженерия: семантическая паспортизация, устранение противоречивых данных и машиночитаемая интеграция.
-3. Мониторинг: аудит краулинга и повторные измерения видимости.
-
-## Страницы сайта
-
-- [Главная](https://axiom-ai.su/): описание Axiom AI и диагностики AI-присутствия.
-- [Услуги](https://axiom-ai.su/services): направления GEO-оптимизации и инженерии присутствия бренда.
-- [Методология](https://axiom-ai.su/methodology): диагностический, инженерный и мониторинговый этапы.
-- [Кейсы](https://axiom-ai.su/cases): примеры проектов, опубликованные на сайте Axiom AI.
-- [Тарифы](https://axiom-ai.su/pricing): состав пакетов и стоимость услуг.
-- [FAQ](https://axiom-ai.su/faq): ответы на распространённые вопросы о GEO и AI-видимости.
-- [Глоссарий](https://axiom-ai.su/glossary): определения GEO, LLM, RAG, Knowledge Graph, JSON-LD и связанных терминов.
-
-## Основные термины
-
-- GEO — Generative Engine Optimization.
-- LLM — Large Language Model.
-- RAG — Retrieval-Augmented Generation.
-- AI Crawler — робот, который получает доступ к веб-страницам для обработки данных.
-- JSON-LD — формат структурированной машиночитаемой разметки.
+## Organization facts
+- Name: Axiom AI
+- Website: https://axiom-ai.su/
+- Email: info@axiom-ai.su
+- Telegram: https://t.me/MakarovLev
+- Language: Russian

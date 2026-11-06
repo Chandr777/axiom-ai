@@ -1,4 +1,4 @@
-# Public access rules for search engines and AI crawlers.
+# Axiom AI crawler access policy
 User-agent: *
 Allow: /
 
@@ -8,22 +8,28 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: GPTBot
-Allow: /
-
+# ChatGPT Search
 User-agent: OAI-SearchBot
 Allow: /
 
+# OpenAI model-training crawler
+User-agent: GPTBot
+Allow: /
+
+# User-triggered page fetches in ChatGPT
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
+# Claude Search
 User-agent: Claude-SearchBot
 Allow: /
 
-User-agent: anthropic-ai
+# Anthropic model-training crawler
+User-agent: ClaudeBot
+Allow: /
+
+# User-triggered page fetches in Claude
+User-agent: Claude-User
 Allow: /
 
 User-agent: PerplexityBot
@@ -32,10 +38,8 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
+# Separate Google generative-AI control; does not replace Googlebot
 User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://axiom-ai.su/sitemap.xml

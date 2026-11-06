@@ -1,5 +1,5 @@
 import { BRANDS, PROMPTS } from './prompts.js';
-const timeout = () => AbortSignal.timeout(90000);
+const timeout = () => AbortSignal.timeout(Number(process.env.SOV_REQUEST_TIMEOUT_MS || 45000));
 async function post(url,key,body,extra={}) {
  const r=await fetch(url,{method:'POST',headers:{authorization:`Bearer ${key}`,'content-type':'application/json',...extra},body:JSON.stringify(body),signal:timeout()});
  const d=await r.json().catch(()=>({}));
@@ -40,7 +40,7 @@ export async function runMonitoring({market='both'}={}){
  if(!ps.length) throw new Error('Нет API-ключей провайдеров. Добавьте OPENAI_API_KEY, ANTHROPIC_API_KEY или PERPLEXITY_API_KEY в Vercel.');
  const started=Date.now();
  const tasks=qs.flatMap(prompt=>ps.map(provider=>({prompt,provider})));
- const results=await pool(tasks,3,async({prompt,provider})=>{
+ const results=await pool(tasks,Number(process.env.SOV_CONCURRENCY || 18),async({prompt,provider})=>{
   const t=Date.now();
   try{const a=await provider.run(prompt.prompt);const citations=a.citations||[];const x=analyze(a.text,citations);return {prompt_id:prompt.id,locale:prompt.locale,category:prompt.category,provider:provider.id,model:a.model,prompt:prompt.prompt,answer:a.text||'',citations,brands:x.brands,position_order:x.position_order,latency_ms:Date.now()-t,status:'success',error:null};}
   catch(e){return {prompt_id:prompt.id,locale:prompt.locale,category:prompt.category,provider:provider.id,model:null,prompt:prompt.prompt,answer:'',citations:[],brands:BRANDS.map(b=>({id:b.id,name:b.name,mentioned:false,cited:false,recommended:false})),position_order:[],latency_ms:Date.now()-t,status:'error',error:e.message||'Provider request failed'};}

@@ -45,7 +45,7 @@ export default function Navbar() {
 
   const contactLink = {
     ...desktopLink(''),
-    fontSize: '11px',
+    fontSize: '10px',
     color: '#333333',
     borderBottom: '1px solid #00a8e8',
     paddingBottom: '3px'
@@ -90,8 +90,8 @@ export default function Navbar() {
           <Link to="/pricing" style={desktopLink('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={desktopLink('/faq')}>FAQ</Link>
           <Link to="/glossary" style={desktopLink('/glossary')}>ГЛОССАРИЙ</Link>
-          <a href={`mailto:${EMAIL}`} style={contactLink}>EMAIL</a>
-          <a href={TELEGRAM} target="_blank" rel="noreferrer" style={contactLink}>TELEGRAM</a>
+          <a href={`mailto:${EMAIL}`} style={contactLink}>info@axiom-ai.su</a>
+          <a href={TELEGRAM} target="_blank" rel="noreferrer" style={contactLink}>@MakarovLev</a>
           <Link to="/audit" style={{
             backgroundColor: '#00a8e8',
             color: '#000000',

@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+const CONTACT_EMAIL = 'info@axiom-ai.su'
+const TELEGRAM_URL = 'https://t.me/MakarovLev'
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
@@ -39,34 +42,44 @@ export default function Navbar() {
     letterSpacing: '1px'
   })
 
+  const contactStyle = {
+    color: '#111111',
+    textDecoration: 'none',
+    fontSize: '12px',
+    fontWeight: '700',
+    letterSpacing: '0.2px',
+    whiteSpace: 'nowrap'
+  }
+
   return (
     <nav style={{
-      display: 'flex', 
-      justifyContent: 'space-between', 
-      alignItems: 'center', 
-      borderBottom: '2px solid #000000', 
-      backgroundColor: '#ffffff', 
-      position: 'sticky', 
-      top: 0, 
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: '20px',
+      borderBottom: '2px solid #000000',
+      backgroundColor: '#ffffff',
+      position: 'sticky',
+      top: 0,
       zIndex: 100,
       width: '100%',
       boxSizing: 'border-box',
-      padding: isMobile ? '16px 24px' : '24px 40px'
+      padding: isMobile ? '16px 24px' : '20px 32px'
     }}>
       <Link to="/" style={{
-        fontSize: isMobile ? '26px' : '34px',
-        fontWeight: '900', 
-        color: '#000000', 
+        fontSize: isMobile ? '26px' : '32px',
+        fontWeight: '900',
+        color: '#000000',
         letterSpacing: '2px',
         textDecoration: 'none',
         flexShrink: 0
       }}>AXIOM <span style={{ color: '#00a8e8' }}>AI</span></Link>
-      
+
       {!isMobile && (
         <div style={{
-          display: 'flex', 
-          gap: '20px', 
-          alignItems: 'center', 
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'center',
           flexWrap: 'wrap',
           justifyContent: 'flex-end'
         }}>
@@ -77,21 +90,23 @@ export default function Navbar() {
           <Link to="/pricing" style={linkStyleDesktop('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={linkStyleDesktop('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyleDesktop('/glossary')}>ГЛОССАРИЙ</Link>
+          <a href={`mailto:${CONTACT_EMAIL}`} style={contactStyle}>EMAIL</a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" style={contactStyle}>TELEGRAM</a>
           <Link to="/audit" style={{
-            backgroundColor: '#00a8e8', 
-            color: '#000000', 
-            textDecoration: 'none', 
-            fontSize: '13px', 
-            fontWeight: '700', 
-            padding: '10px 20px', 
-            letterSpacing: '1px' 
+            backgroundColor: '#00a8e8',
+            color: '#000000',
+            textDecoration: 'none',
+            fontSize: '13px',
+            fontWeight: '700',
+            padding: '10px 20px',
+            letterSpacing: '1px'
           }}>AI-АУДИТ</Link>
         </div>
       )}
 
       {isMobile && (
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
+        <button
+          onClick={() => setIsOpen(!isOpen)}
           style={{
             background: 'none',
             border: 'none',
@@ -108,6 +123,7 @@ export default function Navbar() {
             minWidth: '44px'
           }}
           aria-label="Меню"
+          aria-expanded={isOpen}
         >
           <div style={{
             width: '24px',
@@ -160,13 +176,15 @@ export default function Navbar() {
           <Link to="/pricing" style={linkStyle('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={linkStyle('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyle('/glossary')}>ГЛОССАРИЙ</Link>
+          <a href={`mailto:${CONTACT_EMAIL}`} style={linkStyle('/')}>EMAIL: {CONTACT_EMAIL}</a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" style={linkStyle('/')}>TELEGRAM: @MakarovLev</a>
           <Link to="/audit" style={{
-            backgroundColor: '#00a8e8', 
-            color: '#000000', 
-            textDecoration: 'none', 
-            fontSize: '13px', 
-            fontWeight: '700', 
-            padding: '16px 20px', 
+            backgroundColor: '#00a8e8',
+            color: '#000000',
+            textDecoration: 'none',
+            fontSize: '13px',
+            fontWeight: '700',
+            padding: '16px 20px',
             letterSpacing: '1px',
             display: 'block',
             textAlign: 'center',

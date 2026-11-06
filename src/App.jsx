@@ -7,6 +7,7 @@ import Cases from './Cases'
 import Pricing from './Pricing'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
+import Monitoring from './Monitoring'
 import heroVideo from './assets/hero-video.mp4'
 import usePageMeta from './usePageMeta'
 
@@ -108,6 +109,7 @@ export default function App() {
     <Route path="/pricing" element={<Pricing />} />
     <Route path="/faq" element={<FAQ />} />
     <Route path="/glossary" element={<Glossary />} />
+    <Route path="/monitoring" element={<Monitoring />} />
     <Route path="/audit" element={<Home />} />
   </Routes></BrowserRouter>
 }

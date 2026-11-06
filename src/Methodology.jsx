@@ -1,4 +1,5 @@
-import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
+import Navbar from './Navbar'
+import usePageMeta from './usePageMeta'
 
 const stages = [
  ['Диагностика','Фиксируем бизнес-цели, услуги, географию, конкурентов и список пользовательских запросов. Проверяем индексацию, доступность сайта, качество фактов, структуру и внешнее присутствие.'],
@@ -6,7 +7,8 @@ const stages = [
  ['Измерение и улучшение','Повторяем запросы на тех же платформах и в сопоставимых условиях. Сравниваем упоминания, цитаты, рекомендации, Share of Voice и точность фактов; документируем изменения и ограничения.'],
 ]
 
-export default function Methodology(){\n  usePageMeta("Методология GEO/AEO — Axiom AI", "Диагностика, внедрение, мониторинг и прозрачные метрики AI-видимости.", "/methodology")
+export default function Methodology(){
+  usePageMeta("Методология GEO/AEO — Axiom AI", "Диагностика, внедрение, мониторинг и прозрачные метрики AI-видимости.", "/methodology")
  return <div className="page-shell"><Navbar/><main className="page-content">
   <p className="eyebrow-dark">TRANSPARENT GEO/AEO PROCESS</p><h1>Методология: от доступности до измеримого результата</h1>
   <p className="page-lead">Работа строится как повторяемый цикл. Мы заранее фиксируем выборку запросов и условия замеров, отделяем технические изменения от контентных и не приписываем результат одной правке без подтверждения.</p>

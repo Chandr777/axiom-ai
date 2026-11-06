@@ -1,4 +1,5 @@
-import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
+import Navbar from './Navbar'
+import usePageMeta from './usePageMeta'
 
 const evidence = [
   ['Исходная ситуация','Фиксируем бренд, продукт, географию и список коммерческих вопросов. Сохраняем исходные ответы и ссылки, чтобы было с чем сравнивать изменения.'],
@@ -6,7 +7,8 @@ const evidence = [
   ['Повторный замер','Повторяем тот же набор запросов на тех же платформах и в сопоставимых условиях. Сравниваем упоминания, цитирования, рекомендации и точность фактов.'],
 ]
 
-export default function Cases() {\n  usePageMeta("Кейсы GEO и AI-видимости — Axiom AI", "Принципы публикации подтверждённых GEO-кейсов: исходные данные, методика, повторные замеры и ограничения.", "/cases")
+export default function Cases() {
+  usePageMeta("Кейсы GEO и AI-видимости — Axiom AI", "Принципы публикации подтверждённых GEO-кейсов: исходные данные, методика, повторные замеры и ограничения.", "/cases")
   return <div className="page-shell"><Navbar/><main className="page-content">
     <p className="eyebrow-dark">ПРОВЕРЯЕМОСТЬ И МЕТОДОЛОГИЯ</p>
     <h1>Кейсы GEO должны подтверждаться данными</h1>

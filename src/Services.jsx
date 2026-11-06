@@ -1,4 +1,5 @@
-import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
+import Navbar from './Navbar'
+import usePageMeta from './usePageMeta'
 
 const services = [
  ['Техническая доступность','Проверяем robots.txt, sitemap.xml, DNS, HTTPS, коды ответов, редиректы, canonical, robots meta, CDN/WAF и доступность контента для роботов.'],
@@ -8,7 +9,8 @@ const services = [
  ['Мониторинг AI-видимости','Фиксируем запросы, платформы, регион и дату; измеряем упоминания, цитирования, рекомендации, Share of Voice и фактическую точность.'],
 ]
 
-export default function Services(){\n  usePageMeta("Услуги GEO и AEO — Axiom AI", "Техническая доступность, структурированные данные, контент для ответов и мониторинг AI-видимости.", "/services")
+export default function Services(){
+  usePageMeta("Услуги GEO и AEO — Axiom AI", "Техническая доступность, структурированные данные, контент для ответов и мониторинг AI-видимости.", "/services")
  return <div className="page-shell"><Navbar/><main className="page-content">
   <p className="eyebrow-dark">GEO / AEO SERVICES</p><h1>Услуги Axiom AI</h1>
   <p className="page-lead">Помогаем компаниям сделать публичную информацию технически доступной, понятной для машин и проверяемой для людей. Каждый проект начинается с диагностики и заканчивается повторным измерением.</p>

@@ -7,9 +7,11 @@ import Cases from './Cases'
 import Pricing from './Pricing'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
-import heroVideo from './assets/hero-video.mp4'\nimport usePageMeta from './usePageMeta'
+import heroVideo from './assets/hero-video.mp4'
+import usePageMeta from './usePageMeta'
 
-function Home() {\n  usePageMeta('Axiom AI — GEO и AEO для видимости бренда', 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.', '/')
+function Home() {
+  usePageMeta('Axiom AI — GEO и AEO для видимости бренда', 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.', '/')
   const [form, setForm] = useState({ company: '', website: '', contact: '' })
   const [prepared, setPrepared] = useState(false)
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
+import Navbar from './Navbar'
+import usePageMeta from './usePageMeta'
 
 const listItemStyle = {
   fontSize: '14px',
@@ -11,7 +12,8 @@ const listItemStyle = {
   textAlign: 'justify'
 }
 
-export default function Pricing() {\n  usePageMeta('Тарифы GEO/AEO — Axiom AI', 'Пакеты услуг Axiom AI по диагностике, технической оптимизации и мониторингу видимости бренда в генеративных системах.', '/pricing')
+export default function Pricing() {
+  usePageMeta('Тарифы GEO/AEO — Axiom AI', 'Пакеты услуг Axiom AI по диагностике, технической оптимизации и мониторингу видимости бренда в генеративных системах.', '/pricing')
   return (
     <div style={styles.container}>
       <Navbar />
@@ -95,7 +97,9 @@ export default function Pricing() {\n  usePageMeta('Тарифы GEO/AEO — Axi
         </div>
       </section>
 
-      <p style={styles.disclaimer}>Показатели и позиции в ответах генеративных систем не гарантируются: результаты зависят от платформы, запроса, региона и доступных источников. Итоговый состав, сроки и стоимость работ согласуются до начала проекта.</p>\n\n      <footer style={styles.footer}>
+      <p style={styles.disclaimer}>Показатели и позиции в ответах генеративных систем не гарантируются: результаты зависят от платформы, запроса, региона и доступных источников. Итоговый состав, сроки и стоимость работ согласуются до начала проекта.</p>
+
+      <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
     </div>
@@ -151,5 +155,6 @@ const styles = {
   
   features: { listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1, textAlign: 'left' }, // Список оставлен выровненным по левому краю для читаемости, но сама карточка по центру
   
-  disclaimer: { maxWidth: '900px', margin: '0 auto 50px', padding: '18px 22px', color: '#4b5861', backgroundColor: '#f5f9fb', border: '1px solid #dce3e8', fontSize: '14px', lineHeight: '1.65' },\n  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
+  disclaimer: { maxWidth: '900px', margin: '0 auto 50px', padding: '18px 22px', color: '#4b5861', backgroundColor: '#f5f9fb', border: '1px solid #dce3e8', fontSize: '14px', lineHeight: '1.65' },
+  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
 }

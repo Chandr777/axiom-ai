@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
-const CONTACT_EMAIL = 'info@axiom-ai.su'
-const TELEGRAM_URL = 'https://t.me/MakarovLev'
+const EMAIL = 'info@axiom-ai.su'
+const TELEGRAM = 'https://t.me/MakarovLev'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -29,26 +29,26 @@ export default function Navbar() {
     fontWeight: '700',
     letterSpacing: '1px',
     display: 'block',
-    padding: '20px 0',
+    padding: '16px 0',
     borderBottom: '1px solid #e5e5e5',
     textAlign: 'center'
   })
 
-  const linkStyleDesktop = (path) => ({
+  const desktopLink = (path) => ({
     color: isActive(path) ? '#00a8e8' : '#000000',
-    textDecoration: 'none',
-    fontSize: '13px',
-    fontWeight: '700',
-    letterSpacing: '1px'
-  })
-
-  const contactStyle = {
-    color: '#111111',
     textDecoration: 'none',
     fontSize: '12px',
     fontWeight: '700',
-    letterSpacing: '0.2px',
+    letterSpacing: '0.5px',
     whiteSpace: 'nowrap'
+  })
+
+  const contactLink = {
+    ...desktopLink(''),
+    fontSize: '11px',
+    color: '#333333',
+    borderBottom: '1px solid #00a8e8',
+    paddingBottom: '3px'
   }
 
   return (
@@ -56,7 +56,7 @@ export default function Navbar() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      gap: '20px',
+      gap: '16px',
       borderBottom: '2px solid #000000',
       backgroundColor: '#ffffff',
       position: 'sticky',
@@ -64,13 +64,13 @@ export default function Navbar() {
       zIndex: 100,
       width: '100%',
       boxSizing: 'border-box',
-      padding: isMobile ? '16px 24px' : '20px 32px'
+      padding: isMobile ? '16px 24px' : '18px 28px'
     }}>
       <Link to="/" style={{
-        fontSize: isMobile ? '26px' : '32px',
+        fontSize: isMobile ? '26px' : '30px',
         fontWeight: '900',
         color: '#000000',
-        letterSpacing: '2px',
+        letterSpacing: '1.5px',
         textDecoration: 'none',
         flexShrink: 0
       }}>AXIOM <span style={{ color: '#00a8e8' }}>AI</span></Link>
@@ -78,28 +78,29 @@ export default function Navbar() {
       {!isMobile && (
         <div style={{
           display: 'flex',
-          gap: '16px',
+          gap: '12px',
           alignItems: 'center',
           flexWrap: 'wrap',
           justifyContent: 'flex-end'
         }}>
-          <Link to="/" style={linkStyleDesktop('/')}>ГЛАВНАЯ</Link>
-          <Link to="/services" style={linkStyleDesktop('/services')}>УСЛУГИ</Link>
-          <Link to="/methodology" style={linkStyleDesktop('/methodology')}>МЕТОДОЛОГИЯ</Link>
-          <Link to="/cases" style={linkStyleDesktop('/cases')}>КЕЙСЫ</Link>
-          <Link to="/pricing" style={linkStyleDesktop('/pricing')}>ЦЕНЫ</Link>
-          <Link to="/faq" style={linkStyleDesktop('/faq')}>FAQ</Link>
-          <Link to="/glossary" style={linkStyleDesktop('/glossary')}>ГЛОССАРИЙ</Link>
-          <a href={`mailto:${CONTACT_EMAIL}`} style={contactStyle}>EMAIL</a>
-          <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" style={contactStyle}>TELEGRAM</a>
+          <Link to="/" style={desktopLink('/')}>ГЛАВНАЯ</Link>
+          <Link to="/services" style={desktopLink('/services')}>УСЛУГИ</Link>
+          <Link to="/methodology" style={desktopLink('/methodology')}>МЕТОДОЛОГИЯ</Link>
+          <Link to="/cases" style={desktopLink('/cases')}>КЕЙСЫ</Link>
+          <Link to="/pricing" style={desktopLink('/pricing')}>ЦЕНЫ</Link>
+          <Link to="/faq" style={desktopLink('/faq')}>FAQ</Link>
+          <Link to="/glossary" style={desktopLink('/glossary')}>ГЛОССАРИЙ</Link>
+          <a href={`mailto:${EMAIL}`} style={contactLink}>EMAIL</a>
+          <a href={TELEGRAM} target="_blank" rel="noreferrer" style={contactLink}>TELEGRAM</a>
           <Link to="/audit" style={{
             backgroundColor: '#00a8e8',
             color: '#000000',
             textDecoration: 'none',
-            fontSize: '13px',
+            fontSize: '12px',
             fontWeight: '700',
-            padding: '10px 20px',
-            letterSpacing: '1px'
+            padding: '9px 14px',
+            letterSpacing: '0.5px',
+            whiteSpace: 'nowrap'
           }}>AI-АУДИТ</Link>
         </div>
       )}
@@ -176,8 +177,8 @@ export default function Navbar() {
           <Link to="/pricing" style={linkStyle('/pricing')}>ЦЕНЫ</Link>
           <Link to="/faq" style={linkStyle('/faq')}>FAQ</Link>
           <Link to="/glossary" style={linkStyle('/glossary')}>ГЛОССАРИЙ</Link>
-          <a href={`mailto:${CONTACT_EMAIL}`} style={linkStyle('/')}>EMAIL: {CONTACT_EMAIL}</a>
-          <a href={TELEGRAM_URL} target="_blank" rel="noreferrer" style={linkStyle('/')}>TELEGRAM: @MakarovLev</a>
+          <a href={`mailto:${EMAIL}`} style={linkStyle('/')}>{EMAIL}</a>
+          <a href={TELEGRAM} target="_blank" rel="noreferrer" style={linkStyle('/')}>Telegram: @MakarovLev</a>
           <Link to="/audit" style={{
             backgroundColor: '#00a8e8',
             color: '#000000',

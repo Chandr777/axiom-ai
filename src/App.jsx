@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import Navbar from './Navbar'
 import Services from './Services'
 import Methodology from './Methodology'
@@ -10,227 +10,102 @@ import Glossary from './Glossary'
 import heroVideo from './assets/hero-video.mp4'
 
 function Home() {
-  const [formData, setFormData] = useState({ company_name: '', website: '', contact: '' })
-  const [status, setStatus] = useState('idle')
-  const [isMobile, setIsMobile] = useState(false)
+  const [form, setForm] = useState({ company: '', website: '', contact: '' })
+  const [prepared, setPrepared] = useState(false)
 
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768)
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    setStatus('success')
-    setFormData({ company_name: '', website: '', contact: '' })
+  function prepareEmail(event) {
+    event.preventDefault()
+    const subject = encodeURIComponent('Запрос GEO/AEO-аудита — Axiom AI')
+    const body = encodeURIComponent([
+      'Здравствуйте! Хочу обсудить GEO/AEO-аудит.',
+      '',
+      `Компания: ${form.company}`,
+      `Сайт: ${form.website}`,
+      `Контакт для ответа: ${form.contact}`,
+    ].join('\n'))
+    setPrepared(true)
+    window.location.href = `mailto:info@axiom-ai.su?subject=${subject}&body=${body}`
   }
 
-  return (
-    <div style={styles.container}>
-      <Navbar />
-
-      <section style={{
-        ...styles.heroSection,
-        height: isMobile ? 'auto' : '100vh',
-        padding: isMobile ? '40px 16px' : '80px 40px'
-      }}>
-        <video autoPlay muted loop playsInline style={styles.video}>
+  return <div className="site-shell">
+    <Navbar />
+    <main>
+      <section className="hero">
+        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/favicon.svg" aria-hidden="true">
           <source src={heroVideo} type="video/mp4" />
         </video>
-        <div style={styles.heroOverlay}>
-          <div style={{
-            ...styles.heroContent,
-            padding: isMobile ? '20px 16px' : '40px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center', // ЖЕСТКОЕ ЦЕНТРИРОВАНИЕ ВСЕГО КОНТЕНТА
-            textAlign: 'center'
-          }}>
-            <h1 style={{
-              ...styles.h1,
-              fontSize: isMobile ? '26px' : 'clamp(32px, 5vw, 56px)',
-              lineHeight: isMobile ? '1.2' : '1.05',
-              textAlign: 'center'
-            }}>
-              Поисковая выдача умерла. Наступила эпоха безальтернативных рекомендаций.
-            </h1>
-            <p style={{
-              ...styles.subtitle,
-              fontSize: isMobile ? '15px' : '18px',
-              textAlign: 'center',
-              maxWidth: isMobile ? '100%' : '800px'
-            }}>
-              Пока ваш отдел маркетинга сжигает бюджеты на классическое SEO, ChatGPT, Perplexity и Claude перехватили контроль над принятием решений. Мы встраиваем ваш бизнес в алгоритмы генеративного поиска так, чтобы для ИИ вы были единственным логичным выбором.
-            </p>
-            <div style={{
-              ...styles.metrics,
-              gap: isMobile ? '24px' : '60px',
-              flexDirection: isMobile ? 'column' : 'row',
-              alignItems: 'center'
-            }}>
-              <div style={{...styles.metricItem, textAlign: 'center'}}>
-                <strong style={{...styles.bigNumber, fontSize: isMobile ? '36px' : '48px'}}>0</strong>
-                кликов в классической выдаче для тех, кто не попал в топ-1 ответа LLM.
-              </div>
-              <div style={{...styles.metricItem, textAlign: 'center'}}>
-                <strong style={{...styles.bigNumber, fontSize: isMobile ? '36px' : '48px'}}>100%</strong>
-                монополия внимания в диалоговых интерфейсах.
-              </div>
-            </div>
-            <a href="#audit" style={{
-              ...styles.button,
-              padding: isMobile ? '14px 20px' : '20px 40px',
-              fontSize: isMobile ? '13px' : '16px',
-              width: isMobile ? '100%' : 'auto',
-              maxWidth: '400px',
-              boxSizing: 'border-box',
-              display: 'inline-block',
-              textAlign: 'center'
-            }}>
-              ИНИЦИИРОВАТЬ АУДИТ AI-ПРИСУТСТВИЯ
-            </a>
+        <div className="hero-shade" />
+        <div className="hero-content">
+          <p className="eyebrow">GENERATIVE ENGINE OPTIMIZATION · ANSWER ENGINE OPTIMIZATION</p>
+          <h1>Сделайте бренд понятным для генеративного поиска</h1>
+          <p className="hero-lead">Axiom AI помогает улучшать доступность, точность и структуру информации о компании для поисковых систем и AI-помощников. Технический аудит, ответы на реальные вопросы клиентов и измерение видимости — в единой методологии.</p>
+          <div className="hero-actions">
+            <a className="button button-blue" href="#audit">Обсудить аудит</a>
+            <a className="button button-outline" href="/knowledge/">База знаний GEO/AEO</a>
           </div>
+          <p className="hero-note">Без обещаний гарантированного места в ответах моделей — с проверяемыми изменениями и понятными метриками.</p>
         </div>
       </section>
 
-      <section style={{
-        ...styles.sectionDark,
-        padding: isMobile ? '40px 16px' : '80px 40px',
-        textAlign: 'center'
-      }}>
-        <h2 style={{
-          ...styles.h2Dark,
-          fontSize: isMobile ? '24px' : 'clamp(28px, 4vw, 44px)'
-        }}>ВЧЕРА VS СЕГОДНЯ</h2>
-        <div style={{
-          ...styles.grid,
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: isMobile ? '16px' : '32px'
-        }}>
-          <div style={{
-            ...styles.cardDark,
-            padding: isMobile ? '24px 16px' : '40px'
-          }}>
-            <h3 style={styles.h3Dark}>КЛАССИЧЕСКИЙ ПОИСК</h3>
-            <p style={styles.textDark}>Пользователь получает 20 ссылок, сравнивает цены, читает отзывы. У вас есть шанс.</p>
-            <p style={styles.warning}>❌ Устаревшая модель</p>
-          </div>
-          <div style={{
-            ...styles.cardDark,
-            padding: isMobile ? '24px 16px' : '40px'
-          }}>
-            <h3 style={styles.h3Dark}>ГЕНЕРАТИВНЫЙ ПОИСК</h3>
-            <p style={styles.textDark}>ИИ анализирует терабайты данных и выдает одну-единственную рекомендацию.</p>
-            <p style={styles.success}>✅ Безальтернативное решение</p>
-          </div>
+      <section className="section">
+        <p className="eyebrow-dark">КАК РАБОТАЕТ GEO/AEO</p>
+        <h2>Три задачи системной работы</h2>
+        <div className="feature-grid">
+          <article className="feature-card"><span className="step">01 / ДОСТУПНОСТЬ</span><h3>Системы могут прочитать сайт</h3><p>Проверяем DNS, HTTPS, robots.txt, sitemap.xml, коды ответов, CDN/WAF и доступность важного контента в HTML.</p></article>
+          <article className="feature-card"><span className="step">02 / ПОНЯТНОСТЬ</span><h3>Факты легко извлечь и проверить</h3><p>Структурируем услуги, цены, контакты, географию, ответы на вопросы и данные Schema.org без расхождений между страницами.</p></article>
+          <article className="feature-card"><span className="step">03 / ДОКАЗАТЕЛЬСТВА</span><h3>Утверждения подтверждаются источниками</h3><p>Анализируем внешние профили, реальные отзывы, публикации, первичные данные и повторяемые замеры по фиксированной выборке запросов.</p></article>
         </div>
       </section>
 
-      <section id="audit" style={{
-        ...styles.section,
-        padding: isMobile ? '40px 16px' : '80px 40px',
-        textAlign: 'center'
-      }}>
-        <h2 style={{
-          ...styles.h1,
-          fontSize: isMobile ? '22px' : 'clamp(28px, 4vw, 44px)',
-          color: '#000000',
-          textAlign: 'center'
-        }}>
-          AI-FOOTPRINT DIAGNOSTIC: РЕНТГЕНОГРАФИЯ ВАШЕГО ЦИФРОВОГО СЛЕДА
-        </h2>
-        <p style={{
-          ...styles.subtitle,
-          color: '#333333',
-          fontSize: isMobile ? '14px' : '18px',
-          textAlign: 'center'
-        }}>
-          Мы не предлагаем «оценить сайт по шкале от 1 до 10». Мы проводим многофакторный программный срез индексации вашего бренда в коммерческих сценариях топ-5 языковых моделей.
-        </p>
-        
-        {status === 'success' ? (
-          <div style={styles.successMessage}>✅ Заявка принята. Закрытый отчет формируется на основе верифицированного среза.</div>
-        ) : (
-          <form onSubmit={handleSubmit} style={{
-            ...styles.form,
-            padding: isMobile ? '0 8px' : '0',
-            alignItems: 'center'
-          }}>
-            <input name="company_name" placeholder="Юридическое лицо / Бренд" value={formData.company_name} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <input name="website" placeholder="Корпоративный домен" value={formData.website} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <input name="contact" placeholder="Email / Telegram ЛПР" value={formData.contact} onChange={(e) => setFormData({...formData, [e.target.name]: e.target.value})} required style={styles.input} />
-            <button type="submit" disabled={status === 'loading'} style={{
-              ...styles.buttonBlack,
-              padding: isMobile ? '16px 20px' : '20px 40px',
-              fontSize: isMobile ? '12px' : '14px'
-            }}>
-              {status === 'loading' ? 'ОБРАБОТКА...' : 'ЗАПРОСИТЬ ЗАКРЫТЫЙ ОТЧЕТ'}
-            </button>
+      <section className="dark-section">
+        <div className="section narrow">
+          <p className="eyebrow">ОТ ТЕХНИЧЕСКОГО АУДИТА ДО МОНИТОРИНГА</p>
+          <h2>Не «оптимизация под алгоритм», а понятная система фактов</h2>
+          <p>Сначала устраняем препятствия для обхода. Затем создаём страницы, которые прямо отвечают на вопросы клиентов. После публикации измеряем упоминания, цитирования, рекомендации и точность сведений в тех же AI-системах.</p>
+          <a className="button button-blue" href="/methodology">Посмотреть методологию</a>
+        </div>
+      </section>
+
+      <section className="section">
+        <p className="eyebrow-dark">БАЗА ЗНАНИЙ</p>
+        <h2>Ответы на конкретные вопросы о GEO и AEO</h2>
+        <div className="feature-grid">
+          <a className="feature-card link-card" href="/knowledge/geo-vs-seo/"><span className="step">ОСНОВЫ</span><h3>GEO и SEO: в чём разница?</h3><p>Как сочетаются SEO, GEO и AEO, какие факты и страницы нужны бренду.</p></a>
+          <a className="feature-card link-card" href="/knowledge/robots-and-ai-crawlers/"><span className="step">ТЕХНИКА</span><h3>Как открыть сайт для AI-краулеров?</h3><p>Поисковые роботы, обучающие краулеры, CDN, WAF и robots.txt.</p></a>
+          <a className="feature-card link-card" href="/knowledge/measure-ai-visibility/"><span className="step">АНАЛИТИКА</span><h3>Как измерить AI-видимость?</h3><p>Mention Rate, Citation Rate, Share of Voice и точность фактов.</p></a>
+        </div>
+        <a className="text-link" href="/knowledge/">Все руководства в базе знаний →</a>
+      </section>
+
+      <section id="audit" className="audit-section">
+        <div className="section narrow">
+          <p className="eyebrow-dark">AI VISIBILITY DIAGNOSTIC</p>
+          <h2>Обсудим аудит AI-присутствия</h2>
+          <p className="center-copy">Заполните поля — сайт подготовит письмо в вашем почтовом приложении. Заявка не отправляется автоматически и не сохраняется на этом сайте.</p>
+          {prepared && <p className="notice">Почтовое приложение должно открыться с подготовленным письмом. Проверьте адрес и отправьте его вручную.</p>}
+          <form className="contact-form" onSubmit={prepareEmail}>
+            <input required aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
+            <input required type="url" aria-label="Сайт компании" placeholder="Сайт компании" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
+            <input required aria-label="Контакт" placeholder="Ваш email или Telegram" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
+            <button className="button button-dark" type="submit">Подготовить письмо</button>
           </form>
-        )}
-        <p style={{
-          ...styles.smallText,
-          padding: isMobile ? '0 8px' : '0',
-          textAlign: 'center'
-        }}>🔒 Гарантия точности: при повторных запросах система выдает верифицированный стабильный результат.</p>
+          <p className="contact-line">Или напишите напрямую: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev" target="_blank" rel="noreferrer">@MakarovLev</a></p>
+        </div>
       </section>
-
-      <footer style={{
-        ...styles.footer,
-        padding: isMobile ? '24px 16px' : '40px 20px'
-      }}>
-        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
-      </footer>
-    </div>
-  )
+    </main>
+    <footer className="site-footer"><p>© {new Date().getFullYear()} AXIOM AI · GEO / AEO consulting</p><p><a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev" target="_blank" rel="noreferrer">@MakarovLev</a> · <a href="/llms.txt">llms.txt</a></p></footer>
+  </div>
 }
 
 export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/methodology" element={<Methodology />} />
-        <Route path="/cases" element={<Cases />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/glossary" element={<Glossary />} />
-        <Route path="/audit" element={<Home />} />
-      </Routes>
-    </Router>
-  )
-}
-
-const styles = {
-  container: { fontFamily: 'system-ui, -apple-system, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh', overflowX: 'hidden' },
-  heroSection: { position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', boxSizing: 'border-box' },
-  video: { position: 'absolute', top: '50%', left: '50%', minWidth: '100%', minHeight: '100%', width: 'auto', height: 'auto', transform: 'translate(-50%, -50%)', zIndex: 1, objectFit: 'cover' },
-  heroOverlay: { position: 'relative', zIndex: 2, backgroundColor: 'rgba(0, 0, 0, 0.75)', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' },
-  heroContent: { maxWidth: '1100px', width: '100%', boxSizing: 'border-box' },
-  section: { maxWidth: '1100px', margin: '0 auto', width: '100%', boxSizing: 'border-box' },
-  sectionDark: { maxWidth: '1100px', margin: '0 auto', backgroundColor: '#000000', color: '#ffffff', width: '100%', boxSizing: 'border-box' },
-  h1: { fontWeight: '900', marginBottom: '32px', color: '#ffffff', textTransform: 'uppercase', margin: '0 auto 32px' },
-  h2Dark: { fontWeight: '900', marginBottom: '40px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { color: '#cccccc', margin: '0 auto 40px', lineHeight: '1.6' },
-  metrics: { display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' },
-  metricItem: { fontSize: '16px', color: '#ffffff', maxWidth: '300px' },
-  bigNumber: { color: '#00a8e8', display: 'block', marginBottom: '8px' },
-  button: { backgroundColor: '#00a8e8', color: '#000000', fontWeight: '800', textDecoration: 'none', letterSpacing: '1px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', marginTop: '16px' },
-  buttonBlack: { backgroundColor: '#000000', color: '#ffffff', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase', border: 'none', cursor: 'pointer', width: '100%', maxWidth: '400px', marginTop: '16px' },
-  grid: { display: 'grid', marginTop: '32px' },
-  cardDark: { backgroundColor: '#111111', border: '2px solid #333333' },
-  h3Dark: { fontSize: '22px', fontWeight: '800', marginBottom: '16px', color: '#00a8e8', textTransform: 'uppercase' },
-  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.6' },
-  warning: { color: '#ff4444', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
-  success: { color: '#00a8e8', fontWeight: '700', marginTop: '20px', fontSize: '14px' },
-  form: { display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '600px', margin: '40px auto 0' },
-  input: { padding: '18px', border: '2px solid #000000', backgroundColor: '#ffffff', color: '#000000', fontSize: '16px', outline: 'none', fontWeight: '600', width: '100%', maxWidth: '400px', boxSizing: 'border-box' },
-  successMessage: { backgroundColor: '#00a8e8', color: '#000000', padding: '24px', fontWeight: '800', marginTop: '24px', fontSize: '16px', maxWidth: '400px', margin: '24px auto 0' },
-  smallText: { fontSize: '13px', color: '#666666', marginTop: '24px', maxWidth: '700px', margin: '24px auto 0' },
-  footer: { textAlign: 'center', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600', width: '100%', boxSizing: 'border-box' }
+  return <BrowserRouter><Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/services" element={<Services />} />
+    <Route path="/methodology" element={<Methodology />} />
+    <Route path="/cases" element={<Cases />} />
+    <Route path="/pricing" element={<Pricing />} />
+    <Route path="/faq" element={<FAQ />} />
+    <Route path="/glossary" element={<Glossary />} />
+    <Route path="/audit" element={<Home />} />
+  </Routes></BrowserRouter>
 }

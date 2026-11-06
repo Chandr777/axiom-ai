@@ -1,61 +1,19 @@
 import Navbar from './Navbar'
 
-export default function Services() {
-  return (
-    <div style={styles.container}>
-      <Navbar />
+const services = [
+ ['Техническая доступность','Проверяем robots.txt, sitemap.xml, DNS, HTTPS, коды ответов, редиректы, canonical, robots meta, CDN/WAF и доступность контента для роботов.'],
+ ['Архитектура фактов и сущностей','Выстраиваем согласованное описание компании, услуг, продуктов, географии и контактов; внедряем подходящую Schema.org JSON-LD-разметку.'],
+ ['Контент для ответов','Создаём отдельные страницы под конкретные вопросы аудитории: прямой ответ, детали, условия, примеры, ограничения и ссылки на подтверждения.'],
+ ['Внешние сигналы доверия','Проверяем публичные профили, бизнес-каталоги, реальные отзывы, отраслевые публикации и согласованность сведений о компании.'],
+ ['Мониторинг AI-видимости','Фиксируем запросы, платформы, регион и дату; измеряем упоминания, цитирования, рекомендации, Share of Voice и фактическую точность.'],
+]
 
-      <section style={styles.section}>
-        <div style={styles.tag}>[ Enterprise-Grade GEO Solutions ]</div>
-        <h1 style={styles.h1}>Инженерия вашего бренда в алгоритмах языковых моделей</h1>
-        <p style={styles.subtitle}>Нейросети не ранжируют сайты — они оперируют сущностями, векторными связями и графами знаний.</p>
-      </section>
-
-      <section style={styles.serviceBlock}>
-        <div style={styles.marker}>[ Service Module 01 ]</div>
-        <h2 style={styles.h2}>Vector & Entity Injection</h2>
-        <p style={styles.text}><strong>Проблема:</strong> Большинство бизнесов для языковых моделей — «слепые зоны».</p>
-        <p style={styles.text}><strong>Решение:</strong> Паспортизация сущности, внедрение в базы знаний, векторное позиционирование.</p>
-        <p style={styles.result}><strong>Результат:</strong> ИИ воспринимает ваш бренд как признанного индустриального лидера.</p>
-      </section>
-
-      <section style={{...styles.serviceBlock, backgroundColor: '#000000', color: '#ffffff'}}>
-        <div style={styles.markerDark}>[ Service Module 02 ]</div>
-        <h2 style={styles.h2Dark}>LLM Crawling Architecture</h2>
-        <p style={styles.textDark}><strong>Проблема:</strong> Стандартные сайты запутывают поисковых роботов нового поколения (GPTBot, PerplexityBot).</p>
-        <p style={styles.textDark}><strong>Решение:</strong> API-слои для краулеров, JSON-LD нового поколения, устранение токенового шума.</p>
-        <p style={styles.resultDark}><strong>Результат:</strong> Коммерческая информация считывается ИИ мгновенно и без искажений.</p>
-      </section>
-
-      <section style={styles.serviceBlock}>
-        <div style={styles.marker}>[ Service Module 03 ]</div>
-        <h2 style={styles.h2}>Multi-Source Citation Engineering</h2>
-        <p style={styles.text}><strong>Проблема:</strong> Нейросети не верят сайтам компаний — они верят перекрестным источникам.</p>
-        <p style={styles.text}><strong>Решение:</strong> Карта цитирования, посев экспертного следа, управление консенсусом данных.</p>
-        <p style={styles.result}><strong>Результат:</strong> Железобетонный консенсус: для ИИ вы — безальтернативный эксперт.</p>
-      </section>
-
-      <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
-      </footer>
-    </div>
-  )
-}
-
-const styles = {
-  container: { fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', color: '#000000', minHeight: '100vh' },
-  section: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', textAlign: 'center' },
-  serviceBlock: { maxWidth: '1100px', margin: '0 auto', padding: '80px 40px', borderTop: '2px solid #000000' },
-  tag: { display: 'inline-block', backgroundColor: '#000000', color: '#00a8e8', padding: '8px 16px', fontSize: '12px', fontWeight: '700', marginBottom: '32px', letterSpacing: '2px' },
-  marker: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
-  markerDark: { fontSize: '12px', fontWeight: '800', color: '#00a8e8', letterSpacing: '2px', marginBottom: '16px' },
-  h1: { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: '900', lineHeight: '1.05', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
-  h2: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#000000', textTransform: 'uppercase' },
-  h2Dark: { fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: '900', marginBottom: '24px', color: '#ffffff', textTransform: 'uppercase' },
-  subtitle: { fontSize: '18px', color: '#333333', maxWidth: '800px', margin: '0 auto', lineHeight: '1.6', textAlign: 'justify' },
-  text: { fontSize: '16px', color: '#000000', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px', textAlign: 'justify' },
-  textDark: { fontSize: '16px', color: '#cccccc', lineHeight: '1.7', maxWidth: '900px', marginBottom: '16px', textAlign: 'justify' },
-  result: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8', textAlign: 'justify' },
-  resultDark: { fontSize: '16px', color: '#00a8e8', lineHeight: '1.7', fontWeight: '700', marginTop: '24px', padding: '20px', border: '2px solid #00a8e8', textAlign: 'justify' },
-  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', marginTop: '80px', fontWeight: '600' }
+export default function Services(){
+ return <div className="page-shell"><Navbar/><main className="page-content">
+  <p className="eyebrow-dark">GEO / AEO SERVICES</p><h1>Услуги Axiom AI</h1>
+  <p className="page-lead">Помогаем компаниям сделать публичную информацию технически доступной, понятной для машин и проверяемой для людей. Каждый проект начинается с диагностики и заканчивается повторным измерением.</p>
+  {services.map(([title,body],i)=><section className="service-row" key={title}><span className="step">0{i+1}</span><div><h2>{title}</h2><p>{body}</p></div></section>)}
+  <aside className="notice-panel"><h2>Что мы не обещаем</h2><p>Мы не гарантируем первое место в ответах ChatGPT, Claude, Perplexity или Google. Генеративные ответы зависят от запроса, региона, версии системы, доступных источников и других факторов. Мы отвечаем за качество выполненных работ, прозрачность методики и измеримость изменений.</p></aside>
+  <p>Смотрите также <a href="/methodology">методологию работы</a> и <a href="/knowledge/">базу знаний GEO/AEO</a>.</p>
+ </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
 }

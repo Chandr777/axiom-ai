@@ -1,150 +1,31 @@
+import { useEffect } from 'react'
 import Navbar from './Navbar'
 
 const questions = [
-  {
-    question: 'Что такое GEO (Generative Engine Optimization)?',
-    answer:
-      'GEO — это оптимизация присутствия бренда в ответах генеративных языковых моделей, таких как ChatGPT, Claude и Perplexity. В отличие от классического SEO, GEO уделяет внимание тому, как модель понимает компанию, её продукты и связи с другими сущностями.',
-  },
-  {
-    question: 'Чем GEO отличается от классического SEO?',
-    answer:
-      'Классическое SEO в первую очередь работает с видимостью страниц в поисковой выдаче. GEO направлено на то, чтобы информация о бренде была понятной, согласованной и доступной для систем, которые формируют готовые ответы и рекомендации.',
-  },
-  {
-    question: 'Что входит в диагностику AI-присутствия?',
-    answer:
-      'Описанная на сайте диагностика включает промт-моделирование, анализ точности сведений о продуктах, ценах, регионах и уникальном предложении, а также сравнение доли рекомендаций бренда с конкурентами.',
-  },
-  {
-    question: 'Как проходит работа Axiom AI?',
-    answer:
-      'Методология состоит из трёх этапов: диагностика присутствия в языковых моделях; инженерия данных, сущностей и связей; мониторинг краулинга и повторные измерения видимости.',
-  },
-  {
-    question: 'Какие технологии и источники учитываются?',
-    answer:
-      'На страницах Axiom AI описаны языковые модели ChatGPT, Claude, Perplexity и Gemini, механизмы RAG, графы знаний, структурированные данные JSON-LD и внешние отраслевые источники.',
-  },
-  {
-    question: 'Зачем сайту robots.txt и структурированные данные?',
-    answer:
-      'robots.txt публикует правила доступа для совместимых роботов, а JSON-LD помогает программам распознавать сведения об организации в структурированном виде. Эти файлы улучшают техническую доступность информации, но сами по себе не гарантируют включение бренда в ответы конкретной модели.',
-  },
+ {q:'Что такое GEO и чем оно отличается от SEO?',a:'SEO помогает поисковым системам находить и ранжировать страницы. GEO помогает сделать сведения о бренде доступными, понятными и подтверждаемыми для генеративных систем, которые формируют ответы. AEO фокусируется на структуре самостоятельных ответов на конкретные вопросы. Эти подходы дополняют друг друга: техническая доступность, полезный контент и понятная структура важны для всех.'},
+ {q:'Какой бот нужен, чтобы сайт находился в ChatGPT Search?',a:'Для поисковых функций ChatGPT предназначен OAI-SearchBot. GPTBot выполняет другую задачу: он собирает веб-контент, который может использоваться при обучении моделей OpenAI. Эти настройки независимы. Разрешение OAI-SearchBot помогает поисковому обнаружению, но не гарантирует, что конкретная страница будет показана в ответе.'},
+ {q:'Нужно ли разрешать GPTBot и ClaudeBot?',a:'GPTBot и ClaudeBot — обучающие краулеры. Если разрешить их, вы допускаете доступ к публичному контенту в рамках описанной операторами политики сбора данных для обучения. Для поискового обнаружения отдельно существуют OAI-SearchBot и Claude-SearchBot. Решение об обучающих ботах должно соответствовать политике публикации контента компании.'},
+ {q:'Достаточно ли файла llms.txt для GEO?',a:'Нет. llms.txt может быть дополнительной краткой картой контента для сервисов, которые умеют его читать, но не заменяет HTML-страницы, robots.txt, sitemap.xml, индексируемость и содержательные ответы. Google указывает, что llms.txt не является требованием для появления в AI-функциях Google Search.'},
+ {q:'Зачем нужна Schema.org JSON-LD?',a:'JSON-LD помогает описать сущность организации и тип материала в структурированном формате. Organization подходит для страницы компании, BlogPosting или Article — для публикации, FAQPage — для реальной страницы вопросов и ответов, HowTo — для пошаговой инструкции. Разметка должна совпадать с видимым текстом и не гарантирует повышение позиций.'},
+ {q:'Как измерять видимость компании в ChatGPT, Claude и Perplexity?',a:'Сформируйте фиксированный набор реальных запросов, повторяйте его на одних и тех же платформах и сохраняйте дату, регион, полный ответ и источники. Отдельно считайте долю ответов с упоминанием бренда, цитирование вашего домена, рекомендации, Share of Voice среди конкурентов и точность фактов.'},
+ {q:'Как подтверждать авторитет компании?',a:'Публикуйте проверяемые факты, документы, сведения об авторах, прозрачную методологию, настоящие клиентские кейсы с разрешением на публикацию и независимые внешние упоминания. Для локальных компаний поддерживайте актуальные подтверждённые профили в уместных справочниках и отвечайте на реальные отзывы. Не используйте вымышленные кейсы и покупные отзывы.'},
+ {q:'Можно ли гарантировать первое место в ответах ИИ?',a:'Нет. Генеративные ответы зависят от формулировки запроса, модели и её версии, региона, языка, доступных источников и включённого режима поиска. Можно улучшать техническую доступность, точность контента и внешнюю подтверждаемость, а затем измерять изменения на фиксированной выборке, но гарантировать место в ответе нельзя.'},
 ]
+const faqSchema = {'@context':'https://schema.org','@type':'FAQPage','@id':'https://axiom-ai.su/faq#faq',mainEntity:questions.map(x=>({'@type':'Question',name:x.q,acceptedAnswer:{'@type':'Answer',text:x.a}}))}
 
 export default function FAQ() {
-  return (
-    <div style={styles.container}>
-      <Navbar />
-      <main>
-        <section style={styles.intro}>
-          <div style={styles.tag}>[ GEO / AI VISIBILITY FAQ ]</div>
-          <h1 style={styles.h1}>Частые вопросы о GEO и видимости в ИИ</h1>
-          <p style={styles.subtitle}>
-            Краткие ответы о генеративной оптимизации, диагностике AI-присутствия и технической
-            доступности информации о бренде.
-          </p>
-        </section>
-
-        <section style={styles.questions} aria-label="Частые вопросы">
-          {questions.map((item, index) => (
-            <details key={item.question} style={styles.item}>
-              <summary style={styles.question}>
-                <span style={styles.number}>{String(index + 1).padStart(2, '0')}</span>
-                {item.question}
-              </summary>
-              <p style={styles.answer}>{item.answer}</p>
-            </details>
-          ))}
-        </section>
-      </main>
-      <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
-      </footer>
-    </div>
-  )
-}
-
-const styles = {
-  container: {
-    fontFamily: 'system-ui, sans-serif',
-    backgroundColor: '#ffffff',
-    color: '#000000',
-    minHeight: '100vh',
-  },
-  intro: {
-    maxWidth: '1100px',
-    margin: '0 auto',
-    padding: '80px 24px 48px',
-    textAlign: 'center',
-  },
-  tag: {
-    display: 'inline-block',
-    backgroundColor: '#000000',
-    color: '#00a8e8',
-    padding: '8px 16px',
-    fontSize: '12px',
-    fontWeight: '700',
-    marginBottom: '32px',
-    letterSpacing: '2px',
-  },
-  h1: {
-    fontSize: 'clamp(30px, 5vw, 56px)',
-    fontWeight: '900',
-    lineHeight: '1.08',
-    margin: '0 0 24px',
-    color: '#000000',
-    textTransform: 'uppercase',
-  },
-  subtitle: {
-    fontSize: '18px',
-    color: '#333333',
-    maxWidth: '800px',
-    margin: '0 auto',
-    lineHeight: '1.6',
-  },
-  questions: {
-    maxWidth: '900px',
-    margin: '0 auto',
-    padding: '0 24px 80px',
-  },
-  item: {
-    border: '2px solid #000000',
-    marginBottom: '16px',
-    padding: '24px',
-    backgroundColor: '#ffffff',
-  },
-  question: {
-    display: 'flex',
-    alignItems: 'baseline',
-    gap: '16px',
-    cursor: 'pointer',
-    fontSize: '18px',
-    lineHeight: '1.5',
-    fontWeight: '800',
-    listStyle: 'none',
-  },
-  number: {
-    color: '#00a8e8',
-    fontSize: '13px',
-    letterSpacing: '1px',
-    flexShrink: 0,
-  },
-  answer: {
-    color: '#333333',
-    fontSize: '16px',
-    lineHeight: '1.7',
-    marginTop: '20px',
-    paddingLeft: '38px',
-  },
-  footer: {
-    textAlign: 'center',
-    padding: '40px 20px',
-    color: '#666666',
-    fontSize: '13px',
-    borderTop: '2px solid #000000',
-    marginTop: '40px',
-    fontWeight: '600',
-  },
+ useEffect(()=>{document.title='Частые вопросы о GEO и AEO — Axiom AI'},[])
+ return <div className="page-shell"><Navbar/><main className="page-content">
+  <p className="eyebrow-dark">GEO / AEO KNOWLEDGE</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>
+  <p className="page-lead">Самостоятельные ответы о технической доступности, структурированных данных, контенте и измерении AI-видимости.</p>
+  {questions.map((x,i)=><details className="faq-item" key={x.q}><summary><span className="step">0{i+1}</span>{x.q}</summary><p>{x.a}</p></details>)}
+  <h2>Подробные руководства</h2>
+  <ul className="readable-list">
+   <li><a href="/knowledge/geo-vs-seo/">GEO и SEO: как подготовить сайт к ответам ИИ</a></li>
+   <li><a href="/knowledge/robots-and-ai-crawlers/">Настройка robots.txt для AI-краулеров</a></li>
+   <li><a href="/knowledge/measure-ai-visibility/">Методика измерения Share of Voice</a></li>
+   <li><a href="/knowledge/structured-data/">Schema.org и JSON-LD для сайта компании</a></li>
+   <li><a href="/knowledge/local-presence/">Локальные профили и отзывы</a></li>
+  </ul>
+ </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
 }

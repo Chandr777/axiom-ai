@@ -1,118 +1,21 @@
 import Navbar from './Navbar'
 
-export default function Glossary() {
-  const terms = [
-    { term: 'GEO (Generative Engine Optimization)', def: 'Оптимизация присутствия бренда в ответах генеративных языковых моделей (ChatGPT, Claude, Perplexity). В отличие от SEO, работает не с поисковой выдачей, а с векторными базами знаний ИИ.' },
-    { term: 'LLM (Large Language Model)', def: 'Большая языковая модель — нейросеть, обученная на огромных массивах текста (GPT-4, Claude, Gemini). Именно эти модели формируют рекомендации пользователям.' },
-    { term: 'RAG (Retrieval-Augmented Generation)', def: 'Архитектура, при которой языковая модель перед генерацией ответа извлекает актуальные данные из внешних источников. Ключевой механизм, через который ИИ «узнает» о вашем бренде.' },
-    { term: 'Векторное пространство (Vector Space)', def: 'Математическое пространство, в котором слова, понятия и сущности представлены как векторы. Семантическая близость брендов определяется расстоянием между их векторами.' },
-    { term: 'Граф знаний (Knowledge Graph)', def: 'Структурированное представление сущностей и связей между ними. Языковые модели используют графы знаний для формирования ответов о компаниях, продуктах и экспертах.' },
-    { term: 'Entity Injection', def: 'Процесс внедрения структурированного описания бренда (паспорта сущности) в источники, которые парсят языковые модели при обучении и дообучении.' },
-    { term: 'Краулер ИИ (AI Crawler)', def: 'Специализированный бот (GPTBot, ClaudeBot, PerplexityBot), который сканирует веб-ресурсы для обучения и актуализации знаний языковой модели.' },
-    { term: 'JSON-LD', def: 'Формат машиночитаемой разметки данных на сайте. Позволяет языковым моделям извлекать структурированную информацию о компании без визуального парсинга.' },
-    { term: 'Токеновый шум (Token Noise)', def: 'Избыточные элементы на сайте (реклама, тяжелые скрипты, SEO-спам), которые искажают восприятие контента языковой моделью при парсинге.' },
-    { term: 'AI-Footprint', def: 'Совокупность цифрового следа бренда в базах знаний языковых моделей. Определяет, как ИИ «видит» и рекомендует вашу компанию.' },
-    { term: 'Determinism Guarantee', def: 'Принцип детерминированной воспроизводимости результатов аудита. При повторных запросах система выдает стабильный верифицированный срез данных.' },
-    { term: 'Foundational Model', def: 'Базовая языковая модель, на которой строятся приложения (OpenAI GPT, Anthropic Claude, Google Gemini). Именно их алгоритмы мы оптимизируем.' }
-  ]
-
-  return (
-    <div style={styles.container}>
-      <Navbar />
-
-      <section style={styles.section}>
-        <div style={styles.tag}>[ Technical Glossary ]</div>
-        <h1 style={styles.h1}>Глоссарий терминов GEO</h1>
-        <p style={styles.subtitle}>Точные определения ключевых понятий генеративной оптимизации.</p>
-      </section>
-
-      <section style={styles.glossarySection}>
-        {terms.map((item, index) => (
-          <div key={index} style={styles.termBlock}>
-            <h2 style={styles.term}>{item.term}</h2>
-            <p style={styles.definition}>{item.def}</p>
-          </div>
-        ))}
-      </section>
-
-      <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
-      </footer>
-    </div>
-  )
-}
-
-const styles = {
-  container: { 
-    fontFamily: 'system-ui, sans-serif', 
-    backgroundColor: '#ffffff', 
-    color: '#000000', 
-    minHeight: '100vh' 
-  },
-  section: { 
-    maxWidth: '1100px', 
-    margin: '0 auto', 
-    padding: '80px 40px', 
-    textAlign: 'center' 
-  },
-  glossarySection: { 
-    maxWidth: '1100px', 
-    margin: '0 auto', 
-    padding: '0 40px 80px' 
-  },
-  tag: { 
-    display: 'inline-block', 
-    backgroundColor: '#000000', 
-    color: '#00a8e8', 
-    padding: '8px 16px', 
-    fontSize: '12px', 
-    fontWeight: '700', 
-    marginBottom: '32px', 
-    letterSpacing: '2px' 
-  },
-  h1: { 
-    fontSize: 'clamp(32px, 5vw, 56px)', 
-    fontWeight: '900', 
-    lineHeight: '1.05', 
-    marginBottom: '24px', 
-    color: '#000000', 
-    textTransform: 'uppercase' 
-  },
-  subtitle: { 
-    fontSize: '18px', 
-    color: '#333333', 
-    maxWidth: '800px', 
-    margin: '0 auto', 
-    lineHeight: '1.6', 
-    textAlign: 'justify' 
-  },
-  termBlock: { 
-    padding: '32px', 
-    border: '2px solid #000000', 
-    marginBottom: '20px', 
-    backgroundColor: '#ffffff' 
-  },
-  term: { 
-    fontSize: '18px', 
-    fontWeight: '900', 
-    color: '#00a8e8', 
-    marginBottom: '12px', 
-    textTransform: 'uppercase', 
-    letterSpacing: '1px' 
-  },
-  definition: { 
-    fontSize: '16px', 
-    color: '#000000', 
-    lineHeight: '1.7', 
-    textAlign: 'justify' 
-  },
-  footer: { 
-    textAlign: 'center', 
-    padding: '40px 20px', 
-    color: '#666666', 
-    fontSize: '13px', 
-    borderTop: '2px solid #000000', 
-    marginTop: '80px', 
-    fontWeight: '600' 
-  }
+const terms = [
+ ['GEO','Generative Engine Optimization — работа над тем, чтобы сведения о бренде были доступны, понятны и подтверждаемы в генеративных системах.'],
+ ['AEO','Answer Engine Optimization — структурирование контента для прямого и полного ответа на конкретный вопрос пользователя.'],
+ ['LLM','Large Language Model — большая языковая модель, формирующая текстовые ответы на основе контекста и данных.'],
+ ['RAG','Retrieval-Augmented Generation — подход, при котором система извлекает материалы из внешних источников и использует их при формировании ответа.'],
+ ['AI crawler','Автоматизированный робот, который получает доступ к веб-страницам для поиска, извлечения или иных заявленных оператором целей. Назначение зависит от конкретного бота.'],
+ ['robots.txt','Файл с правилами обхода для совместимых роботов. Он не является механизмом авторизации и не гарантирует фактический обход.'],
+ ['llms.txt','Необязательный текстовый файл-карта сайта для агентов, которые поддерживают такой формат. Он не заменяет контент, robots.txt и sitemap.xml.'],
+ ['JSON-LD','Формат записи структурированных данных, в том числе Schema.org, в виде JSON внутри HTML-документа.'],
+ ['Knowledge Graph','Граф знаний — модель данных, представляющая сущности и отношения между ними.'],
+ ['Mention Rate','Доля ответов в тестовой выборке, где упоминается проверяемый бренд.'],
+ ['Citation Rate','Доля ответов, содержащих ссылку на заданный домен или его страницу.'],
+ ['Share of Voice','Доля упоминаний бренда среди упоминаний выбранного набора конкурентов по установленному правилу подсчёта.'],
+]
+export default function Glossary(){
+ return <div className="page-shell"><Navbar/><main className="page-content"><p className="eyebrow-dark">GEO / AEO TERMINOLOGY</p><h1>Глоссарий GEO и AEO</h1><p className="page-lead">Краткие определения терминов, используемых в технической оптимизации и измерении видимости бренда в генеративных системах.</p>
+ {terms.map(([term,def])=><article className="glossary-item" key={term}><h2>{term}</h2><p>{def}</p></article>)}
+ </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
 }

@@ -1,4 +1,4 @@
-import Navbar from './Navbar'
+import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
 
 const terms = [
  ['GEO','Generative Engine Optimization — работа над тем, чтобы сведения о бренде были доступны, понятны и подтверждаемы в генеративных системах.'],
@@ -14,7 +14,7 @@ const terms = [
  ['Citation Rate','Доля ответов, содержащих ссылку на заданный домен или его страницу.'],
  ['Share of Voice','Доля упоминаний бренда среди упоминаний выбранного набора конкурентов по установленному правилу подсчёта.'],
 ]
-export default function Glossary(){
+export default function Glossary(){\n  usePageMeta("Глоссарий GEO и AEO — Axiom AI", "Определения GEO, AEO, LLM, RAG, AI crawler, JSON-LD, Mention Rate и Share of Voice.", "/glossary")
  return <div className="page-shell"><Navbar/><main className="page-content"><p className="eyebrow-dark">GEO / AEO TERMINOLOGY</p><h1>Глоссарий GEO и AEO</h1><p className="page-lead">Краткие определения терминов, используемых в технической оптимизации и измерении видимости бренда в генеративных системах.</p>
  {terms.map(([term,def])=><article className="glossary-item" key={term}><h2>{term}</h2><p>{def}</p></article>)}
  </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>

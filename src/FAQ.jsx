@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
 
 const questions = [
  {q:'Что такое GEO и чем оно отличается от SEO?',a:'SEO помогает поисковым системам находить и ранжировать страницы. GEO помогает сделать сведения о бренде доступными, понятными и подтверждаемыми для генеративных систем, которые формируют ответы. AEO фокусируется на структуре самостоятельных ответов на конкретные вопросы. Эти подходы дополняют друг друга: техническая доступность, полезный контент и понятная структура важны для всех.'},
@@ -13,7 +13,7 @@ const questions = [
 ]
 const faqSchema = {'@context':'https://schema.org','@type':'FAQPage','@id':'https://axiom-ai.su/faq#faq',mainEntity:questions.map(x=>({'@type':'Question',name:x.q,acceptedAnswer:{'@type':'Answer',text:x.a}}))}
 
-export default function FAQ() {
+export default function FAQ() {\n  usePageMeta("Частые вопросы о GEO и AEO — Axiom AI", "Ответы о GEO, AEO, AI-краулерах, robots.txt, llms.txt, Schema.org и измерении видимости.", "/faq")
  useEffect(()=>{document.title='Частые вопросы о GEO и AEO — Axiom AI'},[])
  return <div className="page-shell"><Navbar/><main className="page-content">
   <p className="eyebrow-dark">GEO / AEO KNOWLEDGE</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>

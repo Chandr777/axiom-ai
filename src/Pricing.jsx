@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Navbar from './Navbar'
+import Navbar from './Navbar'\nimport usePageMeta from './usePageMeta'
 
 const listItemStyle = {
   fontSize: '14px',
@@ -11,7 +11,7 @@ const listItemStyle = {
   textAlign: 'justify'
 }
 
-export default function Pricing() {
+export default function Pricing() {\n  usePageMeta('Тарифы GEO/AEO — Axiom AI', 'Пакеты услуг Axiom AI по диагностике, технической оптимизации и мониторингу видимости бренда в генеративных системах.', '/pricing')
   return (
     <div style={styles.container}>
       <Navbar />
@@ -19,7 +19,7 @@ export default function Pricing() {
       <section style={styles.section}>
         <div style={styles.tag}>[ Pricing & Engagement Models ]</div>
         <h1 style={styles.h1}>ТАРИФНЫЕ ПЛАНЫ</h1>
-        <p style={styles.subtitle}>Выберите уровень инженерного вмешательства в архитектуру генеративного поиска.</p>
+        <p style={styles.subtitle}>Выберите формат диагностики, внедрения и регулярного мониторинга AI-видимости.</p>
       </section>
 
       <section style={styles.gridSection}>
@@ -38,7 +38,7 @@ export default function Pricing() {
             <li style={listItemStyle}>Автоматический срез видимости в топ-3 LLM</li>
             <li style={listItemStyle}>Отчёт по 15 ключевым коммерческим запросам</li>
             <li style={listItemStyle}>Индекс цитирования бренда</li>
-            <li style={listItemStyle}>Выявление критических «галлюцинаций» ИИ</li>
+            <li style={listItemStyle}>Проверка фактических ошибок и неверных сведений в ответах ИИ</li>
             <li style={listItemStyle}>Сравнительная таблица с 3 конкурентами</li>
             <li style={listItemStyle}>PDF-отчёт на email в течение 24 часов</li>
           </ul>
@@ -79,7 +79,7 @@ export default function Pricing() {
             <span style={styles.price}>140 000 – 160 000 ₽</span>
             <span style={styles.priceNote}>В месяц / контракт от 6 мес.</span>
           </div>
-          <p style={styles.cardDesc}>Для Enterprise-клиентов, для которых позиция в рекомендациях ИИ — вопрос рыночной монополии.</p>
+          <p style={styles.cardDesc}>Для команд, которым нужны регулярный контроль AI-видимости, техническая поддержка и отчётность.</p>
           <ul style={styles.features}>
             <li style={listItemStyle}>Всё из тарифа PRO, плюс:</li>
             <li style={listItemStyle}>Еженедельный мониторинг в топ-5 LLM</li>
@@ -90,12 +90,12 @@ export default function Pricing() {
             <li style={listItemStyle}>Краулинг-аудит инфраструктуры</li>
             <li style={listItemStyle}>Выделенная команда (инженер + аналитик)</li>
             <li style={listItemStyle}>Ежемесячный стратегический отчёт</li>
-            <li style={listItemStyle}>Гарантия сохранения индекса видимости</li>
+            <li style={listItemStyle}>Регулярный отчёт о динамике метрик без гарантии позиций в ответах моделей</li>
           </ul>
         </div>
       </section>
 
-      <footer style={styles.footer}>
+      <p style={styles.disclaimer}>Показатели и позиции в ответах генеративных систем не гарантируются: результаты зависят от платформы, запроса, региона и доступных источников. Итоговый состав, сроки и стоимость работ согласуются до начала проекта.</p>\n\n      <footer style={styles.footer}>
         <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
       </footer>
     </div>
@@ -151,5 +151,5 @@ const styles = {
   
   features: { listStyle: 'none', padding: 0, margin: '0 0 32px 0', flexGrow: 1, textAlign: 'left' }, // Список оставлен выровненным по левому краю для читаемости, но сама карточка по центру
   
-  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
+  disclaimer: { maxWidth: '900px', margin: '0 auto 50px', padding: '18px 22px', color: '#4b5861', backgroundColor: '#f5f9fb', border: '1px solid #dce3e8', fontSize: '14px', lineHeight: '1.65' },\n  footer: { textAlign: 'center', padding: '40px 20px', color: '#666666', fontSize: '13px', borderTop: '2px solid #000000', fontWeight: '600' }
 }

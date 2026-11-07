@@ -16,16 +16,8 @@ const faqSchema = {'@context':'https://schema.org','@type':'FAQPage','@id':'http
 export default function FAQ() {
   usePageMeta("Частые вопросы о GEO и AEO — Axiom AI", "Ответы о GEO, AEO, AI-краулерах, robots.txt, llms.txt, Schema.org и измерении видимости.", "/faq")
  return <div className="page-shell"><Navbar/><main className="page-content">
-  <p className="eyebrow-dark">GEO / AEO KNOWLEDGE</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>
+  <p className="eyebrow-dark">GEO / AEO FAQ</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>
   <p className="page-lead">Самостоятельные ответы о технической доступности, структурированных данных, контенте и измерении AI-видимости.</p>
   {questions.map((x,i)=><details className="faq-item" key={x.q}><summary><span className="step">0{i+1}</span>{x.q}</summary><p>{x.a}</p></details>)}
-  <h2>Подробные руководства</h2>
-  <ul className="readable-list">
-   <li><a href="/knowledge/geo-vs-seo/">GEO и SEO: как подготовить сайт к ответам ИИ</a></li>
-   <li><a href="/knowledge/robots-and-ai-crawlers/">Настройка robots.txt для AI-краулеров</a></li>
-   <li><a href="/knowledge/measure-ai-visibility/">Методика измерения Share of Voice</a></li>
-   <li><a href="/knowledge/structured-data/">Schema.org и JSON-LD для сайта компании</a></li>
-   <li><a href="/knowledge/local-presence/">Локальные профили и отзывы</a></li>
-  </ul>
- </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
+ </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · </p></footer></div>
 }

@@ -29,7 +29,7 @@ export default function Navbar() {
     {mobile && <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Открыть меню"><span/><span/><span/></button>}
     {mobile && open && <nav className="mobile-nav" aria-label="Мобильная навигация">
       {links.map(([path,label]) => <Link key={path} to={path}>{label}</Link>)}
-      <a href="/knowledge/">БАЗА ЗНАНИЙ</a><a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
     </nav>}
   </div></header>
 }

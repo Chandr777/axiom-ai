@@ -22,6 +22,6 @@ export default function Methodology(){
    <li><strong>Fact Accuracy:</strong> доля проверенных фактов, которые система описывает корректно.</li>
   </ul>
   <aside className="notice-panel"><h2>Ограничения измерений</h2><p>Ответы генеративных систем могут меняться между запусками. Для сравнения фиксируем платформу, доступную версию модели, регион, язык, включение поиска, точную формулировку запроса и дату. Не называем небольшую ручную выборку статистически репрезентативным исследованием.</p></aside>
-  <p>Подробности — в <a href="/knowledge/measure-ai-visibility/">руководстве по измерению AI-видимости</a>.</p>
- </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
+  <p>Ответы на частые вопросы об измерении AI-видимости собраны на странице <a href="/faq">FAQ</a>.</p>
+ </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p></footer></div>
 }

@@ -1,5 +1,16 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "functions": {
+    "api/monitoring/run.js": {
+      "maxDuration": 300
+    },
+    "api/monitoring/cron.js": {
+      "maxDuration": 300
+    }
+  }
 }

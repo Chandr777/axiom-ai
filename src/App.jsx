@@ -88,14 +88,14 @@ function Home() {
           <form className="contact-form" onSubmit={prepareEmail}>
             <input required aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
             <input required type="url" aria-label="Сайт компании" placeholder="Сайт компании" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
-            <input required aria-label="Контакт" placeholder="Ваш email или Telegram" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
+            <input required aria-label="Контакт" placeholder="Ваш email" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
             <button className="button button-dark" type="submit">Подготовить письмо</button>
           </form>
-          <p className="contact-line">Или напишите напрямую: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev" target="_blank" rel="noreferrer">@MakarovLev</a></p>
+          <p className="contact-line">Напишите нам: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p>
         </div>
       </section>
     </main>
-    <footer className="site-footer"><p>© {new Date().getFullYear()} AXIOM AI · GEO / AEO consulting</p><p><a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev" target="_blank" rel="noreferrer">@MakarovLev</a> · <a href="/llms.txt">llms.txt</a></p></footer>
+    <footer className="site-footer"><p>© {new Date().getFullYear()} AXIOM AI · GEO / AEO consulting</p><p><a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="/llms.txt">llms.txt</a></p></footer>
   </div>
 }
 

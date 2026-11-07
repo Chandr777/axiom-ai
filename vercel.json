@@ -12,11 +12,5 @@
     "api/monitoring/cron.js": {
       "maxDuration": 300
     }
-  },
-  "crons": [
-    {
-      "path": "/api/monitoring/cron",
-      "schedule": "0 4 * * 1"
-    }
-  ]
+  }
 }

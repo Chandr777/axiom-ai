@@ -1,5 +1,20 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/knowledge",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/knowledge/:path*",
+      "destination": "/faq",
+      "permanent": true
+    }
   ]
 }

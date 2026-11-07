@@ -24,7 +24,6 @@ export default function Navbar() {
     <Link className="brand" to="/">AXIOM <span>AI</span></Link>
     {!mobile && <nav className="nav" aria-label="Основная навигация">
       {links.map(([path,label]) => <Link key={path} to={path} className={location.pathname===path?'active':''}>{label}</Link>)}
-      <a href="/knowledge/">БАЗА ЗНАНИЙ</a>
       <a href={`mailto:${EMAIL}`}>EMAIL</a>
     </nav>}
     {mobile && <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Открыть меню"><span/><span/><span/></button>}

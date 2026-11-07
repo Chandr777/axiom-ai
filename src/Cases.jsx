@@ -22,6 +22,6 @@ export default function Cases() {
     <div className="feature-grid">{evidence.map(([title,body],i)=><article className="feature-card" key={title}><span className="step">0{i+1}</span><h3>{title}</h3><p>{body}</p></article>)}</div>
     <h2>Рекомендуемые показатели</h2>
     <ul className="readable-list"><li>Количество и формулировки проверенных запросов.</li><li>Платформы, регион, язык, режим поиска и дата каждого прогона.</li><li>Доля ответов с упоминанием бренда и доля ответов со ссылкой на сайт.</li><li>Share of Voice среди заранее определённого набора конкурентов.</li><li>Точность описания услуг, цен, контактов, географии и URL.</li><li>Ограничения выборки и формула агрегированных показателей.</li></ul>
-    <p>Подробнее — в <a href="/knowledge/measure-ai-visibility/">методике измерения AI-видимости</a>.</p>
-  </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="https://t.me/MakarovLev">@MakarovLev</a></p></footer></div>
+    <p>Подробнее о принципах измерения — в разделе <a href="/faq">FAQ</a>.</p>
+  </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p></footer></div>
 }

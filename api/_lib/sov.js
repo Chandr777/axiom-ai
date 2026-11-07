@@ -146,7 +146,7 @@ export async function runMonitoring({ market = 'both', prompts = [], brands = []
 
   const started = Date.now();
   const tasks = selectedPrompts.flatMap((prompt) => selectedProviders.map((provider) => ({ prompt, provider })));
-  const results = await pool(tasks, Number(process.env.SOV_CONCURRENCY || 6), async ({ prompt, provider }) => {
+  const results = await pool(tasks, Number(process.env.SOV_CONCURRENCY || 18), async ({ prompt, provider }) => {
     const taskStarted = Date.now();
     try {
       const answer = await provider.run(prompt.prompt_text);

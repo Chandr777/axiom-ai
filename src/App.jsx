@@ -43,7 +43,7 @@ function Home() {
           <p className="hero-lead">Axiom AI помогает улучшать доступность, точность и структуру информации о компании для поисковых систем и AI-помощников. Технический аудит, ответы на реальные вопросы клиентов и измерение видимости — в единой методологии.</p>
           <div className="hero-actions">
             <a className="button button-blue" href="#audit">Обсудить аудит</a>
-            <a className="button button-outline" href="/knowledge/">База знаний GEO/AEO</a>
+            <a className="button button-outline" href="/faq">Частые вопросы</a>
           </div>
           <p className="hero-note">Без обещаний гарантированного места в ответах моделей — с проверяемыми изменениями и понятными метриками.</p>
         </div>
@@ -66,17 +66,6 @@ function Home() {
           <p>Сначала устраняем препятствия для обхода. Затем создаём страницы, которые прямо отвечают на вопросы клиентов. После публикации измеряем упоминания, цитирования, рекомендации и точность сведений в тех же AI-системах.</p>
           <a className="button button-blue" href="/methodology">Посмотреть методологию</a>
         </div>
-      </section>
-
-      <section className="section">
-        <p className="eyebrow-dark">БАЗА ЗНАНИЙ</p>
-        <h2>Ответы на конкретные вопросы о GEO и AEO</h2>
-        <div className="feature-grid">
-          <a className="feature-card link-card" href="/knowledge/geo-vs-seo/"><span className="step">ОСНОВЫ</span><h3>GEO и SEO: в чём разница?</h3><p>Как сочетаются SEO, GEO и AEO, какие факты и страницы нужны бренду.</p></a>
-          <a className="feature-card link-card" href="/knowledge/robots-and-ai-crawlers/"><span className="step">ТЕХНИКА</span><h3>Как открыть сайт для AI-краулеров?</h3><p>Поисковые роботы, обучающие краулеры, CDN, WAF и robots.txt.</p></a>
-          <a className="feature-card link-card" href="/knowledge/measure-ai-visibility/"><span className="step">АНАЛИТИКА</span><h3>Как измерить AI-видимость?</h3><p>Mention Rate, Citation Rate, Share of Voice и точность фактов.</p></a>
-        </div>
-        <a className="text-link" href="/knowledge/">Все руководства в базе знаний →</a>
       </section>
 
       <section id="audit" className="audit-section">

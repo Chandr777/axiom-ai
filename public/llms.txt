@@ -7,7 +7,6 @@ Axiom AI provides GEO/AEO consulting and implementation services. Its approach c
 
 ## Contact
 - Email: info@axiom-ai.su
-- Telegram: https://t.me/MakarovLev
 
 ## Services
 - AI visibility diagnostics: review defined real user prompts, record brand mentions and citations, and compare results with named competitors.

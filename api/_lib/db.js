@@ -157,9 +157,8 @@ export async function finishRun(run, details) {
   });
 }
 
-export async function getDashboard() {
+export async function getDashboard(requestedRunId = null) {
   const runs = await call('measurement_runs?select=*&order=created_at.desc&limit=20');
-  const latestRun = runs?.[0] || null;
   const mappedRuns = (runs || []).map((run) => ({
     ...run,
     market: run.market_scope,
@@ -167,14 +166,18 @@ export async function getDashboard() {
     failed_count: run.config?.failed_count || 0,
     duration_ms: run.config?.duration_ms || 0,
   }));
-  if (!latestRun) return { runs: mappedRuns, results: [] };
+  const selectedRun = requestedRunId
+    ? mappedRuns.find((run) => run.id === requestedRunId)
+    : mappedRuns[0] || null;
+  if (requestedRunId && !selectedRun) throw new Error('Выбранный запуск не найден среди последних 20 запусков.');
+  if (!selectedRun) return { runs: mappedRuns, selectedRun: null, results: [] };
 
   const [responses, prompts, brands] = await Promise.all([
-    call(`ai_responses?select=*&run_id=eq.${encodeURIComponent(latestRun.id)}&order=created_at.asc&limit=1000`),
+    call(`ai_responses?select=*&run_id=eq.${encodeURIComponent(selectedRun.id)}&order=created_at.asc&limit=1000`),
     select('test_prompts'),
     select('tracked_brands'),
   ]);
-  if (!responses?.length) return { runs: mappedRuns, results: [] };
+  if (!responses?.length) return { runs: mappedRuns, selectedRun, results: [] };
 
   const responseIds = responses.map((response) => response.id);
   const inFilter = `in.(${responseIds.join(',')})`;
@@ -238,5 +241,5 @@ export async function getDashboard() {
     };
   });
 
-  return { runs: mappedRuns, results };
+  return { runs: mappedRuns, selectedRun, results };
 }

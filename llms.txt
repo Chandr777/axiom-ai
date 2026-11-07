@@ -15,15 +15,12 @@ Axiom AI provides GEO/AEO consulting and implementation services. Its approach c
 - Answer-oriented content: create pages that answer a specific question directly and explain evidence and limitations.
 - External entity consistency: align company information across relevant profiles, directories, media, and review sources.
 
-## Knowledge base
-- [GEO vs SEO](https://axiom-ai.su/knowledge/geo-vs-seo/): how GEO and AEO complement technical SEO.
-- [Robots.txt and AI crawlers](https://axiom-ai.su/knowledge/robots-and-ai-crawlers/): search crawlers, user-triggered fetchers, and training crawlers.
-- [Measuring AI visibility](https://axiom-ai.su/knowledge/measure-ai-visibility/): prompt sets, citation rate, mention rate, factual accuracy, and share of voice.
-- [Structured data](https://axiom-ai.su/knowledge/structured-data/): Organization, Article, FAQPage, and HowTo.
-- [Local presence](https://axiom-ai.su/knowledge/local-presence/): company details, business profiles, and customer reviews.
-- [FAQ](https://axiom-ai.su/faq): questions about GEO, crawlers, schema, and measurement.
+## Site pages
+- [FAQ](https://axiom-ai.su/faq): answers about GEO, crawlers, schema, and AI visibility.
 - [Services](https://axiom-ai.su/services): GEO/AEO service scope.
 - [Methodology](https://axiom-ai.su/methodology): diagnostics, implementation, and monitoring.
+- [Glossary](https://axiom-ai.su/glossary): GEO/AEO terminology.
+
 
 ## Important notes
 - This is an orientation document for agents that support llms.txt. It does not guarantee crawling, indexing, citations, rankings, or inclusion in AI answers.

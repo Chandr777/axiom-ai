@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const EMAIL = 'info@axiom-ai.su'
-const TELEGRAM = 'https://t.me/MakarovLev'
 const links = [
   ['/', 'ГЛАВНАЯ'], ['/services', 'УСЛУГИ'], ['/methodology', 'МЕТОДОЛОГИЯ'],
   ['/cases', 'КЕЙСЫ'], ['/pricing', 'ЦЕНЫ'], ['/faq', 'FAQ'],
@@ -27,13 +26,11 @@ export default function Navbar() {
       {links.map(([path,label]) => <Link key={path} to={path} className={location.pathname===path?'active':''}>{label}</Link>)}
       <a href="/knowledge/">БАЗА ЗНАНИЙ</a>
       <a href={`mailto:${EMAIL}`}>EMAIL</a>
-      <a href={TELEGRAM} target="_blank" rel="noreferrer">TELEGRAM</a>
     </nav>}
     {mobile && <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Открыть меню"><span/><span/><span/></button>}
     {mobile && open && <nav className="mobile-nav" aria-label="Мобильная навигация">
       {links.map(([path,label]) => <Link key={path} to={path}>{label}</Link>)}
       <a href="/knowledge/">БАЗА ЗНАНИЙ</a><a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-      <a href={TELEGRAM} target="_blank" rel="noreferrer">Telegram: @MakarovLev</a>
     </nav>}
   </div></header>
 }

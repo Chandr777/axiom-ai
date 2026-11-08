@@ -41,6 +41,16 @@ export default async function handler(req, res) {
       successful_count: output.successful_count,
       failed_count: output.failed_count,
       duration_ms: Date.now() - started,
+      cost_summary: {
+        budget_usd: output.budget_usd,
+        total_cost_usd: output.total_cost_usd,
+        cost_by_provider: output.cost_by_provider,
+        budget_reached: output.budget_reached,
+        cost_unknown: output.cost_unknown,
+        planned_request_count: output.planned_request_count,
+        completed_request_count: output.completed_request_count,
+      },
+      partial: output.stopped_early || output.completed_request_count < output.planned_request_count,
     });
 
     return res.status(200).json({ runId: run.id, ...output });

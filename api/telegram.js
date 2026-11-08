@@ -1,3 +1,6 @@
+import { lookup } from 'node:dns/promises'
+import { isIP } from 'node:net'
+
 const MAX_BODY_BYTES = 10_000
 
 function respond(res, status, body) {
@@ -57,10 +60,26 @@ export default async function handler(req, res) {
   }
 
   if (!company || !contact || !['http:', 'https:'].includes(parsedWebsite.protocol)) {
-    return respond(res, 400, { error: 'Check the required fields' })
+    return respond(res, 400, { error: 'Проверьте обязательные поля формы.' })
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)) {
-    return respond(res, 400, { error: 'Check the contact email' })
+    return respond(res, 400, { error: 'Укажите корректный email для связи.' })
+  }
+  if (isIP(parsedWebsite.hostname) || !parsedWebsite.hostname.includes('.')) {
+    return respond(res, 400, { error: 'Введите домен сайта, например example.ru.' })
+  }
+
+  try {
+    const addresses = await lookup(parsedWebsite.hostname, { all: true })
+    if (addresses.length === 0) {
+      return respond(res, 400, { error: 'Домен не найден. Проверьте адрес сайта.' })
+    }
+  } catch (error) {
+    if (['ENOTFOUND', 'ENODATA', 'EAI_NONAME'].includes(error.code)) {
+      return respond(res, 400, { error: 'Домен не найден. Проверьте адрес сайта.' })
+    }
+    console.error('Website domain lookup failed', error.code || error)
+    return respond(res, 503, { error: 'Не удалось проверить домен. Попробуйте отправить заявку позже.' })
   }
 
   const token = process.env.TELEGRAM_BOT_TOKEN

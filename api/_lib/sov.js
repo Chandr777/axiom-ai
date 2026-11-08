@@ -43,7 +43,9 @@ async function openai(prompt) {
     .map((item) => ({ url: item.url, title: item.title || item.url }));
   const usage = data.usage || {};
   const searchCalls = (data.output || []).filter((item) => item.type === 'web_search_call').length;
-  const costUsd = usdPerMillion(usage.input_tokens, 10) + usdPerMillion(usage.output_tokens, 50) + searchCalls * 0.01 / 1000;
+  const costUsd = model === 'gpt-6-astra'
+    ? usdPerMillion(usage.input_tokens, 10) + usdPerMillion(usage.output_tokens, 50) + searchCalls * 0.01 / 1000
+    : null;
   return { text: outText(data), citations, model: data.model || model, usage, cost_usd: roundCost(costUsd) };
 }
 
@@ -69,11 +71,13 @@ async function claude(prompt) {
       .map((item) => ({ url: item.url, title: item.title || item.url })),
     model: data.model || model,
     usage: data.usage || {},
-    cost_usd: roundCost(
-      usdPerMillion(data.usage?.input_tokens, 3)
-      + usdPerMillion(data.usage?.output_tokens, 15)
-      + Number(data.usage?.server_tool_use?.web_search_requests || 0) * 0.01 / 1000
-    ),
+    cost_usd: model === 'claude-sonnet-4-6'
+      ? roundCost(
+        usdPerMillion(data.usage?.input_tokens, 3)
+        + usdPerMillion(data.usage?.output_tokens, 15)
+        + Number(data.usage?.server_tool_use?.web_search_requests || 0) * 0.01 / 1000
+      )
+      : null,
   };
 }
 
@@ -93,14 +97,14 @@ async function perplexity(prompt) {
   return {
     text: outText(data), citations, model: data.model || preset,
     usage: data.usage || {},
-    cost_usd: Number.isFinite(Number(data.usage?.cost_usd)) ? roundCost(Number(data.usage.cost_usd)) : null,
+    cost_usd: typeof data.usage?.cost_usd === 'number' && Number.isFinite(data.usage.cost_usd) ? roundCost(data.usage.cost_usd) : null,
   };
 }
 
 const providers = [
   { id: 'chatgpt', enabled: () => !!process.env.OPENAI_API_KEY, run: openai },
   { id: 'claude', enabled: () => !!process.env.ANTHROPIC_API_KEY, run: claude },
-  { id: 'perplexity', enabled: () => !!process.env.PERPLEXITY_API_KEY, run: perplexity },
+  { id: 'perplexity', enabled: () => !!process.env.PERPLEXITY_API_KEY && process.env.PERPLEXITY_COST_TRACKING_ENABLED === 'true', run: perplexity },
 ];
 
 const aliasesBySlug = new Map(BRANDS.map((brand) => [brand.id, brand.aliases]));

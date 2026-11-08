@@ -83,7 +83,7 @@ function Home() {
           {status === 'error' && <p className="notice" role="alert">Не удалось отправить заявку. Попробуйте позже или напишите на info@axiom-ai.su.</p>}
           <form className="contact-form" onSubmit={submitAuditRequest}>
             <input required maxLength={120} aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
-            <input required type="url" maxLength={300} aria-label="Сайт компании" placeholder="Сайт компании" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
+            <input required type="text" inputMode="url" maxLength={300} aria-label="Сайт компании" placeholder="Сайт компании (например, example.ru)" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
             <input required type="email" maxLength={254} aria-label="Контактный email" placeholder="Ваш email" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
             <input className="form-website-confirm" style={{position:"absolute",left:"-10000px",width:1,height:1,overflow:"hidden"}} tabIndex="-1" autoComplete="off" aria-hidden="true" aria-label="Не заполняйте это поле" value={form.websiteConfirm} onChange={e => setForm({...form, websiteConfirm:e.target.value})} />
             <button className="button button-dark" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Отправляем…' : 'Заказать бесплатный отчёт'}</button>

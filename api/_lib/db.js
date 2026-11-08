@@ -145,6 +145,8 @@ export async function finishRun(run, details) {
     successful_count: details.successful_count || 0,
     failed_count: details.failed_count || 0,
     duration_ms: details.duration_ms || 0,
+    cost_summary: details.cost_summary || null,
+    partial: !!details.partial,
   };
   await call(`measurement_runs?id=eq.${encodeURIComponent(run.id)}`, {
     method: 'PATCH',

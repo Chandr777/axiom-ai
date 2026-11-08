@@ -14,9 +14,9 @@ export default async function handler(req, res) {
     const config = await loadMeasurementConfig(market);
     const enabledProviderIds = config.providers.map((provider) => provider.id);
     const availableProviderIds = enabledProviderIds.filter((id) => {
-      if (id === 'chatgpt') return !!process.env.OPENAI_API_KEY;
-      if (id === 'claude') return !!process.env.ANTHROPIC_API_KEY;
-      if (id === 'perplexity') return !!process.env.PERPLEXITY_API_KEY;
+      if (id === 'chatgpt') return !!process.env.OPENAI_API_KEY && (process.env.OPENAI_MODEL || 'gpt-6-astra') === 'gpt-6-astra';
+      if (id === 'claude') return !!process.env.ANTHROPIC_API_KEY && (process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6') === 'claude-sonnet-4-6';
+      if (id === 'perplexity') return !!process.env.PERPLEXITY_API_KEY && process.env.PERPLEXITY_COST_TRACKING_ENABLED === 'true';
       return false;
     });
     if (!availableProviderIds.length) {

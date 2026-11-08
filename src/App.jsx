@@ -14,10 +14,12 @@ function Home() {
   usePageMeta('Axiom AI — GEO и AEO для видимости бренда', 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.', '/')
   const [form, setForm] = useState({ company: '', website: '', contact: '', websiteConfirm: '' })
   const [status, setStatus] = useState('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   async function submitAuditRequest(event) {
     event.preventDefault()
     setStatus('sending')
+    setErrorMessage('')
 
     try {
       const response = await fetch('/api/telegram', {
@@ -30,8 +32,9 @@ function Home() {
       if (!response.ok) throw new Error(result.error || 'Не удалось отправить заявку')
       setStatus('sent')
       setForm({ company: '', website: '', contact: '', websiteConfirm: '' })
-    } catch {
+    } catch (error) {
       setStatus('error')
+      setErrorMessage(error.message === 'Failed to fetch' ? 'Не удалось отправить заявку. Проверьте подключение и попробуйте позже.' : error.message)
     }
   }
 
@@ -80,7 +83,7 @@ function Home() {
           <h2>Заказать бесплатный отчёт</h2>
           <p className="center-copy">Оставьте данные компании — мы получим заявку и свяжемся с вами.</p>
           {status === 'sent' && <p className="notice" role="status">Заявка отправлена. Спасибо! Мы свяжемся с вами.</p>}
-          {status === 'error' && <p className="notice" role="alert">Не удалось отправить заявку. Попробуйте позже или напишите на info@axiom-ai.su.</p>}
+          {status === 'error' && <p className="notice" role="alert">{errorMessage || 'Не удалось отправить заявку. Попробуйте позже или напишите на info@axiom-ai.su.'}</p>}
           <form className="contact-form" onSubmit={submitAuditRequest}>
             <input required maxLength={120} aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
             <input required type="text" inputMode="url" maxLength={300} aria-label="Сайт компании" placeholder="Сайт компании (например, example.ru)" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />

@@ -102,8 +102,8 @@ async function perplexity(prompt) {
 }
 
 const providers = [
-  { id: 'chatgpt', enabled: () => !!process.env.OPENAI_API_KEY, run: openai },
-  { id: 'claude', enabled: () => !!process.env.ANTHROPIC_API_KEY, run: claude },
+  { id: 'chatgpt', enabled: () => !!process.env.OPENAI_API_KEY && (process.env.OPENAI_MODEL || 'gpt-6-astra') === 'gpt-6-astra', run: openai },
+  { id: 'claude', enabled: () => !!process.env.ANTHROPIC_API_KEY && (process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6') === 'claude-sonnet-4-6', run: claude },
   { id: 'perplexity', enabled: () => !!process.env.PERPLEXITY_API_KEY && process.env.PERPLEXITY_COST_TRACKING_ENABLED === 'true', run: perplexity },
 ];
 

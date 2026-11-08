@@ -12,21 +12,27 @@ import usePageMeta from './usePageMeta'
 
 function Home() {
   usePageMeta('Axiom AI — GEO и AEO для видимости бренда', 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.', '/')
-  const [form, setForm] = useState({ company: '', website: '', contact: '' })
-  const [prepared, setPrepared] = useState(false)
+  const [form, setForm] = useState({ company: '', website: '', contact: '', websiteConfirm: '' })
+  const [status, setStatus] = useState('idle')
 
-  function prepareEmail(event) {
+  async function submitAuditRequest(event) {
     event.preventDefault()
-    const subject = encodeURIComponent('Запрос GEO/AEO-аудита — Axiom AI')
-    const body = encodeURIComponent([
-      'Здравствуйте! Хочу обсудить GEO/AEO-аудит.',
-      '',
-      `Компания: ${form.company}`,
-      `Сайт: ${form.website}`,
-      `Контакт для ответа: ${form.contact}`,
-    ].join('\n'))
-    setPrepared(true)
-    window.location.href = `mailto:info@axiom-ai.su?subject=${subject}&body=${body}`
+    setStatus('sending')
+
+    try {
+      const response = await fetch('/api/telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const result = await response.json()
+
+      if (!response.ok) throw new Error(result.error || 'Не удалось отправить заявку')
+      setStatus('sent')
+      setForm({ company: '', website: '', contact: '', websiteConfirm: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   return <div className="site-shell">
@@ -71,14 +77,16 @@ function Home() {
       <section id="audit" className="audit-section">
         <div className="section narrow">
           <p className="eyebrow-dark">AI VISIBILITY DIAGNOSTIC</p>
-          <h2>Обсудим аудит AI-присутствия</h2>
-          <p className="center-copy">Заполните поля — сайт подготовит письмо в вашем почтовом приложении. Заявка не отправляется автоматически и не сохраняется на этом сайте.</p>
-          {prepared && <p className="notice">Почтовое приложение должно открыться с подготовленным письмом. Проверьте адрес и отправьте его вручную.</p>}
-          <form className="contact-form" onSubmit={prepareEmail}>
-            <input required aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
-            <input required type="url" aria-label="Сайт компании" placeholder="Сайт компании" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
-            <input required aria-label="Контакт" placeholder="Ваш email" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
-            <button className="button button-dark" type="submit">Подготовить письмо</button>
+          <h2>Заказать бесплатный отчёт</h2>
+          <p className="center-copy">Оставьте данные компании — мы получим заявку и свяжемся с вами.</p>
+          {status === 'sent' && <p className="notice" role="status">Заявка отправлена. Спасибо! Мы свяжемся с вами.</p>}
+          {status === 'error' && <p className="notice" role="alert">Не удалось отправить заявку. Попробуйте позже или напишите на info@axiom-ai.su.</p>}
+          <form className="contact-form" onSubmit={submitAuditRequest}>
+            <input required maxLength={120} aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
+            <input required type="url" maxLength={300} aria-label="Сайт компании" placeholder="Сайт компании" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
+            <input required type="email" maxLength={254} aria-label="Контактный email" placeholder="Ваш email" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
+            <input className="form-website-confirm" style={{position:"absolute",left:"-10000px",width:1,height:1,overflow:"hidden"}} tabIndex="-1" autoComplete="off" aria-hidden="true" aria-label="Не заполняйте это поле" value={form.websiteConfirm} onChange={e => setForm({...form, websiteConfirm:e.target.value})} />
+            <button className="button button-dark" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Отправляем…' : 'Заказать бесплатный отчёт'}</button>
           </form>
           <p className="contact-line">Напишите нам: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p>
         </div>

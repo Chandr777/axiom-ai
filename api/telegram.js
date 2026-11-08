@@ -48,9 +48,10 @@ export default async function handler(req, res) {
   const company = clean(body.company, 120)
   const website = clean(body.website, 300)
   const contact = clean(body.contact, 254)
+  const normalizedWebsite = /^https?:\/\//i.test(website) ? website : `https://${website}`
   let parsedWebsite
   try {
-    parsedWebsite = new URL(website)
+    parsedWebsite = new URL(normalizedWebsite)
   } catch {
     return respond(res, 400, { error: 'Check the company website URL' })
   }

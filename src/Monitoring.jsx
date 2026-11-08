@@ -179,7 +179,7 @@ export default function Monitoring() {
             </div>
             <p>По провайдерам: {Object.entries(data.selectedRun.config.cost_summary.cost_by_provider || {}).map(([id, value]) => (providerNames[id] || id) + ': $' + Number(value).toFixed(4)).join(' · ') || 'Нет подтверждённых расходов'}</p>
             {data.selectedRun.config.partial && <p className="sov-cost-warning">Замер остановлен досрочно: {data.selectedRun.config.cost_summary.budget_reached ? 'достигнут бюджетный ориентир.' : 'стоимость одного из провайдеров нельзя подтвердить.'} Выполнена только часть запланированных запросов.</p>}
-          </section>
+          </section>}
           <section className="sov-metrics">
             <Metric label="Share of Voice" value={pct(data.metrics.shareOfVoice)} note="Доля упоминаний Axiom AI среди брендов" />
             <Metric label="Mention Rate" value={pct(data.metrics.mentionRate)} note="Успешные ответы с упоминанием Axiom AI" />

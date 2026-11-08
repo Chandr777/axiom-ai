@@ -31,12 +31,18 @@ export default function Monitoring() {
   const [expanded, setExpanded] = useState(null);
 
   async function api(path, options = {}) {
+    const accessKey = key.trim();
+    if (!accessKey) throw new Error('Введите ключ доступа.');
+    if (!/^[!-~]+$/.test(accessKey)) {
+      throw new Error('В ключе обнаружены недопустимые символы. Скопируйте значение MONITORING_ACCESS_KEY из Vercel заново; не вводите его вручную.');
+    }
+
     const response = await fetch(path, {
       ...options,
       headers: {
-        'content-type': 'application/json',
-        'x-monitoring-key': key,
         ...options.headers,
+        'content-type': 'application/json',
+        'x-monitoring-key': accessKey,
       },
     });
     const result = await response.json().catch(() => ({}));
@@ -111,7 +117,7 @@ export default function Monitoring() {
         <h2>Внутренняя панель</h2>
         <p>Введите MONITORING_ACCESS_KEY из настроек Vercel.</p>
         <form onSubmit={(event) => { event.preventDefault(); load(''); }}>
-          <input type="password" value={key} onChange={(event) => setKey(event.target.value)} placeholder="Ключ доступа" autoComplete="current-password" />
+          <input type="password" value={key} onChange={(event) => setKey(event.target.value)} placeholder="Ключ доступа" autoComplete="current-password" autoCapitalize="off" spellCheck={false} />
           <button disabled={!key || loading}>{loading ? 'Проверка…' : 'Открыть панель'}</button>
         </form>
         {error && <p className="sov-error">{error}</p>}

@@ -7,7 +7,7 @@ import Cases from './Cases'
 import Pricing from './Pricing'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
-import heroVideo from './assets/hero-video.mp4'
+
 import usePageMeta from './usePageMeta'
 
 function Home() {
@@ -42,9 +42,6 @@ function Home() {
     <Navbar />
     <main>
       <section className="hero">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/favicon.svg" aria-hidden="true">
-          <source src={heroVideo} type="video/mp4" />
-        </video>
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">GENERATIVE ENGINE OPTIMIZATION · ANSWER ENGINE OPTIMIZATION</p>

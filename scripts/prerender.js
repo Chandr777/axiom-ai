@@ -14,6 +14,7 @@ const pages = [
   { path: '/pricing', title: 'Цены на GEO и AEO — Axiom AI', description: 'Пакеты и стоимость услуг Axiom AI по технической доступности, контенту и AI-видимости.' },
   { path: '/faq', title: 'Частые вопросы о GEO и AEO — Axiom AI', description: 'Ответы о GEO, AEO, AI-краулерах, robots.txt, llms.txt, Schema.org и измерении видимости.' },
   { path: '/glossary', title: 'Глоссарий GEO и AEO — Axiom AI', description: 'Определения терминов GEO, AEO, генеративного поиска и измерения видимости.' },
+  { path: '/audit', canonicalPath: '/', title: 'Axiom AI — GEO и AEO для видимости бренда', description: 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.' },
 ]
 
 const server = await createServer({ configFile: path.resolve('vite.config.js'), server: { middlewareMode: true }, appType: 'custom' })
@@ -22,7 +23,7 @@ try {
   const template = await readFile('dist/index.html', 'utf8')
   for (const page of pages) {
     const app = renderToString(createElement(MemoryRouter, { initialEntries: [page.path] }, createElement(AppRoutes)))
-    const canonical = `${baseUrl}${page.path}`
+    const canonical = `${baseUrl}${page.canonicalPath || page.path}`
     const html = template
       .replace('<div id="root"></div>', `<div id="root">${app}</div>`)
       .replace(/<title>[^<]*<\/title>/, `<title>${page.title}</title>`)

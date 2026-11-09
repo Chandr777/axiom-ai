@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
+import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
 
 const listItemStyle = {
@@ -99,9 +100,7 @@ export default function Pricing() {
 
       <p style={styles.disclaimer}>Показатели и позиции в ответах генеративных систем не гарантируются: результаты зависят от платформы, запроса, региона и доступных источников. Итоговый состав, сроки и стоимость работ согласуются до начала проекта.</p>
 
-      <footer style={styles.footer}>
-        <p>© {new Date().getFullYear()} AXIOM AI. Architecture of Generative Dominance.</p>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

@@ -1,18 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import Navbar from './Navbar'
+import SiteFooter from './SiteFooter'
 import Services from './Services'
 import Methodology from './Methodology'
 import Cases from './Cases'
 import Pricing from './Pricing'
 import FAQ from './FAQ'
 import Glossary from './Glossary'
+import Privacy from './Privacy'
+import Consent from './Consent'
+import SiteTerms from './SiteTerms'
 
 import usePageMeta from './usePageMeta'
 
 function Home() {
   usePageMeta('Axiom AI — GEO и AEO для видимости бренда', 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.', '/')
-  const [form, setForm] = useState({ company: '', website: '', contact: '', websiteConfirm: '' })
+  const [form, setForm] = useState({ company: '', website: '', contact: '', websiteConfirm: '', personalDataConsent: false })
   const [status, setStatus] = useState('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -31,7 +35,7 @@ function Home() {
 
       if (!response.ok) throw new Error(result.error || 'Не удалось отправить заявку')
       setStatus('sent')
-      setForm({ company: '', website: '', contact: '', websiteConfirm: '' })
+      setForm({ company: '', website: '', contact: '', websiteConfirm: '', personalDataConsent: false })
     } catch (error) {
       setStatus('error')
       setErrorMessage(error.message === 'Failed to fetch' ? 'Не удалось отправить заявку. Проверьте подключение и попробуйте позже.' : error.message)
@@ -85,6 +89,7 @@ function Home() {
             <input required maxLength={120} aria-label="Компания или бренд" placeholder="Компания / бренд" value={form.company} onChange={e => setForm({...form, company:e.target.value})} />
             <input required type="text" inputMode="url" maxLength={300} aria-label="Сайт компании" placeholder="Сайт компании (например, example.ru)" value={form.website} onChange={e => setForm({...form, website:e.target.value})} />
             <input required type="email" maxLength={254} aria-label="Контактный email" placeholder="Ваш email" value={form.contact} onChange={e => setForm({...form, contact:e.target.value})} />
+            <label className="privacy-consent"><input required type="checkbox" checked={form.personalDataConsent} onChange={e => setForm({...form, personalDataConsent:e.target.checked})} /><span>Я отдельно даю согласие на обработку данных для ответа на запрос. <a href="/consent">Текст согласия</a> · <a href="/privacy">Политика обработки</a></span></label>
             <input className="form-website-confirm" style={{position:"absolute",left:"-10000px",width:1,height:1,overflow:"hidden"}} tabIndex="-1" autoComplete="off" aria-hidden="true" aria-label="Не заполняйте это поле" value={form.websiteConfirm} onChange={e => setForm({...form, websiteConfirm:e.target.value})} />
             <button className="button button-dark" type="submit" disabled={status === 'sending'}>{status === 'sending' ? 'Отправляем…' : 'Заказать бесплатный отчёт'}</button>
           </form>
@@ -92,7 +97,7 @@ function Home() {
         </div>
       </section>
     </main>
-    <footer className="site-footer"><p>© {new Date().getFullYear()} AXIOM AI · GEO / AEO consulting</p><p><a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="/llms.txt">llms.txt</a></p></footer>
+    <SiteFooter />
   </div>
 }
 
@@ -105,6 +110,9 @@ export function AppRoutes() {
     <Route path="/pricing" element={<Pricing />} />
     <Route path="/faq" element={<FAQ />} />
     <Route path="/glossary" element={<Glossary />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/consent" element={<Consent />} />
+    <Route path="/terms" element={<SiteTerms />} />
     <Route path="/audit" element={<Home />} />
   </Routes>
 }

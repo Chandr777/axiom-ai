@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
 
 const services = [
@@ -17,5 +18,5 @@ export default function Services(){
   {services.map(([title,body],i)=><section className="service-row" key={title}><span className="step">0{i+1}</span><div><h2>{title}</h2><p>{body}</p></div></section>)}
   <aside className="notice-panel"><h2>Что мы не обещаем</h2><p>Мы не гарантируем первое место в ответах ChatGPT, Claude, Perplexity или Google. Генеративные ответы зависят от запроса, региона, версии системы, доступных источников и других факторов. Мы отвечаем за качество выполненных работ, прозрачность методики и измеримость изменений.</p></aside>
   <p>Смотрите также <a href="/methodology">методологию работы</a> и <a href="/faq">ответы на частые вопросы</a>.</p>
- </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p></footer></div>
+ </main><SiteFooter /></div>
 }

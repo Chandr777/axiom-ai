@@ -7,4 +7,7 @@
 <url><loc>https://www.axiom-ai.su/pricing</loc><priority>0.7</priority></url>
 <url><loc>https://www.axiom-ai.su/faq</loc><priority>0.8</priority></url>
 <url><loc>https://www.axiom-ai.su/glossary</loc><priority>0.7</priority></url>
+<url><loc>https://www.axiom-ai.su/privacy</loc><priority>0.3</priority></url>
+<url><loc>https://www.axiom-ai.su/consent</loc><priority>0.3</priority></url>
+<url><loc>https://www.axiom-ai.su/terms</loc><priority>0.3</priority></url>
 </urlset>

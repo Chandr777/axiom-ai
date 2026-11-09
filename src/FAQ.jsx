@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
 
 const questions = [
@@ -19,5 +20,5 @@ export default function FAQ() {
   <p className="eyebrow-dark">GEO / AEO FAQ</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>
   <p className="page-lead">Самостоятельные ответы о технической доступности, структурированных данных, контенте и измерении AI-видимости.</p>
   {questions.map((x,i)=><details className="faq-item" key={x.q}><summary><span className="step">0{i+1}</span>{x.q}</summary><p>{x.a}</p></details>)}
- </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · </p></footer></div>
+ </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><SiteFooter /></div>
 }

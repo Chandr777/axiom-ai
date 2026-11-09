@@ -47,6 +47,9 @@ export default async function handler(req, res) {
 
   // Honeypot: respond with success to bots without sending a notification.
   if (clean(body.websiteConfirm, 300)) return respond(res, 200, { ok: true })
+  if (body.personalDataConsent !== true) {
+    return respond(res, 400, { error: 'Для отправки заявки необходимо дать отдельное согласие на обработку данных.' })
+  }
 
   const company = clean(body.company, 120)
   const website = clean(body.website, 300)
@@ -95,6 +98,7 @@ export default async function handler(req, res) {
     `Компания: ${company}`,
     `Сайт: ${parsedWebsite.href}`,
     `Контакт: ${contact}`,
+    `Согласие на обработку данных: да (${new Date().toISOString()})`,
   ].join('\n')
 
   try {

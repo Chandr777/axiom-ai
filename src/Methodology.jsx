@@ -1,4 +1,5 @@
 import Navbar from './Navbar'
+import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
 
 const stages = [
@@ -23,5 +24,5 @@ export default function Methodology(){
   </ul>
   <aside className="notice-panel"><h2>Ограничения измерений</h2><p>Ответы генеративных систем могут меняться между запусками. Для сравнения фиксируем платформу, доступную версию модели, регион, язык, включение поиска, точную формулировку запроса и дату. Не называем небольшую ручную выборку статистически репрезентативным исследованием.</p></aside>
   <p>Ответы на частые вопросы об измерении AI-видимости собраны на странице <a href="/faq">FAQ</a>.</p>
- </main><footer className="site-footer"><p>© 2026 AXIOM AI · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p></footer></div>
+ </main><SiteFooter /></div>
 }

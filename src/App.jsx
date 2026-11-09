@@ -113,7 +113,6 @@ export function AppRoutes() {
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/consent" element={<Consent />} />
     <Route path="/terms" element={<SiteTerms />} />
-    <Route path="/audit" element={<Home />} />
   </Routes>
 }
 

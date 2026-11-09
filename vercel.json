@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/audit",
+      "destination": "/#audit",
+      "permanent": true
+    },
+    {
       "source": "/knowledge",
       "destination": "/faq",
       "permanent": true

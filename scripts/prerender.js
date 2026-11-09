@@ -17,7 +17,6 @@ const pages = [
   { path: '/privacy', title: 'Политика обработки персональных данных — Axiom AI', description: 'Какие данные получает форма Axiom AI, зачем они нужны и как связаться по вопросам обработки.' },
   { path: '/consent', title: 'Согласие на обработку персональных данных — Axiom AI', description: 'Отдельное согласие для отправки заявки через форму Axiom AI.' },
   { path: '/terms', title: 'Правила использования сайта — Axiom AI', description: 'Информация об использовании сайта Axiom AI, заявках и отсутствии гарантий поисковых позиций.' },
-  { path: '/audit', canonicalPath: '/', title: 'Axiom AI — GEO и AEO для видимости бренда', description: 'Техническая доступность, фактический контент, структурированные данные и измерение AI-видимости.' },
 ]
 
 const server = await createServer({ configFile: path.resolve('vite.config.js'), server: { middlewareMode: true }, appType: 'custom' })

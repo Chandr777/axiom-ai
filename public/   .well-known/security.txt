@@ -1,4 +1,0 @@
-   Contact: mailto:info@axiom-ai.su
-   Expires: 2027-12-31T23:59:59.000Z
-   Preferred-Languages: ru, en
-   Canonical: https://axiom-ai.su/.well-known/security.txt

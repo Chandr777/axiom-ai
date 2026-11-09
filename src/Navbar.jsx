@@ -18,17 +18,15 @@ export default function Navbar() {
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
-  useEffect(() => setOpen(false), [location])
-
   return <header className="site-header"><div className="header-inner">
     <Link className="brand" to="/">AXIOM <span>AI</span></Link>
     {!mobile && <nav className="nav" aria-label="Основная навигация">
-      {links.map(([path,label]) => <Link key={path} to={path} className={location.pathname===path?'active':''}>{label}</Link>)}
+      {links.map(([path,label]) => <Link key={path} to={path} className={location.pathname===path?'active':''} onClick={() => setOpen(false)}>{label}</Link>)}
       <a href={`mailto:${EMAIL}`}>EMAIL</a>
     </nav>}
-    {mobile && <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Открыть меню"><span/><span/><span/></button>}
-    {mobile && open && <nav className="mobile-nav" aria-label="Мобильная навигация">
-      {links.map(([path,label]) => <Link key={path} to={path}>{label}</Link>)}
+    {mobile && <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? 'Закрыть меню' : 'Открыть меню'}><span/><span/><span/></button>}
+    {mobile && <nav id="mobile-navigation" className="mobile-nav" aria-label="Мобильная навигация" style={{display:open?'flex':'none'}}>
+      {links.map(([path,label]) => <Link key={path} to={path} onClick={() => setOpen(false)}>{label}</Link>)}
 <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
     </nav>}
   </div></header>

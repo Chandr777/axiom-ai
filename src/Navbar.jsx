@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 const EMAIL = 'info@axiom-ai.su'
 const links = [
   ['/', 'ГЛАВНАЯ'], ['/services', 'УСЛУГИ'], ['/methodology', 'МЕТОДОЛОГИЯ'],
-  ['/cases', 'КЕЙСЫ'], ['/pricing', 'ЦЕНЫ'], ['/faq', 'FAQ'],
+  ['/cases', 'КЕЙСЫ'], ['/pricing', 'ЦЕНЫ'], ['/faq', 'FAQ'], ['/glossary', 'ГЛОССАРИЙ'],
 ]
 
 export default function Navbar() {

@@ -1,35 +1,24 @@
 # Axiom AI
 
-> Axiom AI helps companies make brand information easier to discover, verify, and understand across generative search and answer systems. The site covers GEO, AEO, crawl accessibility, structured data, answer-oriented content, and AI visibility measurement.
+> Axiom AI помогает компаниям сделать сведения о бренде доступными, точными и понятными для поисковых систем и AI-ассистентов. Услуги включают технический аудит, структурирование фактов и контента, а также измерение AI-видимости.
 
-## Company
-Axiom AI provides GEO/AEO consulting and implementation services. Its approach combines technical accessibility, factual content, structured organization and article data, consistent external references, and repeatable measurement.
+## Компания
+- Название: Axiom AI
+- Сайт: https://www.axiom-ai.su/
+- Язык сайта: русский
+- Контакт: info@axiom-ai.su
 
-## Contact
-- Email: info@axiom-ai.su
+## Страницы
+- [Главная](https://www.axiom-ai.su/): подход Axiom AI к GEO/AEO и заявка на аудит.
+- [Услуги](https://www.axiom-ai.su/services): техническая доступность, фактический контент, структурированные данные и внешняя согласованность сведений.
+- [Методология](https://www.axiom-ai.su/methodology): аудит, внедрение улучшений и повторяемое измерение.
+- [Кейсы](https://www.axiom-ai.su/cases): сведения о доступных примерах и доказательствах выполненной работы.
+- [Цены](https://www.axiom-ai.su/pricing): состав и стоимость пакетов услуг.
+- [Частые вопросы](https://www.axiom-ai.su/faq): ответы о GEO, AEO, краулерах, Schema.org и измерении видимости.
+- [Глоссарий](https://www.axiom-ai.su/glossary): определения терминов GEO/AEO.
 
-## Services
-- AI visibility diagnostics: review defined real user prompts, record brand mentions and citations, and compare results with named competitors.
-- Technical accessibility: review robots.txt, crawl access, status codes, canonical URLs, sitemaps, rendering, and performance.
-- Structured data: maintain Schema.org JSON-LD that accurately describes visible organization, article, FAQ, and how-to content.
-- Answer-oriented content: create pages that answer a specific question directly and explain evidence and limitations.
-- External entity consistency: align company information across relevant profiles, directories, media, and review sources.
-
-## Site pages
-- [FAQ](https://axiom-ai.su/faq): answers about GEO, crawlers, schema, and AI visibility.
-- [Services](https://axiom-ai.su/services): GEO/AEO service scope.
-- [Methodology](https://axiom-ai.su/methodology): diagnostics, implementation, and monitoring.
-- [Glossary](https://axiom-ai.su/glossary): GEO/AEO terminology.
-
-
-## Important notes
-- This is an orientation document for agents that support llms.txt. It does not guarantee crawling, indexing, citations, rankings, or inclusion in AI answers.
-- Google does not require llms.txt or special schema markup for inclusion in its AI search features. Crawlability, indexable content, and people-first quality remain important.
-- Search crawlers and model-training crawlers have different purposes and separate controls. Review robots.txt before changing access preferences.
-- Axiom AI does not guarantee rankings in AI answers. Outputs vary by prompt, platform, geography, time, and retrieval context.
-
-## Organization facts
-- Name: Axiom AI
-- Website: https://axiom-ai.su/
-- Email: info@axiom-ai.su
-- Language: Russian
+## Важные оговорки
+- Этот файл — краткий справочник для систем, которые поддерживают формат llms.txt. Он не гарантирует обход сайта, индексацию, цитирование или появление в ответах AI.
+- llms.txt не заменяет доступные HTML-страницы, robots.txt, sitemap.xml и полезный контент.
+- Поисковые краулеры и краулеры для обучения моделей имеют разные назначения. Их доступ регулируется отдельно в robots.txt.
+- Axiom AI не гарантирует позиции в ответах моделей. Результаты зависят от запроса, платформы, региона, времени и используемых источников.

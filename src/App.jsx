@@ -99,8 +99,8 @@ function Home() {
   </div>
 }
 
-export default function App() {
-  return <BrowserRouter><Routes>
+export function AppRoutes() {
+  return <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/services" element={<Services />} />
     <Route path="/methodology" element={<Methodology />} />
@@ -109,5 +109,9 @@ export default function App() {
     <Route path="/faq" element={<FAQ />} />
     <Route path="/glossary" element={<Glossary />} />
     <Route path="/audit" element={<Home />} />
-  </Routes></BrowserRouter>
+  </Routes>
+}
+
+export default function App() {
+  return <BrowserRouter><AppRoutes /></BrowserRouter>
 }

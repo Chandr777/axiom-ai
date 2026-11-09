@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://axiom-ai.su/</loc><lastmod>2026-11-06</lastmod><priority>1.0</priority></url>
-<url><loc>https://axiom-ai.su/services</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-<url><loc>https://axiom-ai.su/methodology</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-<url><loc>https://axiom-ai.su/cases</loc><lastmod>2026-11-06</lastmod><priority>0.6</priority></url>
-<url><loc>https://axiom-ai.su/pricing</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
-<url><loc>https://axiom-ai.su/faq</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-<url><loc>https://axiom-ai.su/glossary</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://www.axiom-ai.su/</loc><priority>1.0</priority></url>
+<url><loc>https://www.axiom-ai.su/services</loc><priority>0.8</priority></url>
+<url><loc>https://www.axiom-ai.su/methodology</loc><priority>0.8</priority></url>
+<url><loc>https://www.axiom-ai.su/cases</loc><priority>0.6</priority></url>
+<url><loc>https://www.axiom-ai.su/pricing</loc><priority>0.7</priority></url>
+<url><loc>https://www.axiom-ai.su/faq</loc><priority>0.8</priority></url>
+<url><loc>https://www.axiom-ai.su/glossary</loc><priority>0.7</priority></url>
 </urlset>

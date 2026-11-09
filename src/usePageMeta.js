@@ -17,7 +17,7 @@ export default function usePageMeta(title, description, path) {
     setMeta('meta[name="description"]', 'name', description)
     setMeta('meta[property="og:title"]', 'property', title)
     setMeta('meta[property="og:description"]', 'property', description)
-    setMeta('meta[property="og:url"]', 'property', `https://axiom-ai.su${path}`)
+    setMeta('meta[property="og:url"]', 'property', `https://www.axiom-ai.su${path}`)
 
     let canonical = document.head.querySelector('link[rel="canonical"]')
     if (!canonical) {
@@ -25,6 +25,6 @@ export default function usePageMeta(title, description, path) {
       canonical.rel = 'canonical'
       document.head.appendChild(canonical)
     }
-    canonical.href = `https://axiom-ai.su${path}`
+    canonical.href = `https://www.axiom-ai.su${path}`
   }, [title, description, path])
 }

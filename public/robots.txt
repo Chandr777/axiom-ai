@@ -42,4 +42,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://axiom-ai.su/sitemap.xml
+Sitemap: https://www.axiom-ai.su/sitemap.xml

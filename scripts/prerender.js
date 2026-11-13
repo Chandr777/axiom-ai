@@ -4,6 +4,7 @@ import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
 import { MemoryRouter } from 'react-router-dom'
 import { createServer } from 'vite'
+import { generateSitemap } from './sitemap.js'
 
 const baseUrl = 'https://www.axiom-ai.su'
 const pages = [
@@ -40,6 +41,7 @@ try {
     await mkdir(path.dirname(out), { recursive: true })
     await writeFile(out, html)
   }
+  await generateSitemap(pages, baseUrl)
 } finally {
   await server.close()
 }

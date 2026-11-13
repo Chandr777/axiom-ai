@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build && node scripts/prerender.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "indexnow": "node scripts/indexnow.js"
   },
   "dependencies": {
     "react": "^19.3.1",

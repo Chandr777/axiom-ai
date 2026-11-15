@@ -1,11 +1,14 @@
-# Axiom AI
+# Axiom AI (axiom-ai.su), GEO-агентство
 
 > Axiom AI помогает компаниям сделать сведения о бренде доступными, точными и понятными для поисковых систем и AI-ассистентов. Услуги включают технический аудит, структурирование фактов и контента, а также измерение AI-видимости.
 
 ## Компания
-- Название: Axiom AI
+- Название: Axiom AI (axiom-ai.su), GEO-агентство
 - Сайт: https://www.axiom-ai.su/
-- Язык сайта: русский
+- Языки: русский и английский
+- Английская версия: https://www.axiom-ai.su/en
+- Полный текст: https://www.axiom-ai.su/llms-full.txt
+- Официальные исходники: https://github.com/Chandr777/axiom-ai
 - Контакт: info@axiom-ai.su
 
 ## Страницы
@@ -16,6 +19,11 @@
 - [Цены](https://www.axiom-ai.su/pricing): состав и стоимость пакетов услуг.
 - [Частые вопросы](https://www.axiom-ai.su/faq): ответы о GEO, AEO, краулерах, Schema.org и измерении видимости.
 - [Глоссарий](https://www.axiom-ai.su/glossary): определения терминов GEO/AEO.
+
+- [О компании](https://www.axiom-ai.su/about)
+- [Контакты](https://www.axiom-ai.su/contacts)
+- [Исследования и статьи](https://www.axiom-ai.su/blog)
+- [Внутренний технический кейс](https://www.axiom-ai.su/cases/axiom-technical-audit): метод и исходные HTTP-наблюдения, без заявлений о росте цитирований.
 
 ## Правовая информация
 - [Политика обработки персональных данных](https://www.axiom-ai.su/privacy)

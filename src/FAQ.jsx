@@ -19,6 +19,6 @@ export default function FAQ() {
  return <div className="page-shell"><Navbar/><main className="page-content">
   <p className="eyebrow-dark">GEO / AEO FAQ</p><h1>Частые вопросы о GEO и видимости в ИИ</h1>
   <p className="page-lead">Самостоятельные ответы о технической доступности, структурированных данных, контенте и измерении AI-видимости.</p>
-  {questions.map((x,i)=><details className="faq-item" key={x.q}><summary><span className="step">0{i+1}</span>{x.q}</summary><p>{x.a}</p></details>)}
+  {questions.map((x,i)=><section className="faq-item" key={x.q}><h2><span className="step">0{i+1}</span> {x.q}</h2><p>{x.a}</p></section>)}
  </main><script type="application/ld+json">{JSON.stringify(faqSchema)}</script><SiteFooter /></div>
 }

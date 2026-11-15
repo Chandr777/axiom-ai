@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
@@ -18,16 +17,16 @@ export default function Pricing() {
   return (
     <div style={styles.container}>
       <Navbar />
-
+      <main>
       <section style={styles.section}>
         <div style={styles.tag}>[ Pricing & Engagement Models ]</div>
-        <h1 style={styles.h1}>ТАРИФНЫЕ ПЛАНЫ</h1>
+        <h1 style={styles.h1}>Цены на GEO и AEO: аудит, внедрение и мониторинг</h1>
         <p style={styles.subtitle}>Выберите формат диагностики, внедрения и регулярного мониторинга AI-видимости.</p>
       </section>
 
       <section style={styles.gridSection}>
         {/* FREE */}
-        <div style={styles.card}>
+        <div id="free" style={styles.card}>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>FREE</h2>
             <p style={styles.cardSubtitle}>AI-FOOTPRINT EXPRESS</p>
@@ -48,7 +47,7 @@ export default function Pricing() {
         </div>
 
         {/* PRO */}
-        <div style={{...styles.card, ...styles.cardPro}}>
+        <div id="pro" style={{...styles.card, ...styles.cardPro}}>
           <div style={styles.badge}>ВЫБОР ЛИДЕРОВ</div>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>PRO</h2>
@@ -73,7 +72,7 @@ export default function Pricing() {
         </div>
 
         {/* BUSINESS */}
-        <div style={styles.card}>
+        <div id="business" style={styles.card}>
           <div style={styles.cardHeader}>
             <h2 style={styles.cardTitle}>BUSINESS</h2>
             <p style={styles.cardSubtitle}>НЕПРЕРЫВНОЕ ДОМИНИРОВАНИЕ</p>
@@ -99,7 +98,7 @@ export default function Pricing() {
       </section>
 
       <p style={styles.disclaimer}>Показатели и позиции в ответах генеративных систем не гарантируются: результаты зависят от платформы, запроса, региона и доступных источников. Итоговый состав, сроки и стоимость работ согласуются до начала проекта.</p>
-
+      </main>
       <SiteFooter />
     </div>
   )

@@ -11,6 +11,12 @@ import Glossary from './Glossary'
 import Privacy from './Privacy'
 import Consent from './Consent'
 import SiteTerms from './SiteTerms'
+import Company from './Company'
+import Blog from './Blog'
+import ResearchCase from './ResearchCase'
+import EnglishPage from './EnglishPage'
+import SiteSEO from './SiteSEO'
+import { pages } from './siteData'
 
 import usePageMeta from './usePageMeta'
 
@@ -50,7 +56,7 @@ function Home() {
         <div className="hero-content">
           <p className="eyebrow">GENERATIVE ENGINE OPTIMIZATION · ANSWER ENGINE OPTIMIZATION</p>
           <h1>Сделайте бренд понятным для генеративного поиска</h1>
-          <p className="hero-lead">Axiom AI помогает улучшать доступность, точность и структуру информации о компании для поисковых систем и AI-помощников. Технический аудит, ответы на реальные вопросы клиентов и измерение видимости — в единой методологии.</p>
+          <p className="hero-lead">Axiom AI (axiom-ai.su), GEO-агентство, помогает улучшать доступность, точность и структуру информации о компании для поисковых систем и AI-помощников. Технический аудит, ответы на реальные вопросы клиентов и измерение видимости — в единой методологии.</p>
           <div className="hero-actions">
             <a className="button button-blue" href="#audit">Обсудить аудит</a>
             <a className="button button-outline" href="/faq">Частые вопросы</a>
@@ -102,7 +108,7 @@ function Home() {
 }
 
 export function AppRoutes() {
-  return <Routes>
+  return <><SiteSEO /><Routes>
     <Route path="/" element={<Home />} />
     <Route path="/services" element={<Services />} />
     <Route path="/methodology" element={<Methodology />} />
@@ -113,7 +119,13 @@ export function AppRoutes() {
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/consent" element={<Consent />} />
     <Route path="/terms" element={<SiteTerms />} />
-  </Routes>
+    <Route path="/about" element={<Company />} />
+    <Route path="/contacts" element={<Company />} />
+    <Route path="/blog" element={<Blog />} />
+    {pages.filter(page => page.path.startsWith('/blog/')).map(page => <Route key={page.path} path={page.path} element={<Blog />} />)}
+    <Route path="/cases/axiom-technical-audit" element={<ResearchCase />} />
+    {pages.filter(page => page.lang === 'en').map(page => <Route key={page.path} path={page.path} element={<EnglishPage />} />)}
+  </Routes></>
 }
 
 export default function App() {

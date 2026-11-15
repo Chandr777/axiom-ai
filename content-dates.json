@@ -1,0 +1,110 @@
+{
+  "/": {
+    "contentHash": "26d57abc00c6dc0dbfdeb45bc9df4268306c2b6f2f6e21a1fa73e65bfcf8323d",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en": {
+    "contentHash": "39b18bb3ac30fd7f90679596e8fae2b7a2744ca902a203f4af024f8dd4a4fe72",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/services": {
+    "contentHash": "6bd6214663970a88a102a76a8e53d2d2d2de9614e2b34927078fb7412331c161",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/services": {
+    "contentHash": "9de298cc825a793a62ac12198fc070bcbf57b58b644db59645eba60360fa852d",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/methodology": {
+    "contentHash": "9292f5e28be8be517068f5d5414a10fec9b023cacbc37a6c4ecacf1ae2abf66d",
+    "lastmod": "2026-11-09T13:37:29.000Z"
+  },
+  "/en/methodology": {
+    "contentHash": "71edb4d50897bbea53a4710ed0afa321dcfec02c2c3fbb9dec515fa4909f34f0",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/cases": {
+    "contentHash": "b821c4f183899525a99d849abe2ac043b5796b8911c3a3abe1092633c5ee01eb",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/cases": {
+    "contentHash": "b136086a89cbca1c3302e47552fcc21249385f63ab70619bcfa0883920890fbe",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/pricing": {
+    "contentHash": "0bdb0cb2d4e4fcc6058f966b4ec7d0c66a92e15050438781a938e89d652b43ad",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/pricing": {
+    "contentHash": "0d8455cb29396dadd1247fee38eb36a773b82d031bb7cb6768052cfe1396a727",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/faq": {
+    "contentHash": "d01921be8695d4337950b4b660936376f11be4da567777444454a1eae992a936",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/faq": {
+    "contentHash": "7e071ed99850630ad84f966e1899f386e25dfba0cd4221ed45749a2bd5d0a61d",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/glossary": {
+    "contentHash": "69a0ce4018af8d4149086a55c16cde849be4cd623d63e4d2fe44cd19dcd763de",
+    "lastmod": "2026-11-09T13:37:29.000Z"
+  },
+  "/en/glossary": {
+    "contentHash": "b3c12d56927bf01776083261abceee9455476aac72dc02097f0086a53d39a14a",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/about": {
+    "contentHash": "7bde5d6b1199de2fcf1472b350d513696fbe9c2b592c51fa0bdc9687f2e0b028",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/about": {
+    "contentHash": "81714a2f8b8b5ce667cecde8b9172eb9f2588eda80314844c663102dc6953837",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/contacts": {
+    "contentHash": "6672e34a4ce018a5d198c56e90fd805c25bb3911c74bf3f513487734d161f1eb",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/contacts": {
+    "contentHash": "af9867e7c33788af52fda58e5fcc897cf48db6f3a8e9bd6cda0ed18ec9bdaae4",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/blog": {
+    "contentHash": "ecb573d12ce02f600e65b89a75b780acd8d635942cd8dbcf6f0249c9d852c0ba",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/blog": {
+    "contentHash": "b743362974eb03097794c8a7f47cb3bed78f9c4784023f773e59b5b31feb58ab",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/cases/axiom-technical-audit": {
+    "contentHash": "5dbca4d3dc399f7a52393b265d7ee4b250f2ad16076242b9613de4983dc79c95",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/en/cases/axiom-technical-audit": {
+    "contentHash": "e6a00f53de817644a58a869d890bdf28ed8b2fb6cd469e9d19aa1b436fc5569b",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/blog/ai-search-technical-checklist": {
+    "contentHash": "ac530c6ea96f2f0467bbb9103cbebfe956d9a014a7c79a3ddb9c5b1ab9ab7699",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/blog/measure-ai-citations": {
+    "contentHash": "c38cfc04c4d3cb32155be43e8979ec1ceb7f4b20e110b6e2777f4b8a0a59de53",
+    "lastmod": "2026-11-15T12:32:30.150Z"
+  },
+  "/privacy": {
+    "contentHash": "1c45c588f1fc93e504a5a80e925a62e0294e26de3867fc18ee582471d2edc88e",
+    "lastmod": "2026-11-09T13:37:29.000Z"
+  },
+  "/consent": {
+    "contentHash": "fc01a266411d4157ed2655d16ce751db22c422faf34ff436ceeb9369f596f617",
+    "lastmod": "2026-11-09T13:37:29.000Z"
+  },
+  "/terms": {
+    "contentHash": "c3a350e6c5946a55ef8a8f8270485a5cba59dfeb7da16f808fe4cbcb397a43d5",
+    "lastmod": "2026-11-09T13:37:29.000Z"
+  }
+}

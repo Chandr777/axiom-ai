@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom'
+
 const legalLinks = [
   ['/privacy', 'Конфиденциальность'],
   ['/consent', 'Согласие на обработку'],
@@ -5,10 +7,17 @@ const legalLinks = [
 ]
 
 export default function SiteFooter() {
+  const en = useLocation().pathname.startsWith('/en')
   return <footer className="site-footer">
-    <p>© {new Date().getFullYear()} AXIOM AI · GEO / AEO consulting · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a> · <a href="/llms.txt">llms.txt</a></p>
-    <nav className="legal-footer-links" aria-label="Правовая информация">
-      {legalLinks.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+    <p>© {new Date().getFullYear()} Axiom AI (axiom-ai.su), {en ? 'GEO agency' : 'GEO-агентство'} · <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a></p>
+    <nav className="legal-footer-links" aria-label={en ? 'Company and research' : 'Компания и исследования'}>
+      <a href={en ? '/en/about' : '/about'}>{en ? 'About' : 'О компании'}</a>
+      <a href={en ? '/en/contacts' : '/contacts'}>{en ? 'Contact' : 'Контакты'}</a>
+      <a href={en ? '/en/blog' : '/blog'}>{en ? 'Research and articles' : 'Исследования и статьи'}</a>
+      <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a>
+    </nav>
+    <nav className="legal-footer-links" aria-label={en ? 'Legal information (Russian)' : 'Правовая информация'}>
+      {legalLinks.map(([href, label]) => <a key={href} href={href} lang="ru">{label}</a>)}
     </nav>
   </footer>
 }

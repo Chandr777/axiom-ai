@@ -8,7 +8,8 @@
     "build": "vite build && node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "indexnow": "node scripts/indexnow.js"
+    "indexnow": "node scripts/indexnow.js",
+    "content:dates": "node scripts/content-dates.js"
   },
   "dependencies": {
     "react": "^19.3.1",

@@ -41,6 +41,10 @@ for (const [path, label, title, source] of [
   ['/terms', 'Правила сайта', 'Правила использования сайта', 'src/SiteTerms.jsx'],
 ]) pages.push({ path, label, title: `${title} — Axiom AI (axiom-ai.su)`, description: `${title} на сайте GEO-агентства Axiom AI (axiom-ai.su).`, lang: 'ru', sources: [source] })
 
+for (const page of pages) {
+  if (page.sources.some(source => ['src/Company.jsx', 'src/Privacy.jsx', 'src/Consent.jsx', 'src/SiteTerms.jsx', 'src/EnglishPage.jsx'].includes(source))) page.sources.push('src/companyIdentity.js')
+}
+
 export function getPage(path) { return pages.find(page => page.path === path) }
 
 export function languageAlternates(page) {

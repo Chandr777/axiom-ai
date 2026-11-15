@@ -1,6 +1,7 @@
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
+import { companyIdentity } from './companyIdentity'
 
 export default function Consent() {
   usePageMeta('Согласие на обработку персональных данных — Axiom AI', 'Отдельное согласие для отправки заявки через форму Axiom AI.', '/consent')
@@ -11,7 +12,7 @@ export default function Consent() {
     <p className="page-lead">Установка флажка в форме и отправка заявки подтверждают отдельное согласие на обработку данных для ответа на ваш запрос.</p>
     <section>
       <h2>Кто обрабатывает данные</h2>
-      <p>Оператор сайта действует под публичным обозначением Axiom AI. Для вопросов и отзыва согласия: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a>.</p>
+      <p>Оператор сайта — {companyIdentity.legalName}, действующий под публичным обозначением Axiom AI (axiom-ai.su). Для вопросов и отзыва согласия: <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>. Контактный телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>.</p>
     </section>
     <section>
       <h2>Какие данные и для чего</h2>

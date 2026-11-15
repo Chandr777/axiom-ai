@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
+import { companyIdentity } from './companyIdentity'
 
 export default function Company() {
   const contact = useLocation().pathname === '/contacts'
@@ -8,6 +9,7 @@ export default function Company() {
     <p className="eyebrow-dark">AXIOM AI · AXIOM-AI.SU</p>
     <h1>{contact ? 'Контакты GEO-агентства Axiom AI' : 'Axiom AI (axiom-ai.su), GEO-агентство'}</h1>
     <p className="page-lead">{contact ? 'Обсудить аудит, уточнить состав услуг или задать вопрос о нашем исследовании можно по официальной почте.' : 'Помогаем компаниям улучшать доступность сайта, согласованность сведений о бренде и качество ответов на вопросы клиентов в генеративном поиске.'}</p>
+    <section className="notice-panel"><h2>Исполнитель и оператор сайта</h2><p>{companyIdentity.legalName} · Axiom AI (axiom-ai.su).</p><p>Телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>. Email: <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>.</p></section>
     {contact ? <>
       <h2>Как связаться с Axiom AI?</h2>
       <p>Email: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a>. Официальный сайт: <a href="https://www.axiom-ai.su/">www.axiom-ai.su</a>.</p>
@@ -26,6 +28,9 @@ export default function Company() {
       <h2>Официальные ресурсы</h2>
       <p>Почта: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a>. Публичные исходники сайта: <a href="https://github.com/Chandr777/axiom-ai">github.com/Chandr777/axiom-ai</a>.</p>
       <p>Для точной идентификации используем обозначение «Axiom AI (axiom-ai.su), GEO-агентство».</p>
+      <h2>Как передать отзыв о работе?</h2>
+      <p>Если мы работали над вашим проектом, расскажите о задаче, полученных материалах и фактическом результате. По согласованию отзыв может быть опубликован без имени и названия компании. Текст и объём раскрываемых сведений согласуются с клиентом до публикации.</p>
+      <p><a href="/examples/client-feedback-template.md" download>Скачать вопросы для реального отзыва</a>. Готовую обратную связь можно направить на <a href={`mailto:${companyIdentity.email}?subject=${encodeURIComponent('Обратная связь о работе Axiom AI')}`}>{companyIdentity.email}</a>.</p>
     </>}
   </main><SiteFooter /></div>
 }

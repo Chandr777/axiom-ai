@@ -11,9 +11,10 @@ with 17 downloadable HTTP observations; stable per-page content dates; a
 descriptive pricing H1 and question H2s in FAQ; ICO favicon. All registered routes are
 prerendered and hydrated from their own HTML.
 
-Company identity is intentionally limited to confirmed public facts. legalName,
-postal address, tax IDs, founder and named expert biographies require the site
-owner's verified information. Do not infer a contracting entity or founder
+Company identity is intentionally limited to confirmed public facts. The owner has supplied the designation
+«ИП Макаров Л.Е.» and telephone +79262156828; these are published consistently.
+Full registered name, postal contact address, tax IDs, founder and named expert
+biographies still require confirmed information. Do not infer a contracting entity or founder
 from the GitHub account, deployment creator or account email. Add confirmed
 facts visibly to `/about`, `/contacts`, `/privacy`, `/consent` and the matching
 Organization data in `src/SiteSEO.jsx`; update English counterparts too.
@@ -57,3 +58,8 @@ A follow-up of the original 17-path technical audit on 15 November 2026
 returned 17 HTTP 200 responses versus 11 at baseline, with the six prior
 404 responses resolved. Both raw HTTP datasets are public. The case does
 not equate this selected-sample result with indexing or business outcomes.
+
+The public operator designation and phone are centralized in src/companyIdentity.js.
+Visible company/contact and privacy/consent/terms pages match Organization data.
+No client reviews, ratings, named experts or client outcomes have been invented.
+Feedback and case questionnaires are templates for real data, not testimonials.

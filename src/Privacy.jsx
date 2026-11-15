@@ -1,6 +1,7 @@
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
+import { companyIdentity } from './companyIdentity'
 
 export default function Privacy() {
   usePageMeta('Политика обработки персональных данных — Axiom AI', 'Какие данные получает форма Axiom AI, зачем они нужны и как связаться по вопросам обработки.', '/privacy')
@@ -11,7 +12,7 @@ export default function Privacy() {
     <p className="page-lead">Здесь описано, какие данные передаются через форму Axiom AI, для чего они обрабатываются и как связаться по вопросам обработки.</p>
     <section>
       <h2>Оператор и контакт</h2>
-      <p>Сайт работает под публичным обозначением Axiom AI. По вопросам о заявках и обработке данных напишите на <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a>. В открытых материалах сайта не указаны юридическое наименование и адрес оператора.</p>
+      <p>Оператор сайта — {companyIdentity.legalName}, работающий под публичным обозначением Axiom AI (axiom-ai.su). По вопросам о заявках и обработке данных напишите на <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>. Контактный телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>.</p>
     </section>
     <section>
       <h2>Какие данные получает форма</h2>

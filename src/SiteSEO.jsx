@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { baseUrl, organizationId, brandDescription, getPage, breadcrumbItems, plans } from './siteData'
 import usePageMeta from './usePageMeta'
 import { serviceForPath, servicePath } from './content/serviceCatalog'
+import { companyIdentity } from './companyIdentity'
 
 export function pageSchema(page) {
   if (!page) return null
@@ -9,10 +10,11 @@ export function pageSchema(page) {
   const en = page.lang === 'en'
   const organization = {
     '@type': 'Organization', '@id': organizationId, name: 'Axiom AI', alternateName: brandDescription,
+    legalName: companyIdentity.legalName, telephone: companyIdentity.phone,
     url: `${baseUrl}/`, logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png`, width: 512, height: 512 },
     description: 'Axiom AI (axiom-ai.su), GEO-агентство: технический аудит, контент для ответных систем и измерение AI-видимости.',
     email: 'info@axiom-ai.su',
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'info@axiom-ai.su', availableLanguage: ['Russian', 'English'] },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: companyIdentity.email, telephone: companyIdentity.phone, availableLanguage: ['Russian', 'English'] },
   }
   const graph = [organization,
     { '@type': 'WebSite', '@id': `${baseUrl}/#website`, url: `${baseUrl}/`, name: 'Axiom AI (axiom-ai.su)', inLanguage: ['ru', 'en'], publisher: { '@id': organizationId } },

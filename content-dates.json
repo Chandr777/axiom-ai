@@ -4,88 +4,88 @@
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en": {
-    "contentHash": "31311761f53c5408ae5567c9313cf255c36183290826bd9ab5ae3968efe288ae",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "ef15f6a63b4e3d9d5e2a4585138e8b20ef14800b2eb937757045f2d479da95cd",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/services": {
     "contentHash": "7bf36956ef6f9482a9dd716173389616e5e130a173cfd834cc9f88544550b77a",
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en/services": {
-    "contentHash": "22621a1dc4bac9422e01ca01c2a9b7c6812bb070e9b849345e547bd0e0bfea21",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "b6208c1a2e70543cf885e9facf25953aef4e0f95e48d8c77d2640bc807842c45",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/methodology": {
     "contentHash": "6a72192c9b4c8b0095eb739eb07b5ee637b76e915cac85a17b73d6b131a4cd7a",
     "lastmod": "2026-11-15T14:05:42.607Z"
   },
   "/en/methodology": {
-    "contentHash": "948cd5efb10c9ae1c65728aeb539bede04425abdc1ab1504186210c93764ac82",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "076e1c8c39ee0073ad95349c80d936dd564138b2a2e53a3eb73bf6aad4047963",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/cases": {
-    "contentHash": "0e212f82d416e17c6625acab10baf9234be1003de087120c7698761f3903bb39",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "abe46c39647f8b5dc355cb0c268306c093b95f615f8cf5b578803e43ba5180fb",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/en/cases": {
-    "contentHash": "f013a3660ee9068f4ad5527434fe42a2f158e310182bfb92d4bdd2ef3dc66557",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "46bcc408fe86f5122ae785e93f9a8cb272891e0cb4c7b895abdf5e4ce5a1022f",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/pricing": {
     "contentHash": "81acb94cf44880c1ba3ba85954dcee54eac7421950b08e8db6b2c36eb2569953",
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en/pricing": {
-    "contentHash": "a9ed4a92e1568e438782074a4ac00c70fcbf1b808fafe5f0798c11a0f13cedae",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "2efd6b8cb632416c2c48dd9b7ebbf6052b99a600439413ca15777058327f09d0",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/faq": {
     "contentHash": "d01921be8695d4337950b4b660936376f11be4da567777444454a1eae992a936",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/faq": {
-    "contentHash": "613e81662a267c696e992a93130d365e9f86e09716c6ee8af27aff58decd8fa1",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "b90dc21ee0cfafe7b57868ccfb2f9383f0919ff736f0a6e0e6eb2d4b0535fece",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/glossary": {
     "contentHash": "69a0ce4018af8d4149086a55c16cde849be4cd623d63e4d2fe44cd19dcd763de",
     "lastmod": "2026-11-09T13:37:29.000Z"
   },
   "/en/glossary": {
-    "contentHash": "36e7ee6b1e8740466bf8a19b59d17e5db1ea9455e3c8018dd52c2079ead46a6a",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "ebee0c9cb9ae40ac560b5c8c80668c29a734e03b727e9ed73fa709a30fb1c320",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/about": {
-    "contentHash": "7bde5d6b1199de2fcf1472b350d513696fbe9c2b592c51fa0bdc9687f2e0b028",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "361d147a09b2e12a2120e1646f9f1f0bb8547e16446e49a51fdb30b38ff72461",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/en/about": {
-    "contentHash": "852de7b3ab2e4313fa69f27563a79fa0c8b9db6b24fe55d5e24455bd9d0dc66f",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "51885e52dec3adeb4ce1b44da3e35edad13231d03bf7166b872af45b57a272e3",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/contacts": {
-    "contentHash": "6672e34a4ce018a5d198c56e90fd805c25bb3911c74bf3f513487734d161f1eb",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "645ebdddfa4af1512b93492e37a91abc7b273d10cbfc916db44f64eb581a1d90",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/en/contacts": {
-    "contentHash": "ae2b11684513c23280993ce3cc6f8c6a463adfd35d5d29ec10c17db6eeecc4b0",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "a03674395293cb5efd98e96d0be3604a673ef9e687a8bd1ef9f86289c7b98f52",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/blog": {
     "contentHash": "599c5efff832daa67d203ac350f60c7857c9ea8de495c44650cec64549fcba49",
     "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/en/blog": {
-    "contentHash": "ce290897049b4d386801091b620bb9b73c4d8a616b8385f7eb679b1483b101b8",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "682ae6607bb1fd6abbe589c19acc6f4c416e6f32b29c0a9f5d881ecfa679edb2",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/cases/axiom-technical-audit": {
     "contentHash": "800b6387d381ebe34c636d010e530316daa114f972a3256323a20af7a817bbf7",
     "lastmod": "2026-11-15T16:27:13.754Z"
   },
   "/en/cases/axiom-technical-audit": {
-    "contentHash": "72cf574c52de782a999a600f92431d7970f73a8b98b99181d6db6992d2abf365",
-    "lastmod": "2026-11-15T16:25:50.376Z"
+    "contentHash": "3b07649af12a964901cbec60936762592f7558ee1e88a8af61a6c2259832c20b",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/services/geo-audit": {
     "contentHash": "e559eb8ba6d4ce926c470e06b305027a9d14caec9723d4eb7e5b2f02773e1a0d",
@@ -132,15 +132,15 @@
     "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/privacy": {
-    "contentHash": "1c45c588f1fc93e504a5a80e925a62e0294e26de3867fc18ee582471d2edc88e",
-    "lastmod": "2026-11-09T13:37:29.000Z"
+    "contentHash": "b7eab68ffaaf9de4e620c008d9314cb070b9b736e1aad4c5148f90b5d2955c93",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/consent": {
-    "contentHash": "fc01a266411d4157ed2655d16ce751db22c422faf34ff436ceeb9369f596f617",
-    "lastmod": "2026-11-09T13:37:29.000Z"
+    "contentHash": "77e0581ebdff29e313965f9e8acba74c5bca9229032397c25552208b6c31f8c3",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/terms": {
-    "contentHash": "c3a350e6c5946a55ef8a8f8270485a5cba59dfeb7da16f808fe4cbcb397a43d5",
-    "lastmod": "2026-11-09T13:37:29.000Z"
+    "contentHash": "41363e83514ab5ff4f0f682eebc6b288c2e72fa38ee54bb23931041c510866e6",
+    "lastmod": "2026-11-15T19:03:47.222Z"
   }
 }

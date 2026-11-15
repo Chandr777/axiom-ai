@@ -16,6 +16,7 @@ import Blog from './Blog'
 import ResearchCase from './ResearchCase'
 import EnglishPage from './EnglishPage'
 import SiteSEO from './SiteSEO'
+import VisibilityStudy from './VisibilityStudy'
 import { pages } from './siteData'
 
 import usePageMeta from './usePageMeta'
@@ -55,7 +56,7 @@ function Home() {
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow">GENERATIVE ENGINE OPTIMIZATION · ANSWER ENGINE OPTIMIZATION</p>
-          <h1>Сделайте бренд понятным для генеративного поиска</h1>
+          <h1>GEO-продвижение и AEO: аудит и повышение видимости бренда в AI-поиске</h1>
           <p className="hero-lead">Axiom AI (axiom-ai.su), GEO-агентство, помогает улучшать доступность, точность и структуру информации о компании для поисковых систем и AI-помощников. Технический аудит, ответы на реальные вопросы клиентов и измерение видимости — в единой методологии.</p>
           <div className="hero-actions">
             <a className="button button-blue" href="#audit">Обсудить аудит</a>
@@ -124,6 +125,7 @@ export function AppRoutes() {
     <Route path="/blog" element={<Blog />} />
     {pages.filter(page => page.path.startsWith('/blog/')).map(page => <Route key={page.path} path={page.path} element={<Blog />} />)}
     <Route path="/cases/axiom-technical-audit" element={<ResearchCase />} />
+    <Route path="/research/ai-visibility-pilot" element={<VisibilityStudy />} />
     {pages.filter(page => page.lang === 'en').map(page => <Route key={page.path} path={page.path} element={<EnglishPage />} />)}
   </Routes></>
 }

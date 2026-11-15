@@ -5,8 +5,8 @@ export const brandDescription = 'Axiom AI (axiom-ai.su), GEO-агентство'
 export const organizationId = `${baseUrl}/#organization`
 
 const routes = [
-  ['/', 'Главная', 'GEO-агентство Axiom AI (axiom-ai.su) — GEO и AEO', 'Технический аудит, контент и измерение видимости бренда в ChatGPT, Claude и Perplexity. Услуги GEO-агентства Axiom AI (axiom-ai.su).', 'Home', 'Axiom AI (axiom-ai.su) — GEO and AEO agency', 'Technical audits, answer-focused content and transparent AI visibility measurement.', 'src/App.jsx'],
-  ['/services', 'Услуги', 'Услуги GEO и AEO — Axiom AI (axiom-ai.su)', 'Техническая доступность сайта, структурированные данные, контент для ответов и мониторинг AI-видимости.', 'Services', 'GEO and AEO services — Axiom AI (axiom-ai.su)', 'Technical accessibility, entity consistency, answer-focused content and AI visibility monitoring.', 'src/Services.jsx'],
+  ['/', 'Главная', 'GEO-продвижение и AEO — Axiom AI (axiom-ai.su)', 'Технический аудит, контент и измерение видимости бренда в ChatGPT, Claude и Perplexity. Услуги GEO-агентства Axiom AI (axiom-ai.su).', 'Home', 'Axiom AI (axiom-ai.su) — GEO and AEO agency', 'Technical audits, answer-focused content and transparent AI visibility measurement.', 'src/App.jsx'],
+  ['/services', 'Услуги', 'Услуги GEO-продвижения и AEO — Axiom AI (axiom-ai.su)', 'GEO-аудит, согласованное описание компании, контент для ответов и мониторинг AI-видимости: состав работ и примеры передаваемых материалов.', 'Services', 'GEO and AEO services — Axiom AI (axiom-ai.su)', 'Technical accessibility, entity consistency, answer-focused content and AI visibility monitoring.', 'src/Services.jsx'],
   ['/methodology', 'Методология', 'Методология GEO/AEO — Axiom AI (axiom-ai.su)', 'Диагностика, внедрение и повторяемое измерение упоминаний, цитирований и точности фактов.', 'Methodology', 'GEO and AEO methodology — Axiom AI (axiom-ai.su)', 'A repeatable audit, implementation and measurement process with explicit limitations.', 'src/Methodology.jsx'],
   ['/cases', 'Кейсы', 'Проверяемые кейсы GEO — Axiom AI (axiom-ai.su)', 'Внутренний технический кейс axiom-ai.su с исходными HTTP-проверками и ограничениями выводов.', 'Case studies', 'Evidence-based GEO case studies — Axiom AI (axiom-ai.su)', 'An internal technical audit of axiom-ai.su with downloadable observations and clear limitations.', 'src/Cases.jsx'],
   ['/pricing', 'Цены', 'Цены на GEO и AEO в рублях — Axiom AI (axiom-ai.su)', 'FREE — 0 ₽, PRO — 43 000–87 000 ₽ за проект, BUSINESS — 140 000–160 000 ₽ в месяц. Состав и условия услуг.', 'Pricing', 'GEO and AEO pricing in RUB — Axiom AI (axiom-ai.su)', 'FREE: RUB 0. PRO: RUB 43,000–87,000 per project. BUSINESS: RUB 140,000–160,000 per month.', 'src/Pricing.jsx'],
@@ -24,6 +24,8 @@ export const pages = routes.flatMap(([path, label, title, description, enLabel, 
 ])
 
 for (const article of articles) pages.push({ path: `/blog/${article.slug}`, label: article.title, title: `${article.title} — Axiom AI`, description: article.description, lang: 'ru', sources: ['src/content/articles.js', 'src/Blog.jsx'] })
+
+pages.push({ path: '/research/ai-visibility-pilot', label: 'Исследование AI-видимости', title: 'Исследование AI-видимости: первичный срез — Axiom AI', description: 'Протокол и первичные ответы ChatGPT Search: фиксированные вопросы, повторы, полные тексты и источники. Ограничения доступа к Яндексу с Алисой и Perplexity.', lang: 'ru', sources: ['src/VisibilityStudy.jsx', 'src/content/geo-ai-pilot-v1.json', 'src/content/visibility-results.json'] })
 
 for (const [path, label, title, source] of [
   ['/privacy', 'Конфиденциальность', 'Политика обработки персональных данных', 'src/Privacy.jsx'],

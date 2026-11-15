@@ -1,0 +1,112 @@
+{
+  "id": "axiom-geo-ai-pilot-v1",
+  "version": "1.0",
+  "registeredAt": "2026-11-15T14:03:03.832266+00:00",
+  "status": "registered_not_measured",
+  "language": "ru",
+  "targetMarket": "Россия",
+  "requestedRegion": "Москва",
+  "actualRegion": "must be recorded per run; not inferred from requested region or proxy location",
+  "brand": {
+    "name": "Axiom AI",
+    "domain": "axiom-ai.su",
+    "disambiguation": "Axiom AI (axiom-ai.su), GEO-агентство"
+  },
+  "queries": [
+    {
+      "id": "Q1",
+      "type": "unbranded",
+      "text": "Какое агентство выбрать для GEO-продвижения бизнеса в России? Назови варианты и источники."
+    },
+    {
+      "id": "Q2",
+      "type": "unbranded",
+      "text": "Где заказать GEO-аудит сайта для российского B2B-бизнеса? Сравни исполнителей и дай ссылки на источники."
+    },
+    {
+      "id": "Q3",
+      "type": "unbranded",
+      "text": "Сколько стоит GEO-продвижение в России и что входит в работу агентства? Приведи исполнителей и источники."
+    },
+    {
+      "id": "Q4",
+      "type": "unbranded",
+      "text": "Кто оказывает услуги мониторинга упоминаний и цитирований бренда в ответах нейросетей в России? Дай ссылки на источники."
+    },
+    {
+      "id": "Q5",
+      "type": "unbranded",
+      "text": "Как выбрать подрядчика для продвижения B2B-компании в ответах ChatGPT и Алисы? Назови агентства с проверяемыми кейсами и источниками."
+    },
+    {
+      "id": "Q6",
+      "type": "branded",
+      "text": "Что известно о GEO-агентстве Axiom AI с сайтом axiom-ai.su? Какие услуги и цены опубликованы? Дай ссылки на источники."
+    }
+  ],
+  "platforms": [
+    {
+      "id": "yandex-alice-search",
+      "name": "Поиск Яндекса с Алисой",
+      "requiredMode": "generative search answer with sources; ordinary search results are not a substitute"
+    },
+    {
+      "id": "chatgpt-search",
+      "name": "ChatGPT Search",
+      "requiredMode": "web search enabled, verified in the interface"
+    },
+    {
+      "id": "perplexity-search",
+      "name": "Perplexity",
+      "requiredMode": "Search, sources recorded"
+    }
+  ],
+  "repeatCount": 2,
+  "plannedCells": 36,
+  "conversationPolicy": "new independent conversation per query and repeat; do not follow up or supply the target brand for unbranded queries",
+  "runFields": [
+    "queryId",
+    "platformId",
+    "repeat",
+    "startedAt",
+    "finishedAt",
+    "actualMode",
+    "modelLabel",
+    "language",
+    "actualRegion",
+    "authState",
+    "status",
+    "fullAnswer",
+    "displayedSources",
+    "resolvedSourceUrls",
+    "verifiedSourceHosts",
+    "brandMention",
+    "domainCitation",
+    "recommendation",
+    "notes"
+  ],
+  "statuses": [
+    "answered",
+    "no_ai_answer",
+    "login_required",
+    "captcha",
+    "service_error",
+    "not_run"
+  ],
+  "metrics": {
+    "denominator": "only answered records from the same platform and query type; publish n and excluded statuses",
+    "mentionRate": "answers unambiguously mentioning the target agency / answered",
+    "citationRate": "answers linking to axiom-ai.su or www.axiom-ai.su / answered",
+    "recommendationRate": "unbranded supplier-selection answers recommending the target agency / answered"
+  },
+  "rules": [
+    "Never count a blocked, unavailable or not-run cell as a negative brand result.",
+    "Keep branded and unbranded queries separate.",
+    "Count each brand/domain at most once per answer.",
+    "Resolve source URLs and distinguish similarly named companies before counting.",
+    "Store raw answers and timestamps; remove account identifiers and unrelated UI/session data.",
+    "Report repeat variation, sample size, actual mode and access limitations.",
+    "Do not bypass CAPTCHA or authentication, and do not use a generic web-search tool as a substitute for a named AI product.",
+    "The protocol is not a visibility result; no growth, ranking or citation claims until observations are collected."
+  ]
+}

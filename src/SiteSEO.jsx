@@ -10,7 +10,7 @@ export function pageSchema(page) {
     '@type': 'Organization', '@id': organizationId, name: 'Axiom AI', alternateName: brandDescription,
     url: `${baseUrl}/`, logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png`, width: 512, height: 512 },
     description: 'Axiom AI (axiom-ai.su), GEO-агентство: технический аудит, контент для ответных систем и измерение AI-видимости.',
-    email: 'info@axiom-ai.su', sameAs: ['https://github.com/Chandr777/axiom-ai'],
+    email: 'info@axiom-ai.su',
     contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: 'info@axiom-ai.su', availableLanguage: ['Russian', 'English'] },
   }
   const graph = [organization,

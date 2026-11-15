@@ -1,0 +1,37 @@
+{
+  "studyId": "axiom-geo-ai-pilot-v1",
+  "scope": "Access checks are separate from visibility observations. No failed or unexecuted query is counted as an answer without a brand mention.",
+  "checks": [
+    {
+      "system": "Поиск Яндекса с Алисой",
+      "checkedAt": "2026-11-15T14:00:30.491968+00:00",
+      "interface": "https://yandex.ru/search/",
+      "status": "captcha",
+      "observedMessage": "Please confirm that you are not a robot",
+      "effect": "No eligible generative-search answer collected; no CAPTCHA bypass attempted."
+    },
+    {
+      "system": "Perplexity Search",
+      "checkedAt": "2026-11-15T14:03:41.735505+00:00",
+      "interface": "https://www.perplexity.ai/",
+      "status": "login_required",
+      "observedMessage": "Зарегистрируйтесь и повторите свой запрос.",
+      "effect": "No eligible answer collected; account registration is required."
+    },
+    {
+      "system": "ChatGPT Search",
+      "status": "available",
+      "startedAt": "2026-11-15T14:14:00.669745+00:00",
+      "finishedAt": "2026-11-15T14:20:55.539449+00:00",
+      "interface": "https://chatgpt.com/",
+      "effect": "12 recorded independent answers with visible Web search mode enabled; model version and actual region undisclosed."
+    },
+    {
+      "system": "Алиса, чат в режиме Авто",
+      "checkedAt": "2026-11-15T14:04:20.490602+00:00",
+      "interface": "https://alice.yandex.ru/",
+      "status": "different_mode_excluded",
+      "effect": "A probe answer was obtained; this chat is not substituted for the registered Yandex search mode."
+    }
+  ]
+}

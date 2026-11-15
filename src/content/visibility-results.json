@@ -1,0 +1,20 @@
+{
+  "status": "partially_measured",
+  "answered": 12,
+  "planned": 36,
+  "periodMoscow": "15 ноября 2026 года, 17:14–17:20 мск",
+  "groups": [
+    {
+      "type": "unbranded",
+      "answers": 10,
+      "mentions": 0,
+      "citations": 0
+    },
+    {
+      "type": "branded",
+      "answers": 2,
+      "mentions": 2,
+      "citations": 2
+    }
+  ]
+}

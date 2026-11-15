@@ -21,6 +21,7 @@ export default function Blog() {
       <p className="page-lead">Собственные технические наблюдения и практические методики. В каждом материале раскрываем способ проверки и ограничения выводов.</p>
       <div className="feature-grid">{articles.map(item => <article className="feature-card" key={item.slug}><p className="article-byline">15 ноября 2026 · Редакция Axiom AI</p><h2><a href={`/blog/${item.slug}`}>{item.title}</a></h2><p>{item.description}</p></article>)}</div>
       <p>Исходные HTTP-проверки собственного сайта доступны во <a href="/cases/axiom-technical-audit">внутреннем техническом кейсе</a>.</p>
+      <p><a href="/research/ai-visibility-pilot">Исследование AI-видимости: протокол и первичный срез ChatGPT Search</a>. Полные ответы и источники; межплатформенный замер ещё не завершён.</p>
     </>}
   </main><SiteFooter /></div>
 }

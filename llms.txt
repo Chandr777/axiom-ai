@@ -25,6 +25,8 @@
 - [Исследования и статьи](https://www.axiom-ai.su/blog)
 - [Внутренний технический кейс](https://www.axiom-ai.su/cases/axiom-technical-audit): метод и исходные HTTP-наблюдения, без заявлений о росте цитирований.
 
+- [Протокол исследования AI-видимости](https://www.axiom-ai.su/research/ai-visibility-pilot): фиксированная выборка, первичный срез ChatGPT Search, полные ответы и источники; межплатформенный замер не завершён.
+
 ## Правовая информация
 - [Политика обработки персональных данных](https://www.axiom-ai.su/privacy)
 - [Согласие на обработку персональных данных](https://www.axiom-ai.su/consent)

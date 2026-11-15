@@ -4,11 +4,11 @@ Site: https://www.axiom-ai.su/ (apex redirects to www).
 
 Implemented: distinctive brand/domain description; full-text export;
 11 English counterparts with reciprocal hreflang; Organization with a stable
-entity ID, official source link and PNG wordmark; visible and structured
+entity ID and PNG wordmark; visible and structured
 breadcrumbs; Service/Offer with the published RUB ranges; company/contact
 pages; two sourced articles and BlogPosting; a real internal technical case
 with 17 downloadable HTTP observations; stable per-page content dates; a
-descriptive pricing H1 and question H2s in FAQ; ICO favicon. All 27 routes are
+descriptive pricing H1 and question H2s in FAQ; ICO favicon. All 28 routes are
 prerendered and hydrated from their own HTML.
 
 Company identity is intentionally limited to confirmed public facts. legalName,
@@ -33,5 +33,14 @@ For external authority, publish the source-backed research under the same
 brand/domain identity. Prepare a genuine company profile on relevant platforms;
 confirm platform eligibility and editorial terms. Obtain acceptance before
 claiming inclusion in a directory. Do not buy reviews or add competitor URLs
-to sameAs. Third-party profiles and articles remain pending until their actual
+to sameAs. The source repository remains an ordinary link; Organization sameAs
+is omitted until official profiles identifying the organization are confirmed. Third-party profiles and articles remain pending until their actual
 public URLs have been verified.
+
+The research page `/research/ai-visibility-pilot` publishes a fixed six-query,
+three-platform, two-repeat protocol and the initial 12 ChatGPT Search answers.
+Branded queries are reported separately. Yandex search CAPTCHA and Perplexity
+registration requirements leave 24 planned observations unexecuted and excluded
+from denominators. Raw answers are generated observations, not verified company
+facts; domain links do not prove content retrieval. Source URL HTTP checks
+and access limitations are downloadable alongside the answers.

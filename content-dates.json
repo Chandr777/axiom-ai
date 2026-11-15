@@ -1,99 +1,103 @@
 {
   "/": {
-    "contentHash": "26d57abc00c6dc0dbfdeb45bc9df4268306c2b6f2f6e21a1fa73e65bfcf8323d",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "ba6a0c894e2b2d473f5ef990c6617fcf86989f7a7a80aa4a1d918dc748b4a62e",
+    "lastmod": "2026-11-15T14:05:42.607Z"
   },
   "/en": {
-    "contentHash": "39b18bb3ac30fd7f90679596e8fae2b7a2744ca902a203f4af024f8dd4a4fe72",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "cbe63e0a8066e68a2697e0f71e4965bb98fde884f529ce91dc02dc360b21cd61",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/services": {
-    "contentHash": "6bd6214663970a88a102a76a8e53d2d2d2de9614e2b34927078fb7412331c161",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "fa224e3b1e19477d3a0e7b1dc3bbcde40df78ad00e38098daa453f9809549a52",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/en/services": {
-    "contentHash": "9de298cc825a793a62ac12198fc070bcbf57b58b644db59645eba60360fa852d",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "02b3b1fc86e60202ae4e970c85751da8c02add2ac6021e0e5b7061b39bd01a22",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/methodology": {
-    "contentHash": "9292f5e28be8be517068f5d5414a10fec9b023cacbc37a6c4ecacf1ae2abf66d",
-    "lastmod": "2026-11-09T13:37:29.000Z"
+    "contentHash": "6a72192c9b4c8b0095eb739eb07b5ee637b76e915cac85a17b73d6b131a4cd7a",
+    "lastmod": "2026-11-15T14:05:42.607Z"
   },
   "/en/methodology": {
-    "contentHash": "71edb4d50897bbea53a4710ed0afa321dcfec02c2c3fbb9dec515fa4909f34f0",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "f384a31d2f2d6fef21315aaa346ad25adabf4a35c8d727e410e3ef3104b52269",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/cases": {
     "contentHash": "b821c4f183899525a99d849abe2ac043b5796b8911c3a3abe1092633c5ee01eb",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/cases": {
-    "contentHash": "b136086a89cbca1c3302e47552fcc21249385f63ab70619bcfa0883920890fbe",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "b306f3b096deedf60e8f324e4329b2577a71422d6ce19c4370e258aa31090112",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/pricing": {
-    "contentHash": "0bdb0cb2d4e4fcc6058f966b4ec7d0c66a92e15050438781a938e89d652b43ad",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "71c19d536538f918dbdc627cacb9f88ae50407d7d517b9581f32bcc58fd65eb8",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/en/pricing": {
-    "contentHash": "0d8455cb29396dadd1247fee38eb36a773b82d031bb7cb6768052cfe1396a727",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "5865ccb50ff55417cd7ab382bba7d53bca4c1a33b7f935c291811c93291f07af",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/faq": {
     "contentHash": "d01921be8695d4337950b4b660936376f11be4da567777444454a1eae992a936",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/faq": {
-    "contentHash": "7e071ed99850630ad84f966e1899f386e25dfba0cd4221ed45749a2bd5d0a61d",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "68061786943eda7bb47989763c6221b0a1b66b3271a455a24b730cb52b7de620",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/glossary": {
     "contentHash": "69a0ce4018af8d4149086a55c16cde849be4cd623d63e4d2fe44cd19dcd763de",
     "lastmod": "2026-11-09T13:37:29.000Z"
   },
   "/en/glossary": {
-    "contentHash": "b3c12d56927bf01776083261abceee9455476aac72dc02097f0086a53d39a14a",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "888fc7cdc2926100ed3495163d18d0f504f4ccfaee4f1f74a87018cba04f2630",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/about": {
     "contentHash": "7bde5d6b1199de2fcf1472b350d513696fbe9c2b592c51fa0bdc9687f2e0b028",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/about": {
-    "contentHash": "81714a2f8b8b5ce667cecde8b9172eb9f2588eda80314844c663102dc6953837",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "cb17c55df53f5f7fab6c24c3b87bce988eed87ee063b467e1d0d58b6108b2d9b",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/contacts": {
     "contentHash": "6672e34a4ce018a5d198c56e90fd805c25bb3911c74bf3f513487734d161f1eb",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/contacts": {
-    "contentHash": "af9867e7c33788af52fda58e5fcc897cf48db6f3a8e9bd6cda0ed18ec9bdaae4",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "1c47b64e272fa6e13af028d5298288c9f2e1c5d10ef712397ed31d928a3e2a4a",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/blog": {
-    "contentHash": "ecb573d12ce02f600e65b89a75b780acd8d635942cd8dbcf6f0249c9d852c0ba",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "599c5efff832daa67d203ac350f60c7857c9ea8de495c44650cec64549fcba49",
+    "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/en/blog": {
-    "contentHash": "b743362974eb03097794c8a7f47cb3bed78f9c4784023f773e59b5b31feb58ab",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "81d0e34baad95baa73a70ab00ff1b478d000bb6ed9624914b628d761b26d84a0",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/cases/axiom-technical-audit": {
     "contentHash": "5dbca4d3dc399f7a52393b265d7ee4b250f2ad16076242b9613de4983dc79c95",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/cases/axiom-technical-audit": {
-    "contentHash": "e6a00f53de817644a58a869d890bdf28ed8b2fb6cd469e9d19aa1b436fc5569b",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "dc16b6ed20a0930871ba0a705927656573d3436e0440e11e914a70429767ab9e",
+    "lastmod": "2026-11-15T14:03:53.359Z"
   },
   "/blog/ai-search-technical-checklist": {
-    "contentHash": "ac530c6ea96f2f0467bbb9103cbebfe956d9a014a7c79a3ddb9c5b1ab9ab7699",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "2e985a870699e7987f8b9cfbed73dc7774a3f396b3e280a3db8b3022665006f1",
+    "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/blog/measure-ai-citations": {
-    "contentHash": "c38cfc04c4d3cb32155be43e8979ec1ceb7f4b20e110b6e2777f4b8a0a59de53",
-    "lastmod": "2026-11-15T12:32:30.150Z"
+    "contentHash": "50d09218eee2ae1bc6549ceff865a0070d02fac09ce29756aa5d013ca9171288",
+    "lastmod": "2026-11-15T14:22:04.890Z"
+  },
+  "/research/ai-visibility-pilot": {
+    "contentHash": "145b60d681478fc15184c6b79cedf4751bc0d8e8199818d9036d1720a25b96ad",
+    "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/privacy": {
     "contentHash": "1c45c588f1fc93e504a5a80e925a62e0294e26de3867fc18ee582471d2edc88e",

@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import { baseUrl, organizationId, brandDescription, getPage, breadcrumbItems, plans } from './siteData'
 import usePageMeta from './usePageMeta'
+import { serviceForPath, servicePath } from './content/serviceCatalog'
 
 export function pageSchema(page) {
   if (!page) return null
@@ -19,6 +20,14 @@ export function pageSchema(page) {
   ]
   const items = breadcrumbItems(page)
   if (items.length) graph.push({ '@type': 'BreadcrumbList', '@id': `${url}#breadcrumbs`, itemListElement: items.map((item, i) => ({ '@type': 'ListItem', position: i + 1, name: item.name, item: `${baseUrl}${item.path}` })) })
+  const service = serviceForPath(page.path)
+  if (service) {
+    const data = service[page.lang]
+    const serviceId = `${baseUrl}${servicePath(service.slug)}#service`
+    graph[2].mainEntity = { '@id': serviceId }
+    graph.push({ '@type': 'Service', '@id': serviceId, name: data.label, serviceType: data.label, description: data.lead, url, provider: { '@id': organizationId }, mainEntityOfPage: { '@id': `${url}#webpage` } })
+    graph.push({ '@type': 'FAQPage', '@id': `${url}#faq`, inLanguage: page.lang, isPartOf: { '@id': `${url}#webpage` }, mainEntity: data.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) })
+  }
   if (/\/(services|pricing)$/.test(page.path)) {
     const offers = plans.map(plan => ({
       '@type': 'Offer', '@id': `${baseUrl}/pricing#${plan.id}-offer`, name: plan.name,

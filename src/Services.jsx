@@ -1,6 +1,7 @@
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
+import ServiceCards from './ServiceCards'
 
 const services = [
  ['Техническая доступность','Проверяем robots.txt, sitemap.xml, DNS, HTTPS, коды ответов, редиректы, canonical, robots meta, CDN/WAF и доступность контента для роботов.','Реестр проверенных URL: адрес → найденная проблема → приоритет → рекомендуемая правка → результат повторной проверки. Пример записи: «/services — отсутствует описание услуги в HTML — добавить серверный HTML — повторно проверить ответ».'],
@@ -15,6 +16,7 @@ export default function Services(){
  return <div className="page-shell"><Navbar/><main className="page-content">
   <p className="eyebrow-dark">GEO / AEO SERVICES</p><h1>Услуги GEO-продвижения, AEO и мониторинга AI-видимости</h1>
   <p className="page-lead">Помогаем компаниям сделать публичную информацию технически доступной, понятной для машин и проверяемой для людей. Каждый проект начинается с диагностики и заканчивается повторным измерением.</p>
+  <section><h2>Какую задачу нужно решить?</h2><ServiceCards /></section>
   <p>Ниже показаны примеры формата передаваемых материалов. Это образцы структуры, а не результаты клиентских проектов. Состав работ и объём внедрения согласуются до начала проекта.</p>
   {services.map(([title,body,example],i)=><section className="service-row" key={title}><span className="step">0{i+1}</span><div><h2>{title}</h2><p>{body}</p><h3>Что получает заказчик: пример</h3><p>{example}</p></div></section>)}
   <aside className="notice-panel"><h2>Что мы не обещаем</h2><p>Мы не гарантируем первое место в ответах ChatGPT, Claude, Perplexity или Google. Генеративные ответы зависят от запроса, региона, версии системы, доступных источников и других факторов. Мы отвечаем за качество выполненных работ, прозрачность методики и измеримость изменений.</p></aside>

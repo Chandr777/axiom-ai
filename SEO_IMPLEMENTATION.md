@@ -3,12 +3,12 @@
 Site: https://www.axiom-ai.su/ (apex redirects to www).
 
 Implemented: distinctive brand/domain description; full-text export;
-11 English counterparts with reciprocal hreflang; Organization with a stable
+15 English counterparts with reciprocal hreflang; Organization with a stable
 entity ID and PNG wordmark; visible and structured
 breadcrumbs; Service/Offer with the published RUB ranges; company/contact
 pages; two sourced articles and BlogPosting; a real internal technical case
 with 17 downloadable HTTP observations; stable per-page content dates; a
-descriptive pricing H1 and question H2s in FAQ; ICO favicon. All 28 routes are
+descriptive pricing H1 and question H2s in FAQ; ICO favicon. All registered routes are
 prerendered and hydrated from their own HTML.
 
 Company identity is intentionally limited to confirmed public facts. legalName,
@@ -44,3 +44,11 @@ registration requirements leave 24 planned observations unexecuted and excluded
 from denominators. Raw answers are generated observations, not verified company
 facts; domain links do not prove content retrieval. Source URL HTTP checks
 and access limitations are downloadable alongside the answers.
+
+Four substantive service pages and four English counterparts now cover GEO
+audit, GEO implementation, AEO content and AI visibility monitoring. Each has
+self-canonical metadata, reciprocal language links, Service/FAQPage/BreadcrumbList,
+scope, deliverables, sample downloads, conditions and contextual enquiries.
+The published package ranges are not presented as invented standalone prices.
+Navigation adapts with CSS before hydration; company/contact/research and service
+links are available throughout the site.

@@ -22,6 +22,7 @@ export default function Pricing() {
         <div style={styles.tag}>[ Pricing & Engagement Models ]</div>
         <h1 style={styles.h1}>Цены на GEO и AEO: аудит, внедрение и мониторинг</h1>
         <p style={styles.subtitle}>Выберите формат диагностики, внедрения и регулярного мониторинга AI-видимости.</p>
+        <p>Подробный состав: <a href="/services/geo-audit">GEO-аудит</a> · <a href="/services/geo-promotion">GEO-продвижение</a> · <a href="/services/aeo">AEO</a> · <a href="/services/ai-visibility-monitoring">Мониторинг AI-видимости</a>.</p>
       </section>
 
       <section style={styles.gridSection}>

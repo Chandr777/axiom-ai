@@ -12,6 +12,7 @@ export const articles = [
     ],
     sources: [
       ['Внутренний кейс и исходные данные Axiom AI', '/cases/axiom-technical-audit'],
+      ['Состав GEO-аудита и пример реестра', '/services/geo-audit'],
       ['Google: AI features and your website', 'https://developers.google.com/search/docs/appearance/ai-features'],
       ['OpenAI: Overview of crawlers', 'https://developers.openai.com/api/docs/bots'],
       ['Google: Build and submit a sitemap', 'https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap'],
@@ -31,6 +32,7 @@ export const articles = [
     ],
     sources: [
       ['Методология Axiom AI', '/methodology'],
+      ['Мониторинг AI-видимости: состав и журнал', '/services/ai-visibility-monitoring'],
       ['OpenAI: Overview of crawlers', 'https://developers.openai.com/api/docs/bots'],
       ['Google: AI features and your website', 'https://developers.google.com/search/docs/appearance/ai-features'],
     ],

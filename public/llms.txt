@@ -27,6 +27,13 @@
 
 - [Протокол исследования AI-видимости](https://www.axiom-ai.su/research/ai-visibility-pilot): фиксированная выборка, первичный срез ChatGPT Search, полные ответы и источники; межплатформенный замер не завершён.
 
+## Подробный состав услуг
+- [GEO-аудит](https://www.axiom-ai.su/services/geo-audit): состав проверки, реестр проблем, входные данные и ограничения.
+- [GEO-продвижение](https://www.axiom-ai.su/services/geo-promotion): согласованное внедрение, контент, внешние сведения и контрольные замеры.
+- [AEO-оптимизация](https://www.axiom-ai.su/services/aeo): страницы под вопросы клиентов, факты, примеры и контент-бриф.
+- [Мониторинг AI-видимости](https://www.axiom-ai.su/services/ai-visibility-monitoring): фиксированные вопросы, полные ответы, источники и раздельные метрики.
+- [English service details](https://www.axiom-ai.su/en/services): English counterparts of the four service pages.
+
 ## Правовая информация
 - [Политика обработки персональных данных](https://www.axiom-ai.su/privacy)
 - [Согласие на обработку персональных данных](https://www.axiom-ai.su/consent)

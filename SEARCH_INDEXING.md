@@ -3,7 +3,7 @@
 Canonical origin: `https://www.axiom-ai.su`.
 Sitemap: `https://www.axiom-ai.su/sitemap.xml`.
 
-`npm run build` prerenders the 28 routes in `src/siteData.js`, generates
+`npm run build` prerenders the routes in `src/siteData.js`, generates
 `dist/sitemap.xml` and exports the rendered main content to `dist/llms-full.txt`.
 Russian and English equivalents have reciprocal ru/en/x-default links in HTML
 and in the sitemap. Articles without a translation do not declare one.

@@ -13,7 +13,8 @@ export default function usePageMeta(title, description, path) {
       let element = document.head.querySelector(selector)
       if (!element) {
         element = document.createElement('meta')
-        element.setAttribute(attribute, value)
+        const key = selector.match(/\[(?:name|property)="([^"]+)"\]/)?.[1]
+        if (key) element.setAttribute(attribute, key)
         document.head.appendChild(element)
       }
       element.setAttribute('content', value)

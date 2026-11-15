@@ -17,6 +17,8 @@ import ResearchCase from './ResearchCase'
 import EnglishPage from './EnglishPage'
 import SiteSEO from './SiteSEO'
 import VisibilityStudy from './VisibilityStudy'
+import ServiceDetail from './ServiceDetail'
+import ServiceCards from './ServiceCards'
 import { pages } from './siteData'
 
 import usePageMeta from './usePageMeta'
@@ -76,6 +78,13 @@ function Home() {
         </div>
       </section>
 
+      <section className="section">
+        <p className="eyebrow-dark">УСЛУГИ И РЕЗУЛЬТАТЫ РАБОТ</p>
+        <h2>Выберите задачу: аудит, внедрение, контент или мониторинг</h2>
+        <ServiceCards />
+        <p>Методика и исходные наблюдения доступны в <a href="/research/ai-visibility-pilot">исследовании AI-видимости</a> и <a href="/cases/axiom-technical-audit">техническом кейсе</a>. Результаты для вашего проекта оцениваются отдельно.</p>
+      </section>
+
       <section className="dark-section">
         <div className="section narrow">
           <p className="eyebrow">ОТ ТЕХНИЧЕСКОГО АУДИТА ДО МОНИТОРИНГА</p>
@@ -126,7 +135,8 @@ export function AppRoutes() {
     {pages.filter(page => page.path.startsWith('/blog/')).map(page => <Route key={page.path} path={page.path} element={<Blog />} />)}
     <Route path="/cases/axiom-technical-audit" element={<ResearchCase />} />
     <Route path="/research/ai-visibility-pilot" element={<VisibilityStudy />} />
-    {pages.filter(page => page.lang === 'en').map(page => <Route key={page.path} path={page.path} element={<EnglishPage />} />)}
+    {pages.filter(page => page.serviceId).map(page => <Route key={page.path} path={page.path} element={<ServiceDetail />} />)}
+    {pages.filter(page => page.lang === 'en' && !page.serviceId).map(page => <Route key={page.path} path={page.path} element={<EnglishPage />} />)}
   </Routes></>
 }
 

@@ -1,4 +1,5 @@
 import { articles } from './content/articles.js'
+import { serviceCatalog, servicePath, serviceContentSources } from './content/serviceCatalog.js'
 
 export const baseUrl = 'https://www.axiom-ai.su'
 export const brandDescription = 'Axiom AI (axiom-ai.su), GEO-агентство'
@@ -22,6 +23,13 @@ export const pages = routes.flatMap(([path, label, title, description, enLabel, 
   { path, label, title, description, lang: 'ru', alternate: path === '/' ? '/en' : `/en${path}`, sources: [source] },
   { path: path === '/' ? '/en' : `/en${path}`, label: enLabel, title: enTitle, description: enDescription, lang: 'en', alternate: path, sources: ['src/EnglishPage.jsx'] },
 ])
+
+for (const service of serviceCatalog) {
+  for (const lang of ['ru', 'en']) pages.push({ path: servicePath(service.slug, lang), label: service[lang].label, title: service[lang].title, description: service[lang].description, lang, alternate: servicePath(service.slug, lang === 'ru' ? 'en' : 'ru'), serviceId: service.slug, sources: ['src/ServiceDetail.jsx', `src/content/services/${service.slug}.js`, `public${service.artifact}`] })
+}
+for (const page of pages) {
+  if (['/', '/services', '/en/services'].includes(page.path)) page.sources.push('src/ServiceCards.jsx', ...serviceContentSources)
+}
 
 for (const article of articles) pages.push({ path: `/blog/${article.slug}`, label: article.title, title: `${article.title} — Axiom AI`, description: article.description, lang: 'ru', sources: ['src/content/articles.js', 'src/Blog.jsx'] })
 

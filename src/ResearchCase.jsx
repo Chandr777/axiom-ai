@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
+import followup from './content/technical-followup.json'
 
 export default function ResearchCase() {
   return <div className="page-shell"><Navbar /><main className="page-content research-article">
@@ -19,10 +20,14 @@ export default function ResearchCase() {
     <p><a href="/research/axiom-technical-baseline-2026-11-15.json" download>Скачать исходные наблюдения в JSON</a>. В выборке 17 заранее выбранных адресов; она не представляет весь сайт или всех роботов.</p>
     <h2>Какие изменения внесены?</h2>
     <ul className="readable-list"><li>Созданы страницы компании, контактов, исследований и английские версии основных материалов.</li><li>Добавлены взаимные hreflang ru/en/x-default, хлебные крошки, Service/Offer с рублёвыми ценами и PNG-логотип.</li><li>Полный текст страниц автоматически включается в llms-full.txt при сборке.</li><li>Даты содержательных изменений страниц сохраняются отдельно от времени сборки сайта.</li><li>Добавлены favicon.ico и заголовки-вопросы в FAQ.</li></ul>
+    <h2>Что показал повторный замер тех же адресов?</h2>
+    <p>15 ноября 2026 года, <time dateTime={followup.checkedAt}>{new Date(Date.parse(followup.checkedAt) + 3 * 60 * 60 * 1000).toISOString().slice(11, 16)} мск</time>, повторили GET-запросы по исходному списку. Все {followup.sampleSize} адресов вернули HTTP 200. В том числе стали доступны шесть адресов, ранее возвращавших 404.</p>
+    <div className="table-scroll"><table><caption>Сопоставление одной и той же выборки URL</caption><thead><tr><th>Показатель</th><th>Исходный замер</th><th>Повторный замер</th></tr></thead><tbody><tr><td>Проверено адресов</td><td>{followup.sampleSize}</td><td>{followup.sampleSize}</td></tr><tr><td>HTTP 200</td><td>{followup.beforeHttp200}</td><td>{followup.afterHttp200}</td></tr><tr><td>HTTP 404</td><td>{followup.beforeHttp404}</td><td>{followup.afterHttp404}</td></tr></tbody></table></div>
+    <p><a href="/research/axiom-technical-followup-2026-11-15.json" download>Скачать повторные HTTP-наблюдения (JSON)</a>. Выборка специально включала проверяемые адреса и не является оценкой всего сайта, индексации или коммерческой результативности.</p>
     <h2>Что означает этот результат?</h2>
     <p>Устранены обнаруженные пробелы в публикации материалов и машиночитаемых данных. Результат проверяется по перечисленным публичным адресам и исходникам. Доступность HTTP 200 — необходимое техническое наблюдение, а не доказательство индексации или цитирования.</p>
     <h2>Ограничения и следующий замер</h2>
     <p>Это внутренний технический кейс собственного сайта. Здесь нет клиентских результатов, измерения прироста трафика, цитирований или поисковых позиций. Состояние индексации необходимо подтвердить в кабинетах Google, Яндекса и Bing. Для оценки AI-видимости потребуется отдельная фиксированная выборка запросов с сохранёнными ответами и источниками.</p>
-    <p>Следующий этап — повторные запросы после публикации, проверка поисковых кабинетов и замер по <a href="/methodology">опубликованной методике</a>.</p>
+    <p>Повторные HTTP-запросы выполнены. Следующий этап — подтверждение состояния URL в поисковых кабинетах и последующие замеры по <a href="/methodology">опубликованной методике</a>.</p>
   </main><SiteFooter /></div>
 }

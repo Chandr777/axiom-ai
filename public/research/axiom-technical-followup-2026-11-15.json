@@ -1,0 +1,151 @@
+{
+  "site": "https://www.axiom-ai.su",
+  "method": "Repeat of the same 17 paths using GET, TLS verification, redirects and AxiomTechnicalAudit/1.0. One network vantage point; no authenticated search console access.",
+  "baselineUrl": "https://www.axiom-ai.su/research/axiom-technical-baseline-2026-11-15.json",
+  "scope": "Technical HTTP availability only. The deliberately selected sample is not all website pages and does not measure indexing, AI citations, traffic or client outcomes.",
+  "summary": {
+    "sampleSize": 17,
+    "beforeHttp200": 11,
+    "afterHttp200": 17,
+    "beforeHttp404": 6,
+    "afterHttp404": 0
+  },
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 15391,
+      "checkedAt": "2026-11-15T16:25:02.356211+00:00"
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/services",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 19285,
+      "checkedAt": "2026-11-15T16:25:02.348268+00:00"
+    },
+    {
+      "path": "/methodology",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/methodology",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 11540,
+      "checkedAt": "2026-11-15T16:25:02.359382+00:00"
+    },
+    {
+      "path": "/cases",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/cases",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 11953,
+      "checkedAt": "2026-11-15T16:25:02.313553+00:00"
+    },
+    {
+      "path": "/pricing",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/pricing",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 22780,
+      "checkedAt": "2026-11-15T16:25:02.601175+00:00"
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/faq",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 19952,
+      "checkedAt": "2026-11-15T16:25:02.554397+00:00"
+    },
+    {
+      "path": "/glossary",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/glossary",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 10878,
+      "checkedAt": "2026-11-15T16:25:02.517018+00:00"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/about",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 9973,
+      "checkedAt": "2026-11-15T16:25:02.472889+00:00"
+    },
+    {
+      "path": "/contacts",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/contacts",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 9151,
+      "checkedAt": "2026-11-15T16:25:02.606623+00:00"
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/blog",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 9552,
+      "checkedAt": "2026-11-15T16:25:02.635886+00:00"
+    },
+    {
+      "path": "/en",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/en",
+      "contentType": "text/html; charset=utf-8",
+      "bytes": 7579,
+      "checkedAt": "2026-11-15T16:25:02.616965+00:00"
+    },
+    {
+      "path": "/llms.txt",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/llms.txt",
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 4986,
+      "checkedAt": "2026-11-15T16:25:02.832008+00:00"
+    },
+    {
+      "path": "/llms-full.txt",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/llms-full.txt",
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 143396,
+      "checkedAt": "2026-11-15T16:25:02.775514+00:00"
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/sitemap.xml",
+      "contentType": "application/xml",
+      "bytes": 11959,
+      "checkedAt": "2026-11-15T16:25:02.741673+00:00"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/robots.txt",
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 865,
+      "checkedAt": "2026-11-15T16:25:02.704628+00:00"
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/favicon.ico",
+      "contentType": "image/vnd.microsoft.icon",
+      "bytes": 2594,
+      "checkedAt": "2026-11-15T16:25:02.775307+00:00"
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "url": "https://www.axiom-ai.su/favicon.svg",
+      "contentType": "image/svg+xml",
+      "bytes": 248,
+      "checkedAt": "2026-11-15T16:25:02.926612+00:00"
+    }
+  ]
+}

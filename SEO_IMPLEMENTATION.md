@@ -52,3 +52,8 @@ scope, deliverables, sample downloads, conditions and contextual enquiries.
 The published package ranges are not presented as invented standalone prices.
 Navigation adapts with CSS before hydration; company/contact/research and service
 links are available throughout the site.
+
+A follow-up of the original 17-path technical audit on 15 November 2026
+returned 17 HTTP 200 responses versus 11 at baseline, with the six prior
+404 responses resolved. Both raw HTTP datasets are public. The case does
+not equate this selected-sample result with indexing or business outcomes.

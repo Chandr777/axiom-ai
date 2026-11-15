@@ -16,11 +16,11 @@ const routes = [
   ['/about', 'О компании', 'О GEO-агентстве Axiom AI (axiom-ai.su)', 'Специализация, принципы работы и проверяемые материалы GEO-агентства Axiom AI (axiom-ai.su).', 'About', 'About the GEO agency Axiom AI (axiom-ai.su)', 'Our services, evidence standards, publishing principles and official contact details.', 'src/Company.jsx'],
   ['/contacts', 'Контакты', 'Контакты Axiom AI (axiom-ai.su), GEO-агентства', 'Связь с GEO-агентством Axiom AI (axiom-ai.su): info@axiom-ai.su и форма заявки на аудит.', 'Contact', 'Contact Axiom AI (axiom-ai.su), GEO agency', 'Contact info@axiom-ai.su to discuss an audit, service scope or a published research finding.', 'src/Company.jsx'],
   ['/blog', 'Исследования и статьи', 'Исследования GEO и AEO — Axiom AI (axiom-ai.su)', 'Практические статьи о доступности сайта для AI-поиска и воспроизводимом измерении цитирований.', 'Research and articles', 'GEO and AEO research — Axiom AI (axiom-ai.su)', 'Practical articles on crawl accessibility and reproducible AI citation measurement.', 'src/Blog.jsx'],
-  ['/cases/axiom-technical-audit', 'Технический аудит axiom-ai.su', 'Кейс: технический аудит axiom-ai.su — Axiom AI', 'Исходные данные проверки 17 URL: 11 ответов HTTP 200 и 6 ответов HTTP 404. Методика, исправления и ограничения.', 'Technical audit of axiom-ai.su', 'Case study: technical audit of axiom-ai.su — Axiom AI', 'A 17-URL technical audit: 11 HTTP 200 responses and 6 HTTP 404 responses, with downloadable raw observations.', 'src/ResearchCase.jsx'],
+  ['/cases/axiom-technical-audit', 'Технический аудит axiom-ai.su', 'Кейс: технический аудит axiom-ai.su — Axiom AI', 'До и после: из 17 адресов HTTP 200 получили сначала 11, после исправлений — все 17. Обе выборки, методика и ограничения.', 'Technical audit of axiom-ai.su', 'Case study: technical audit of axiom-ai.su — Axiom AI', 'A repeatable 17-URL audit: HTTP 200 responses increased from 11 to 17. Downloadable before/after HTTP observations and limitations.', 'src/ResearchCase.jsx'],
 ]
 
 export const pages = routes.flatMap(([path, label, title, description, enLabel, enTitle, enDescription, source]) => [
-  { path, label, title, description, lang: 'ru', alternate: path === '/' ? '/en' : `/en${path}`, sources: [source] },
+  { path, label, title, description, lang: 'ru', alternate: path === '/' ? '/en' : `/en${path}`, sources: source === 'src/ResearchCase.jsx' ? [source, 'src/content/technical-followup.json'] : [source] },
   { path: path === '/' ? '/en' : `/en${path}`, label: enLabel, title: enTitle, description: enDescription, lang: 'en', alternate: path, sources: ['src/EnglishPage.jsx'] },
 ])
 

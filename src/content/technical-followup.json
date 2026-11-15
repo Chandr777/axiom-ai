@@ -1,0 +1,8 @@
+{
+  "sampleSize": 17,
+  "beforeHttp200": 11,
+  "afterHttp200": 17,
+  "beforeHttp404": 6,
+  "afterHttp404": 0,
+  "checkedAt": "2026-11-15T16:25:02.926612+00:00"
+}

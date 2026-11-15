@@ -28,7 +28,7 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', check)
   }, [])
   return <><header className="site-header"><div className="header-inner">
-    <Link className="brand" to={en ? '/en' : '/'} aria-label="Axiom AI (axiom-ai.su)">AXIOM <span>AI</span><small>{en ? 'GEO AGENCY · AXIOM-AI.SU' : 'GEO-АГЕНТСТВО · AXIOM-AI.SU'}</small></Link>
+    <Link className="brand" to={en ? '/en' : '/'}>AXIOM <span>AI</span><small>{en ? 'GEO AGENCY · AXIOM-AI.SU' : 'GEO-АГЕНТСТВО · AXIOM-AI.SU'}</small></Link>
     {!mobile && <nav className="nav" aria-label={en ? 'Main navigation' : 'Основная навигация'}>
       {navigation.map(([path,label]) => <Link key={path} to={path} className={location.pathname===path?'active':''} onClick={() => setOpen(false)}>{label}</Link>)}
       {page?.alternate && <Link to={page.alternate} lang={en ? 'ru' : 'en'} hrefLang={en ? 'ru' : 'en'}>{en ? 'RU' : 'EN'}</Link>}

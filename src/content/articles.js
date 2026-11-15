@@ -1,6 +1,7 @@
 export const articles = [
   {
     slug: 'ai-search-technical-checklist',
+    seoTitle: 'Доступность сайта для AI-поиска: проверка — Axiom AI',
     title: 'Что мешает AI-поиску прочитать сайт: проверка на собственных данных',
     description: 'Проверка HTTP, HTML, canonical, sitemap и доступа роботов на примере внутреннего аудита axiom-ai.su.',
     sections: [
@@ -20,6 +21,7 @@ export const articles = [
   },
   {
     slug: 'measure-ai-citations',
+    seoTitle: 'Как измерять цитирования в AI-поиске — Axiom AI',
     title: 'Как измерять цитирования в ChatGPT, Claude и Perplexity',
     description: 'Воспроизводимый протокол замеров: запросы, условия, исходные ответы, формулы Mention Rate и Citation Rate.',
     sections: [

@@ -31,7 +31,7 @@ for (const page of pages) {
   if (['/', '/services', '/en/services'].includes(page.path)) page.sources.push('src/ServiceCards.jsx', ...serviceContentSources)
 }
 
-for (const article of articles) pages.push({ path: `/blog/${article.slug}`, label: article.title, title: `${article.title} — Axiom AI`, description: article.description, lang: 'ru', sources: ['src/content/articles.js', 'src/Blog.jsx'] })
+for (const article of articles) pages.push({ path: `/blog/${article.slug}`, label: article.title, title: article.seoTitle || `${article.title} — Axiom AI`, description: article.description, lang: 'ru', sources: ['src/content/articles.js', 'src/Blog.jsx'] })
 
 pages.push({ path: '/research/ai-visibility-pilot', label: 'Исследование AI-видимости', title: 'Исследование AI-видимости: первичный срез — Axiom AI', description: 'Протокол и первичные ответы ChatGPT Search: фиксированные вопросы, повторы, полные тексты и источники. Ограничения доступа к Яндексу с Алисой и Perplexity.', lang: 'ru', sources: ['src/VisibilityStudy.jsx', 'src/content/geo-ai-pilot-v1.json', 'src/content/visibility-results.json'] })
 
@@ -39,7 +39,7 @@ for (const [path, label, title, source] of [
   ['/privacy', 'Конфиденциальность', 'Политика обработки персональных данных', 'src/Privacy.jsx'],
   ['/consent', 'Согласие на обработку', 'Согласие на обработку персональных данных', 'src/Consent.jsx'],
   ['/terms', 'Правила сайта', 'Правила использования сайта', 'src/SiteTerms.jsx'],
-]) pages.push({ path, label, title: `${title} — Axiom AI (axiom-ai.su)`, description: `${title} на сайте GEO-агентства Axiom AI (axiom-ai.su).`, lang: 'ru', sources: [source] })
+]) pages.push({ path, label, title: `${title} — Axiom AI`, description: `${title} на сайте GEO-агентства Axiom AI (axiom-ai.su).`, lang: 'ru', sources: [source] })
 
 for (const page of pages) {
   if (page.sources.some(source => ['src/Company.jsx', 'src/Privacy.jsx', 'src/Consent.jsx', 'src/SiteTerms.jsx', 'src/EnglishPage.jsx'].includes(source))) page.sources.push('src/companyIdentity.js')

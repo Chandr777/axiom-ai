@@ -11,8 +11,8 @@ export default function Privacy() {
     <h1>Политика обработки персональных данных</h1>
     <p className="page-lead">Здесь описано, какие данные передаются через форму Axiom AI, для чего они обрабатываются и как связаться по вопросам обработки.</p>
     <section>
-      <h2>Оператор и контакт</h2>
-      <p>Оператор сайта — {companyIdentity.legalName}, работающий под публичным обозначением Axiom AI (axiom-ai.su). По вопросам о заявках и обработке данных напишите на <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>. Контактный телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>.</p>
+      <h2>Контакт по обработке данных</h2>
+      <p>По вопросам о заявках и обработке данных на сайте Axiom AI (axiom-ai.su) напишите на <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>.</p>
     </section>
     <section>
       <h2>Какие данные получает форма</h2>

@@ -10,11 +10,10 @@ export function pageSchema(page) {
   const en = page.lang === 'en'
   const organization = {
     '@type': 'Organization', '@id': organizationId, name: 'Axiom AI', alternateName: brandDescription,
-    legalName: companyIdentity.legalName, telephone: companyIdentity.phone,
     url: `${baseUrl}/`, logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.png`, width: 512, height: 512 },
     description: 'Axiom AI (axiom-ai.su), GEO-агентство: технический аудит, контент для ответных систем и измерение AI-видимости.',
     email: 'info@axiom-ai.su',
-    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: companyIdentity.email, telephone: companyIdentity.phone, availableLanguage: ['Russian', 'English'] },
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: companyIdentity.email, availableLanguage: ['Russian', 'English'] },
   }
   const graph = [organization,
     { '@type': 'WebSite', '@id': `${baseUrl}/#website`, url: `${baseUrl}/`, name: 'Axiom AI (axiom-ai.su)', inLanguage: ['ru', 'en'], publisher: { '@id': organizationId } },

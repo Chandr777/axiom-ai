@@ -11,8 +11,8 @@ export default function Consent() {
     <h1>Согласие на обработку персональных данных</h1>
     <p className="page-lead">Установка флажка в форме и отправка заявки подтверждают отдельное согласие на обработку данных для ответа на ваш запрос.</p>
     <section>
-      <h2>Кто обрабатывает данные</h2>
-      <p>Оператор сайта — {companyIdentity.legalName}, действующий под публичным обозначением Axiom AI (axiom-ai.su). Для вопросов и отзыва согласия: <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>. Контактный телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>.</p>
+      <h2>Вопросы и отзыв согласия</h2>
+      <p>По вопросам обработки данных на сайте Axiom AI (axiom-ai.su) и для отзыва согласия напишите на <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>.</p>
     </section>
     <section>
       <h2>Какие данные и для чего</h2>

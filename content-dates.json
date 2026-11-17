@@ -4,88 +4,88 @@
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en": {
-    "contentHash": "59fb8721baf0567804d4714932f570748ce7c3448cf1fdc712a37a9a47d9b54e",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "7ce6d7dca76d2cdaaed1baa438c33ee32fff4f46257096cd70f648111d723338",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/services": {
     "contentHash": "7bf36956ef6f9482a9dd716173389616e5e130a173cfd834cc9f88544550b77a",
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en/services": {
-    "contentHash": "ac27369b72d53a5ed764d2d9842004ed905209101ef6510486b7c9639b1a9ea4",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "a4950924cb3e1d951e22e4e1a6bd139c941294521e504c1342ecf4a227b9fa63",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/methodology": {
     "contentHash": "6a72192c9b4c8b0095eb739eb07b5ee637b76e915cac85a17b73d6b131a4cd7a",
     "lastmod": "2026-11-15T14:05:42.607Z"
   },
   "/en/methodology": {
-    "contentHash": "b4dc42df31795e610532a4435c1c89ce9e2a5fab5e4de963c23c9018954c55c3",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "bcce02b15da0a676e5c85ef70fb83e8e946c7079f97fdc2fc737942c12b6925f",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/cases": {
     "contentHash": "abe46c39647f8b5dc355cb0c268306c093b95f615f8cf5b578803e43ba5180fb",
     "lastmod": "2026-11-15T19:03:47.222Z"
   },
   "/en/cases": {
-    "contentHash": "34f1dc7fd46a5177585961618ed1f2ebbea0e65e5889833ffb93d060ab8137f8",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "72b9db3467af8616ec09f535a6b88dd6a807b8032e6cd4c4151914bd7c643f72",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/pricing": {
     "contentHash": "81acb94cf44880c1ba3ba85954dcee54eac7421950b08e8db6b2c36eb2569953",
     "lastmod": "2026-11-15T16:14:52.235Z"
   },
   "/en/pricing": {
-    "contentHash": "111667a01fd69fabe35e39799001a84feceefe1a461a5202ac91c9d0aa842aff",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "0bcfaadc987379e825d246a1cfd28ddbbe65b2da8f752c6eb1d7f5d49521952f",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/faq": {
     "contentHash": "d01921be8695d4337950b4b660936376f11be4da567777444454a1eae992a936",
     "lastmod": "2026-11-15T12:32:30.150Z"
   },
   "/en/faq": {
-    "contentHash": "c339058db98b2cabbba43ade8e3fabaadeefcf5ec3d30b2aa36aca20a742b3d2",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "a549228d278202405f2b702bf9d6d087ffc62859f11c7d30b345d2dbda18e937",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/glossary": {
     "contentHash": "69a0ce4018af8d4149086a55c16cde849be4cd623d63e4d2fe44cd19dcd763de",
     "lastmod": "2026-11-09T13:37:29.000Z"
   },
   "/en/glossary": {
-    "contentHash": "bb79abfa15551ed8c753b39d8b4305d7f9d5ab373e737802aef938da7b62d5af",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "06adfd3a9fb627dc5ed7a17f13bd05a4b2955af22495b79509c1592355e281bb",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/about": {
-    "contentHash": "361d147a09b2e12a2120e1646f9f1f0bb8547e16446e49a51fdb30b38ff72461",
-    "lastmod": "2026-11-15T19:03:47.222Z"
+    "contentHash": "88af4b1657fb977cf6faa3381d9a03d34783a41f6ee4862f27a22e08dfed7837",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/en/about": {
-    "contentHash": "d6ceee9ddc6ea1008bf2715b8a54029222cb8d1b0fc97922dd03f8458eabc566",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "8aafd58c4f9d82ec271ec3051888ecc0214a007a4f335dac77dceef172cbf47a",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/contacts": {
-    "contentHash": "645ebdddfa4af1512b93492e37a91abc7b273d10cbfc916db44f64eb581a1d90",
-    "lastmod": "2026-11-15T19:03:47.222Z"
+    "contentHash": "c6c29dce14152e46cdef76f3cef95366677ecb8506d482afc827fbc076c0126f",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/en/contacts": {
-    "contentHash": "061cfbeba909e160e6464898a02f0652a1523db9189e44af958dc1e13a9846f6",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "501f2a4d900ebf268b5dcfb1b680b5189c39bc827d5c098f229829c29a80bd69",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/blog": {
     "contentHash": "93ef27747a6220eec3ad2937122e0e7b80797a6e737711dfa327fb70354eba3c",
     "lastmod": "2026-11-15T19:18:26.778Z"
   },
   "/en/blog": {
-    "contentHash": "4417b71d2a1e7c10327ea8b731722a7b4471ba908b198a2f3b9260bc39a37dbc",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "46c2b208bbbd2642d29980e72fcb6b1bdbab9150f9fc2801baf037c1cab05530",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/cases/axiom-technical-audit": {
     "contentHash": "800b6387d381ebe34c636d010e530316daa114f972a3256323a20af7a817bbf7",
     "lastmod": "2026-11-15T16:27:13.754Z"
   },
   "/en/cases/axiom-technical-audit": {
-    "contentHash": "e6dc2de0ce12bdbe2dfb97d9adda2065c40028f4808e5a0e3cf78ef2b9f40a2f",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "e72c6937cdc69dd821c944baa2aa80ce1bb245ae8011d88cf695859fc02d7e7f",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/services/geo-audit": {
     "contentHash": "e559eb8ba6d4ce926c470e06b305027a9d14caec9723d4eb7e5b2f02773e1a0d",
@@ -132,15 +132,15 @@
     "lastmod": "2026-11-15T14:22:04.890Z"
   },
   "/privacy": {
-    "contentHash": "3536c9accf34e78f545ffb771915ecca03121313d88685972a4a12936e7ef9f7",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "0af00036c9b4d51070c199d355aa6cbc07235ac3f0f2282c24ead53b10b29716",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/consent": {
-    "contentHash": "0e9c71b7c3ddfd0f01a313044113bb2da0ebabf0fbba4f1355367771c7b9249b",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "b4f13b196d099c72d2bb6f70767376099d96ff12bb6579c45ae0bd2664600443",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   },
   "/terms": {
-    "contentHash": "3f76c757eb73910dfb9d8878454f162d5b47fc75007f3028d4b05cc51568e2c0",
-    "lastmod": "2026-11-15T19:18:26.778Z"
+    "contentHash": "bb2c4227fa9d3e41041f23dc98f2693a769f78deb1c2adf5d892a46926bf4d0c",
+    "lastmod": "2026-11-17T06:29:57.558Z"
   }
 }

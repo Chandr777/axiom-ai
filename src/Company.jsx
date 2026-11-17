@@ -9,7 +9,6 @@ export default function Company() {
     <p className="eyebrow-dark">AXIOM AI · AXIOM-AI.SU</p>
     <h1>{contact ? 'Контакты GEO-агентства Axiom AI' : 'Axiom AI (axiom-ai.su), GEO-агентство'}</h1>
     <p className="page-lead">{contact ? 'Обсудить аудит, уточнить состав услуг или задать вопрос о нашем исследовании можно по официальной почте.' : 'Помогаем компаниям улучшать доступность сайта, согласованность сведений о бренде и качество ответов на вопросы клиентов в генеративном поиске.'}</p>
-    <section className="notice-panel"><h2>Исполнитель и оператор сайта</h2><p>{companyIdentity.legalName} · Axiom AI (axiom-ai.su).</p><p>Телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>. Email: <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>.</p></section>
     {contact ? <>
       <h2>Как связаться с Axiom AI?</h2>
       <p>Email: <a href="mailto:info@axiom-ai.su">info@axiom-ai.su</a>. Официальный сайт: <a href="https://www.axiom-ai.su/">www.axiom-ai.su</a>.</p>

@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import { getPage, plans } from './siteData'
 import ServiceCards from './ServiceCards'
-import { companyIdentity } from './companyIdentity'
 
 const faq = [
   ['What is GEO and how does it differ from SEO?', 'SEO helps search engines discover and rank pages. GEO improves the accessibility, consistency and verifiability of brand information used by generative answer systems. AEO focuses on complete answers to specific questions. These approaches share technical accessibility and useful content as a foundation.'],
@@ -78,7 +77,6 @@ export default function EnglishPage() {
     <p className="eyebrow-dark">AXIOM AI · AXIOM-AI.SU · GEO / AEO</p>
     <h1>{data?.title || (pathname === '/en/faq' ? 'Frequently asked questions about GEO and AEO' : 'GEO and AEO glossary')}</h1>
     <p className="page-lead">{data?.lead || page.description}</p>
-    {['/en/about', '/en/contacts'].includes(pathname) && <section className="notice-panel"><h2>Service provider and website operator</h2><p><span lang="ru">{companyIdentity.legalName}</span> (individual entrepreneur), operating under the Axiom AI (axiom-ai.su) brand.</p><p>Telephone: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>. Email: <a href={`mailto:${companyIdentity.email}`}>{companyIdentity.email}</a>.</p></section>}
     {pathname === '/en/services' && <section><h2>Choose your scope</h2><ServiceCards lang="en" /></section>}
     {(special || data.sections).map(([title, text]) => <section key={title}><h2>{title}</h2><p>{text}</p></section>)}
     {pathname === '/en/services' && <section><h2>Examples of deliverables</h2><p>These are format examples, not client results. Implementation scope is agreed before the project.</p><ul className="readable-list"><li>Technical audit: URL, observed issue, priority, proposed fix and repeat-check result.</li><li>Company facts: a sourced fact sheet and consistent service descriptions and RUB prices across pages and JSON-LD.</li><li>Answer-focused content: a page with a direct answer, price conditions, scope, timing, limitations and sources.</li><li>External presence: profile URLs, factual discrepancies, proposed corrections and verified publication status.</li><li>Monitoring: exact query, platform and search mode, time, full answer, sources, verified domains and separate mention and citation counts.</li></ul></section>}

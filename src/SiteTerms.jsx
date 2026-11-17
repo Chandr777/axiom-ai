@@ -1,7 +1,6 @@
 import Navbar from './Navbar'
 import SiteFooter from './SiteFooter'
 import usePageMeta from './usePageMeta'
-import { companyIdentity } from './companyIdentity'
 
 export default function SiteTerms() {
   usePageMeta('Правила использования сайта — Axiom AI', 'Правила доступа к информационному сайту Axiom AI и его публичным материалам.', '/terms')
@@ -10,7 +9,6 @@ export default function SiteTerms() {
     <p className="eyebrow-dark">ПРАВИЛА САЙТА</p>
     <h1>Правила использования сайта</h1>
     <p className="page-lead">Эти правила относятся к просмотру информационных материалов на axiom-ai.su и не заменяют отдельный договор на услуги.</p>
-    <p>Исполнитель и оператор сайта — {companyIdentity.legalName}. Контактный телефон: <a href={`tel:${companyIdentity.phone}`}>{companyIdentity.phoneDisplay}</a>.</p>
     <section>
       <h2>Назначение материалов</h2>
       <p>Сайт описывает подход Axiom AI к GEO/AEO, перечень услуг, методологию, тарифные ориентиры и ответы на общие вопросы. Материалы предназначены для общего ознакомления и не являются индивидуальной рекомендацией или гарантией результата.</p>

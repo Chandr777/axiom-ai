@@ -13,4 +13,3 @@ Disallow: /*.csv$
 Disallow: /*.md$
 
 Sitemap: https://www.axiom-ai.su/sitemap.xml
-

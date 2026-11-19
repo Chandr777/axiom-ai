@@ -1,8 +1,15 @@
 # Axiom AI crawler access policy
 User-agent: *
 Allow: /
-Disallow: /admin/
+Disallow: /admin
 Disallow: /api/
-Disallow: /login/
+
+# Keep downloadable templates out of the HTML audit budget.
+User-agent: OpenSEO-Audit
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /*.csv$
+Disallow: /*.md$
 
 Sitemap: https://www.axiom-ai.su/sitemap.xml

@@ -1,57 +1,15 @@
 # Axiom AI crawler access policy
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/
 
-User-agent: Googlebot
+# Keep downloadable templates out of the HTML audit budget.
+User-agent: OpenSEO-Audit
 Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# ChatGPT Search
-User-agent: OAI-SearchBot
-Allow: /
-
-# OpenAI model-training crawler
-User-agent: GPTBot
-Allow: /
-
-# User-triggered page fetches in ChatGPT
-User-agent: ChatGPT-User
-Allow: /
-
-# Claude Search
-User-agent: Claude-SearchBot
-Allow: /
-
-# Anthropic model-training crawler
-User-agent: ClaudeBot
-Allow: /
-
-# User-triggered page fetches in Claude
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-# Separate Google generative-AI control; does not replace Googlebot
-User-agent: Google-Extended
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /*.csv$
+Disallow: /*.md$
 
 Sitemap: https://www.axiom-ai.su/sitemap.xml

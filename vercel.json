@@ -52,5 +52,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/96efe6e8856243c9b53d8d0838818dc4.txt",
+      "destination": "/api/indexnow-key"
+    }
   ]
 }

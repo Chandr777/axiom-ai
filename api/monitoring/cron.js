@@ -2,6 +2,15 @@ import { runMonitoring } from '../_lib/sov.js';
 import { createRun, finishRun, loadMeasurementConfig, saveResults } from '../_lib/db.js';
 import { authorized } from '../_lib/auth.js';
 
+function configuredProviderIds(providers) {
+  return providers.map((provider) => provider.id).filter((id) => {
+    if (id === 'chatgpt') return !!process.env.OPENAI_API_KEY && (process.env.OPENAI_MODEL || 'gpt-6-astra') === 'gpt-6-astra';
+    if (id === 'claude') return !!process.env.ANTHROPIC_API_KEY && (process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6') === 'claude-sonnet-4-6';
+    if (id === 'perplexity') return !!process.env.PERPLEXITY_API_KEY && process.env.PERPLEXITY_COST_TRACKING_ENABLED === 'true';
+    return false;
+  });
+}
+
 export default async function handler(req, res) {
   if (!authorized(req, true)) return res.status(401).json({ error: 'Unauthorized' });
   if (!['GET', 'POST'].includes(req.method)) return res.status(405).json({ error: 'Method not allowed' });
@@ -11,12 +20,7 @@ export default async function handler(req, res) {
 
   try {
     const config = await loadMeasurementConfig('both');
-    const availableProviderIds = config.providers.map((provider) => provider.id).filter((id) => {
-      if (id === 'chatgpt') return !!process.env.OPENAI_API_KEY;
-      if (id === 'claude') return !!process.env.ANTHROPIC_API_KEY;
-      if (id === 'perplexity') return !!process.env.PERPLEXITY_API_KEY;
-      return false;
-    });
+    const availableProviderIds = configuredProviderIds(config.providers);
     if (!availableProviderIds.length) {
       throw new Error('Нет API-ключей активных AI-провайдеров. Плановый запуск пропущен.');
     }

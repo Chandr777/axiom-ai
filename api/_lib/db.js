@@ -48,7 +48,7 @@ export async function createRun({ market, promptCount, providerIds }) {
     method: 'POST',
     headers: { Prefer: 'return=representation' },
     body: JSON.stringify({
-      panel_mode: 'both',
+      panel_mode: market,
       market_scope: market,
       status: 'running',
       started_at: new Date().toISOString(),
